@@ -1,4 +1,4 @@
 ///@description Draw FPS counter
 if (debug_enable) {
-	draw_text_color(0, 0, fps, c_lime, c_lime, c_lime, c_lime, 1.0)
+	draw_text_color(0, 0, fps, #00FF00, #00FF00, #00FF00, #00FF00, 1.0)
 }
