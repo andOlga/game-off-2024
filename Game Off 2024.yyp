@@ -34,6 +34,7 @@
   },
   "name":"Game Off 2024",
   "resources":[
+    {"id":{"name":"InputController","path":"objects/InputController/InputController.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "resourceType":"GMProject",
