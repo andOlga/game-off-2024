@@ -1,5 +1,7 @@
 ///@description Input variable setup
 
+debug_enable = true; // Set to false to disable debug overlay
+
 // This struct is meant to represent the same kind of inputs you would find on an NES controller.
 // There is a D-Pad, A/B and Start/Select buttons.
 // Nobody should ever need more inputs than these.
@@ -83,7 +85,6 @@ get_ls = function () { // Translate LS into D-Pad like inputs
 }
 
 // Debug functionality
-debug_enable = true; // Set to false to disable debug overlay
 if (debug_enable) {
 	dbg_view("Input", true, 500, 200)
 	dbg_section("Input values")
