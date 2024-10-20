@@ -73,3 +73,24 @@ get_ls = function () { // Translate LS into D-Pad like inputs
 	if (dy > 0) dy = 1
 	return { dx, dy }
 }
+
+// Input hint related functions
+enum INPUT_GLYPHS {
+	dpad, a, b, pause, sel
+}
+
+get_input_hint = function(glyph) {
+	var prompt_text = ""
+	if (glyph == INPUT_GLYPHS.dpad) {
+		prompt_text = "\u21ce or \u21cb or \u23f4\u23f5\u23f6\u23f7"
+	} else if (glyph == INPUT_GLYPHS.a) {
+		prompt_text = "\u21a7 or \uff3a"
+	} else if (glyph == INPUT_GLYPHS.b) {
+		prompt_text = "\u21a6 or \uff38"
+	} else if (glyph == INPUT_GLYPHS.pause) {
+		prompt_text = "\u21f8 or \u242e or \u242f"
+	} else if (glyph == INPUT_GLYPHS.sel) {
+		prompt_text = "\u21f7 or \u243a"
+	}
+	return prompt_text
+}
