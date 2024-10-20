@@ -1,5 +1,21 @@
-///@description Input variable setup
+///@description Input init
 
+#region Pause
+paused = false // Is the game currently paused?
+pause_gp_loss = false // Pause was due to gamepad loss
+
+pause = function() {
+	if (!paused) {
+		instance_deactivate_all(true);
+	} else {
+		instance_activate_all();
+		pause_gp_loss = false
+	}
+	paused = !paused
+}
+#endregion
+
+#region Input handling
 // This struct is meant to represent the same kind of inputs you would find on an NES controller.
 // There is a D-Pad, A/B and Start/Select buttons.
 // Nobody should ever need more inputs than these.
@@ -13,19 +29,6 @@ global.input = {
 	start: 0, // is Start equivalent being pressed currently
 	sel: 0, // is "Select" equivalent pressed just now
 	gp_idx: -1, // current gamepad index
-}
-
-paused = false // Is the game currently paused?
-pause_gp_loss = false // Pause was due to gamepad loss
-
-pause = function() {
-	if (!paused) {
-		instance_deactivate_all(true);
-	} else {
-		instance_activate_all();
-		pause_gp_loss = false
-	}
-	paused = !paused
 }
 
 // Helper functions used to populate the values in the struct above
@@ -73,8 +76,9 @@ get_ls = function () { // Translate LS into D-Pad like inputs
 	if (dy > 0) dy = 1
 	return { dx, dy }
 }
+#endregion
 
-// Input hint related functions
+#region Input hints
 enum INPUT_GLYPHS {
 	dpad, a, b, pause, sel
 }
@@ -101,3 +105,4 @@ get_input_hint = function(glyph, sep = " or ", sep1 = ", ") {
 	}
 	return prompt_text
 }
+#endregion

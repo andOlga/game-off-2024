@@ -1,4 +1,4 @@
-///@description Update input variables
+///@description Input update
 
 var buttons = get_buttons()
 var keys = get_keys()
