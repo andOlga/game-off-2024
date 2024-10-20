@@ -1,10 +1,16 @@
 /// @param {string} message
 function draw_text_centered(message) {
+	var old_va = draw_get_valign()
+	var old_ha = draw_get_halign()
+	draw_set_halign(fa_center)
+	draw_set_valign(fa_middle)
 	draw_text(
-		(view_wport[0] - string_width(message)) / 2,
-		(view_hport[0] - string_height(message)) / 2,
+		view_wport[0] / 2,
+		view_hport[0] / 2,
 		message
 	);
+	draw_set_halign(old_ha)
+	draw_set_valign(old_va)
 }
 
 enum INPUT_GLYPHS {
@@ -12,16 +18,10 @@ enum INPUT_GLYPHS {
 }
 
 /**
-@description Draws an input hint at the specified position
-@param {real} xpos
-@param {real} ypos
+@description Gets the text representation (in PromptFont) of the input hint
 @param {real} glyph
 */
-function draw_input_hint(xpos, ypos, glyph) {
-	var old_font = draw_get_font()
-	var old_color = draw_get_color()
-	var old_alpha = draw_get_alpha()
-	draw_set_font(PromptFont)
+function get_input_hint(glyph) {
 	var prompt_text = ""
 	if (glyph == INPUT_GLYPHS.dpad) {
 		prompt_text = "\u21ce or \u21cb or \u23f4\u23f5\u23f6\u23f7"
@@ -34,8 +34,5 @@ function draw_input_hint(xpos, ypos, glyph) {
 	} else if (glyph == INPUT_GLYPHS.sel) {
 		prompt_text = "\u21f7 or \u243a"
 	}
-	draw_text(xpos, ypos, prompt_text)
-	draw_set_font(old_font)
-	draw_set_color(old_color)
-	draw_set_alpha(old_alpha)
+	return prompt_text
 }
