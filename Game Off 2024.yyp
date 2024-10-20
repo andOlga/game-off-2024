@@ -32,12 +32,14 @@
     {"id":{"name":"DebugController","path":"objects/DebugController/DebugController.yy",},},
     {"id":{"name":"InputController","path":"objects/InputController/InputController.yy",},},
     {"id":{"name":"MainMenu","path":"rooms/MainMenu/MainMenu.yy",},},
+    {"id":{"name":"TemplateRoom","path":"rooms/TemplateRoom/TemplateRoom.yy",},},
     {"id":{"name":"Helpers","path":"scripts/Helpers/Helpers.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"MainMenu","path":"rooms/MainMenu/MainMenu.yy",},},
+    {"roomId":{"name":"TemplateRoom","path":"rooms/TemplateRoom/TemplateRoom.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
