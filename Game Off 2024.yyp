@@ -30,6 +30,7 @@
   "name":"Game Off 2024",
   "resources":[
     {"id":{"name":"PromptFont","path":"fonts/PromptFont/PromptFont.yy",},},
+    {"id":{"name":"ControlHintDisplay","path":"objects/ControlHintDisplay/ControlHintDisplay.yy",},},
     {"id":{"name":"DebugController","path":"objects/DebugController/DebugController.yy",},},
     {"id":{"name":"InputController","path":"objects/InputController/InputController.yy",},},
     {"id":{"name":"MainMenu","path":"rooms/MainMenu/MainMenu.yy",},},

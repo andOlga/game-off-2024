@@ -93,7 +93,7 @@ enum INPUT_GLYPHS {
 get_input_hint = function(glyph, sep = " or ", sep1 = ", ") {
 	var prompt_text = ""
 	if (glyph == INPUT_GLYPHS.dpad) {
-		prompt_text = $"\u21ce{sep1}\u21cb{sep}\u23f4\u23f5\u23f6\u23f7"
+		prompt_text = $"\u21ce{sep1}\u21cb{sep}\u23f6\u23f7\u23f4\u23f5"
 	} else if (glyph == INPUT_GLYPHS.a) {
 		prompt_text = $"\u21a7{sep}\uff3a"
 	} else if (glyph == INPUT_GLYPHS.b) {
