@@ -13,8 +13,8 @@
   ],
   "name":"TemplateRoom",
   "parent":{
-    "name":"Rooms",
-    "path":"folders/Rooms.yy",
+    "name":"Templates",
+    "path":"folders/Templates.yy",
   },
   "parentRoom":null,
   "physicsSettings":{
