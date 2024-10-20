@@ -1,4 +1,4 @@
-The files found in the Git repository found at https://github.com/andOlga/game-off-2024.git are mostly placed into the public domain, with two things to keep in mind:
+The files found in the Git repository located at https://github.com/andOlga/game-off-2024.git are mostly placed into the public domain, with two things to keep in mind:
 
 - This project bundles parts of [PromptFont](https://shinmera.github.io/promptfont/), which is licensed under the SIL Open Font Licence.
 If you do not agree to the terms of the OFL, you must delete the `fonts` folder from any derivative works.
