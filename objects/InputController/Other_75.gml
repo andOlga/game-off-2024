@@ -5,3 +5,10 @@ if (async_load[? "event_type"] == "gamepad discovered") {
 		window_set_fullscreen(true);
 	}
 }
+
+if (async_load[? "event_type"] == "gamepad lost") {
+	if (!pause_gp_loss) {
+		pause_gp_loss = true
+		pause()
+	}
+}
