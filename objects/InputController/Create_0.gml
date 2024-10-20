@@ -79,18 +79,25 @@ enum INPUT_GLYPHS {
 	dpad, a, b, pause, sel
 }
 
-get_input_hint = function(glyph) {
+///@description Gets input hint text (in PromptFont) for a glyph.
+///				The hint text combines all relevant controller and keyboard icons.
+///				If there are more than 2 icons, the first two will be separated with `sep1`.
+///				In all other cases, `sep` is used to separate them.
+///@param {real} glyph
+///@param {string} sep
+///@param {string} sep1
+get_input_hint = function(glyph, sep = " or ", sep1 = ", ") {
 	var prompt_text = ""
 	if (glyph == INPUT_GLYPHS.dpad) {
-		prompt_text = "\u21ce or \u21cb or \u23f4\u23f5\u23f6\u23f7"
+		prompt_text = $"\u21ce{sep1}\u21cb{sep}\u23f4\u23f5\u23f6\u23f7"
 	} else if (glyph == INPUT_GLYPHS.a) {
-		prompt_text = "\u21a7 or \uff3a"
+		prompt_text = $"\u21a7{sep}\uff3a"
 	} else if (glyph == INPUT_GLYPHS.b) {
-		prompt_text = "\u21a6 or \uff38"
+		prompt_text = $"\u21a6{sep}\uff38"
 	} else if (glyph == INPUT_GLYPHS.pause) {
-		prompt_text = "\u21f8 or \u242e or \u242f"
+		prompt_text = $"\u21f8{sep1}\u242e{sep}\u242f"
 	} else if (glyph == INPUT_GLYPHS.sel) {
-		prompt_text = "\u21f7 or \u243a"
+		prompt_text = $"\u21f7{sep}\u243a"
 	}
 	return prompt_text
 }
