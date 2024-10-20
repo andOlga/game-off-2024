@@ -12,7 +12,8 @@ global.input = {
 	bdown: 0, // is "B" equivalent being pressed currently
 	pause: 0, // is "Start" equivalent pressed just now
 	sel: 0, // is "Select" equivalent pressed just now
-	gp_idx: -1 // current gamepad index
+	gp_idx: -1, // current gamepad index
+	stick_enabled: 1 // whether LS can be used instead of D-Pad inputs
 }
 
 // Helper functions used to populate the values in the struct above
@@ -33,7 +34,8 @@ get_buttons = function() {
 				gamepad_button_check(global.input.gp_idx, gp_padd)
 				- gamepad_button_check(global.input.gp_idx, gp_padu)
 			),
-			debug: gamepad_button_check_pressed(global.input.gp_idx, gp_shoulderl)
+			debug: gamepad_button_check_pressed(global.input.gp_idx, gp_shoulderl),
+			stick_toggle: gamepad_button_check_pressed(global.input.gp_idx, gp_stickl)
 		}
 	} else {
 		return {
@@ -45,7 +47,8 @@ get_buttons = function() {
 			sel: 0,
 			dx: 0,
 			dy: 0,
-			debug: 0
+			debug: 0,
+			stick_toggle: 0
 		}
 	}
 }
@@ -64,6 +67,21 @@ get_keys = function() {
 	}
 }
 
+get_ls = function () { // Translate LS into D-Pad like inputs
+	if (global.input.gp_idx >= 0 && global.input.stick_enabled) {
+		gamepad_set_axis_deadzone(global.input.gp_idx, 0.5)
+		var dx = gamepad_axis_value(global.input.gp_idx, gp_axislh)
+		var dy = gamepad_axis_value(global.input.gp_idx, gp_axislv)
+		if (dx < 0) dx = -1
+		if (dx > 0) dx = 1
+		if (dy < 0) dy = -1
+		if (dy > 0) dy = 1
+		return { dx, dy }
+	} else {
+		return { dx: 0, dy: 0 }
+	}
+}
+
 // Debug functionality
 debug_enable = true; // Set to false to disable debug overlay
 if (debug_enable) {
@@ -75,6 +93,7 @@ if (debug_enable) {
 	dbg_watch(ref_create(global.input, "bdown"), "B")
 	dbg_section("Gamepad setup");
 	dbg_watch(ref_create(global.input, "gp_idx"), "Current gamepad index");
+	dbg_watch(ref_create(global.input, "stick_enabled"), "LS enabled");
 	debug = false;
 	show_debug_overlay(false);
 }
