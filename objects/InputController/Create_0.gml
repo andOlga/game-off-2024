@@ -86,7 +86,7 @@ get_ls = function () { // Translate LS into D-Pad like inputs
 
 // Debug functionality
 if (debug_enable) {
-	dbg_view("Input", true, 500, 200)
+	dbg_view("Input", true, 100, 100, 400, 200)
 	dbg_section("Input values")
 	dbg_watch(ref_create(global.input, "dx"), "DX")
 	dbg_watch(ref_create(global.input, "dy"), "DY")
