@@ -22,3 +22,9 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <http://unlicense.org/>
+
+===
+
+This project bundles parts of [PromptFont](https://shinmera.github.io/promptfont/), which is licensed under the SIL Open Font Licence.
+
+If you do not agree to the terms of the OFL, you must delete this folder from any derivative works.
