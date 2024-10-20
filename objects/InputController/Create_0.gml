@@ -1,7 +1,5 @@
 ///@description Input variable setup
 
-debug_enable = true; // Set to false to disable debug overlay
-
 // This struct is meant to represent the same kind of inputs you would find on an NES controller.
 // There is a D-Pad, A/B and Start/Select buttons.
 // Nobody should ever need more inputs than these.
@@ -15,7 +13,7 @@ global.input = {
 	pause: 0, // is "Start" equivalent pressed just now
 	sel: 0, // is "Select" equivalent pressed just now
 	gp_idx: -1, // current gamepad index
-	stick_enabled: 1 // whether LS can be used instead of D-Pad inputs
+	stick_enabled: 1, // whether LS can be used instead of D-Pad inputs
 }
 
 // Helper functions used to populate the values in the struct above
@@ -82,19 +80,4 @@ get_ls = function () { // Translate LS into D-Pad like inputs
 	} else {
 		return { dx: 0, dy: 0 }
 	}
-}
-
-// Debug functionality
-if (debug_enable) {
-	dbg_view("Input", true, 100, 100, 400, 200)
-	dbg_section("Input values")
-	dbg_watch(ref_create(global.input, "dx"), "DX")
-	dbg_watch(ref_create(global.input, "dy"), "DY")
-	dbg_watch(ref_create(global.input, "adown"), "A")
-	dbg_watch(ref_create(global.input, "bdown"), "B")
-	dbg_section("Gamepad setup");
-	dbg_watch(ref_create(global.input, "gp_idx"), "Current gamepad index");
-	dbg_watch(ref_create(global.input, "stick_enabled"), "LS enabled");
-	debug = false;
-	show_debug_overlay(false);
 }

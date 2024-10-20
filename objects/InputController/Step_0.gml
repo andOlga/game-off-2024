@@ -17,7 +17,8 @@ if (buttons.stick_toggle) {
 	global.input.stick_enabled = !global.input.stick_enabled
 }
 
-if ((buttons.debug + keys.debug) && debug_enable) {
-	debug = !debug
-	show_debug_overlay(debug)
+if (buttons.debug + keys.debug) {
+	with (DebugController) {
+		toggle_overlay();
+	}
 }

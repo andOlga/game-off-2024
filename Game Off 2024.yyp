@@ -28,6 +28,7 @@
   },
   "name":"Game Off 2024",
   "resources":[
+    {"id":{"name":"DebugController","path":"objects/DebugController/DebugController.yy",},},
     {"id":{"name":"InputController","path":"objects/InputController/InputController.yy",},},
     {"id":{"name":"PauseController","path":"objects/PauseController/PauseController.yy",},},
     {"id":{"name":"MainMenu","path":"rooms/MainMenu/MainMenu.yy",},},
