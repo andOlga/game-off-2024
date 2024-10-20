@@ -13,7 +13,6 @@ global.input = {
 	pause: 0, // is "Start" equivalent pressed just now
 	sel: 0, // is "Select" equivalent pressed just now
 	gp_idx: -1, // current gamepad index
-	stick_enabled: 1, // whether LS can be used instead of D-Pad inputs
 }
 
 // Helper functions used to populate the values in the struct above
@@ -35,7 +34,6 @@ get_buttons = function() {
 				- gamepad_button_check(global.input.gp_idx, gp_padu)
 			),
 			debug: gamepad_button_check_pressed(global.input.gp_idx, gp_shoulderl),
-			stick_toggle: gamepad_button_check_pressed(global.input.gp_idx, gp_stickl)
 		}
 	} else {
 		return {
@@ -68,7 +66,7 @@ get_keys = function() {
 }
 
 get_ls = function () { // Translate LS into D-Pad like inputs
-	if (global.input.gp_idx >= 0 && global.input.stick_enabled) {
+	if (global.input.gp_idx >= 0) {
 		gamepad_set_axis_deadzone(global.input.gp_idx, 0.5)
 		var dx = gamepad_axis_value(global.input.gp_idx, gp_axislh)
 		var dy = gamepad_axis_value(global.input.gp_idx, gp_axislv)

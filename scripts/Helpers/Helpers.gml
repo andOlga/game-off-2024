@@ -8,7 +8,7 @@ function draw_text_centered(message) {
 }
 
 enum INPUT_GLYPHS {
-	dpad, a, b, pause, sel, ls_toggle
+	dpad, a, b, pause, sel
 }
 
 /**
@@ -33,8 +33,6 @@ function draw_input_hint(xpos, ypos, glyph) {
 		prompt_text = "\u21f8 or \u242e or \u242f"
 	} else if (glyph == INPUT_GLYPHS.sel) {
 		prompt_text = "\u21f7 or \u243a"
-	} else if (glyph == INPUT_GLYPHS.ls_toggle) {
-		prompt_text = "\u21ba"
 	}
 	draw_text(xpos, ypos, prompt_text)
 	draw_set_font(old_font)

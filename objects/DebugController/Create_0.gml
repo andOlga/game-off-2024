@@ -10,7 +10,6 @@ if (debug_enable) {
 	dbg_watch(ref_create(global.input, "bdown"), "B")
 	dbg_section("Gamepad setup");
 	dbg_watch(ref_create(global.input, "gp_idx"), "Current gamepad index");
-	dbg_watch(ref_create(global.input, "stick_enabled"), "LS enabled");
 	show_debug_overlay(false);
 }
 

@@ -13,10 +13,6 @@ global.input.sel = buttons.sel + keys.sel
 global.input.dx = clamp(buttons.dx + keys.dx + ls.dx, -1, 1)
 global.input.dy = clamp(buttons.dy + keys.dy + ls.dy, -1, 1)
 
-if (buttons.stick_toggle) {
-	global.input.stick_enabled = !global.input.stick_enabled
-}
-
 if (buttons.debug + keys.debug) {
 	with (DebugController) {
 		toggle_overlay();
