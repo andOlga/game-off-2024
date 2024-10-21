@@ -1,3 +1,5 @@
+///@description Wait for Start
+
 if (global.input.start) {
 	with (InputController) {
 		can_pause = true

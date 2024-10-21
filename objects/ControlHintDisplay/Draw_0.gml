@@ -1,3 +1,5 @@
+///@description Show control hints
+
 var ihDpad = InputController.get_input_hint(INPUT_GLYPHS.dpad)
 var ihA = InputController.get_input_hint(INPUT_GLYPHS.a)
 var ihB = InputController.get_input_hint(INPUT_GLYPHS.b)
