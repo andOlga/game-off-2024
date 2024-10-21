@@ -1,8 +1,6 @@
 ///@description Wait for Start
 
-if (global.input.start) {
-	with (InputController) {
-		can_pause = true
-	}
-	room_goto(GameRoom)
+if (global.input.start && !is_in_fade) {
+	is_in_fade = true
+	alarm[0] = 1
 }
