@@ -94,18 +94,16 @@ enum INPUT_GLYPHS {
 ///@param {string} sep
 ///@param {string} sep1
 get_input_hint = function(glyph, sep = " or ", sep1 = ", ") {
-	var prompt_text = ""
 	if (glyph == INPUT_GLYPHS.dpad) {
-		prompt_text = $"\u21ce{sep1}\u21cb{sep}\u23f6\u23f7\u23f4\u23f5"
+		return $"\u21ce{sep1}\u21cb{sep}\u23f6\u23f7\u23f4\u23f5" // D-pad, LS or arrows
 	} else if (glyph == INPUT_GLYPHS.a) {
-		prompt_text = $"\u21a7{sep}\uff3a"
+		return $"\u21a7{sep}\uff3a" // Button A or Key Z
 	} else if (glyph == INPUT_GLYPHS.b) {
-		prompt_text = $"\u21a6{sep}\uff38"
+		return $"\u21a6{sep}\uff38" // Button B or Key X
 	} else if (glyph == INPUT_GLYPHS.pause) {
-		prompt_text = $"\u21f8{sep1}\u242e{sep}\u242f"
+		return $"\u21f8{sep1}\u242e{sep}\u242f" // Start, Enter or Escape
 	} else if (glyph == INPUT_GLYPHS.sel) {
-		prompt_text = $"\u21f7{sep}\u243a"
+		return $"\u21f7{sep}\u243a" // Select or Space
 	}
-	return prompt_text
 }
 #endregion
