@@ -5,6 +5,9 @@ paused = false // Is the game currently paused?
 pause_gp_loss = false // Pause was due to gamepad loss
 
 pause = function() {
+	if (!can_pause) {
+		return
+	}
 	if (!paused) {
 		instance_deactivate_all(true);
 	} else {
