@@ -65,7 +65,7 @@ get_keys = function() {
 		sel: keyboard_check_pressed(vk_space),
 		dx: keyboard_check(vk_right) - keyboard_check(vk_left),
 		dy: keyboard_check(vk_down) - keyboard_check(vk_up),
-		debug: keyboard_check_pressed(ord("D"))
+		debug: keyboard_check_pressed(ord("D")),
 	}
 }
 

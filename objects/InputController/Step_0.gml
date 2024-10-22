@@ -15,7 +15,7 @@ global.input.dy = clamp(buttons.dy + keys.dy + ls.dy, -1, 1)
 
 if (buttons.debug + keys.debug) {
 	with (DebugController) {
-		toggle_overlay();
+		toggle_overlay()
 	}
 }
 
