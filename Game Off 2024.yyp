@@ -36,7 +36,6 @@
     {"id":{"name":"GameRoom","path":"rooms/GameRoom/GameRoom.yy",},},
     {"id":{"name":"MainMenu","path":"rooms/MainMenu/MainMenu.yy",},},
     {"id":{"name":"TemplateRoom","path":"rooms/TemplateRoom/TemplateRoom.yy",},},
-    {"id":{"name":"Helpers","path":"scripts/Helpers/Helpers.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
