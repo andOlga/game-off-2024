@@ -6,7 +6,7 @@ var ihB = InputController.get_input_hint(INPUT_GLYPHS.b)
 var ihPause = InputController.get_input_hint(INPUT_GLYPHS.pause)
 var ihSel = InputController.get_input_hint(INPUT_GLYPHS.sel)
 ihMessage = (
-	$"Controls:\n"
+	  $"Controls:\n"
 	+ $"Move: {ihDpad}\n"
 	+ $"Action 1: {ihA}\n"
 	+ $"Action 2: {ihB}\n"
