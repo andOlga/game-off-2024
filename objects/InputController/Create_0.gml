@@ -93,7 +93,8 @@ get_keys = function() {
 
 get_ls = function () { // Translate LS into D-Pad like inputs
 	var retval = {dx: 0, dy: 0}
-	for (var gp_idx = 0; gp_idx < gamepad_get_device_count(); gp_idx++) {
+	var gp_count = gamepad_get_device_count()
+	for (var gp_idx = 0; gp_idx < gp_count; gp_idx++) {
 		if (!gamepad_is_connected(gp_idx)) {
 			continue
 		}
