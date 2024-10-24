@@ -8,8 +8,6 @@ if (debug_enable) {
 	dbg_watch(ref_create(global.input, "dy"), "DY")
 	dbg_watch(ref_create(global.input, "adown"), "A")
 	dbg_watch(ref_create(global.input, "bdown"), "B")
-	dbg_section("Gamepad setup")
-	dbg_watch(ref_create(global.input, "gp_idx"), "Current gamepad index")
 	show_debug_overlay(false)
 }
 

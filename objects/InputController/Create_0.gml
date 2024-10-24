@@ -31,28 +31,50 @@ global.input = {
 	bdown: 0, // is "B" equivalent being pressed currently
 	start: 0, // is Start equivalent being pressed just now
 	sel: 0, // is "Select" equivalent pressed just now
-	gp_idx: -1, // current gamepad index
 }
 
 // Helper functions used to populate the values in the struct above
 get_buttons = function() {
-	return {
-		a: gamepad_button_check_pressed(global.input.gp_idx, gp_face1),
-		b: gamepad_button_check_pressed(global.input.gp_idx, gp_face2),
-		adown: gamepad_button_check(global.input.gp_idx, gp_face1),
-		bdown: gamepad_button_check(global.input.gp_idx, gp_face2),
-		start: gamepad_button_check_pressed(global.input.gp_idx, gp_start),
-		sel: gamepad_button_check_pressed(global.input.gp_idx, gp_select),
-		dx: (
-			gamepad_button_check(global.input.gp_idx, gp_padr)
-			- gamepad_button_check(global.input.gp_idx, gp_padl)
-		),
-		dy: (
-			gamepad_button_check(global.input.gp_idx, gp_padd)
-			- gamepad_button_check(global.input.gp_idx, gp_padu)
-		),
-		debug: gamepad_button_check_pressed(global.input.gp_idx, gp_shoulderl),
+	var gp_count = gamepad_get_device_count()
+	var retval = {
+		a: 0, b: 0, adown: 0, bdown: 0,
+		start: 0, sel: 0, dx: 0, dy: 0,
+		debug: 0
 	}
+	for (var gp_idx = 0; gp_idx < gp_count; gp_idx++) {
+		if (!gamepad_is_connected(gp_idx)) {
+			continue
+		}
+		retval = {
+			a: gamepad_button_check_pressed(gp_idx, gp_face1),
+			b: gamepad_button_check_pressed(gp_idx, gp_face2),
+			adown: gamepad_button_check(gp_idx, gp_face1),
+			bdown: gamepad_button_check(gp_idx, gp_face2),
+			start: gamepad_button_check_pressed(gp_idx, gp_start),
+			sel: gamepad_button_check_pressed(gp_idx, gp_select),
+			dx: (
+				gamepad_button_check(gp_idx, gp_padr)
+				- gamepad_button_check(gp_idx, gp_padl)
+			),
+			dy: (
+				gamepad_button_check(gp_idx, gp_padd)
+				- gamepad_button_check(gp_idx, gp_padu)
+			),
+			debug: gamepad_button_check_pressed(gp_idx, gp_shoulderl),
+		}
+		var gamepad_was_in_use = false
+		var gamepad_vars = struct_get_names(retval)
+		for (var i = 0; i < array_length(gamepad_vars); i++) {
+			if (retval[$ gamepad_vars[i]] != 0) {
+				gamepad_was_in_use = true
+				break
+			}
+		}
+		if (gamepad_was_in_use) {
+			break
+		}
+	}
+	return retval
 }
 
 get_keys = function() {
@@ -70,14 +92,24 @@ get_keys = function() {
 }
 
 get_ls = function () { // Translate LS into D-Pad like inputs
-	gamepad_set_axis_deadzone(global.input.gp_idx, 0.5)
-	var dx = gamepad_axis_value(global.input.gp_idx, gp_axislh)
-	var dy = gamepad_axis_value(global.input.gp_idx, gp_axislv)
-	if (dx < 0) dx = -1
-	if (dx > 0) dx = 1
-	if (dy < 0) dy = -1
-	if (dy > 0) dy = 1
-	return { dx, dy }
+	var retval = {dx: 0, dy: 0}
+	for (var gp_idx = 0; gp_idx < gamepad_get_device_count(); gp_idx++) {
+		if (!gamepad_is_connected(gp_idx)) {
+			continue
+		}
+		gamepad_set_axis_deadzone(gp_idx, 0.5)
+		var dx = gamepad_axis_value(gp_idx, gp_axislh)
+		var dy = gamepad_axis_value(gp_idx, gp_axislv)
+		if (dx < 0) dx = -1
+		if (dx > 0) dx = 1
+		if (dy < 0) dy = -1
+		if (dy > 0) dy = 1
+		if (dx != 0 || dy != 0) {
+			retval = {dx, dy}
+			break
+		}
+	}
+	return retval
 }
 #endregion
 
