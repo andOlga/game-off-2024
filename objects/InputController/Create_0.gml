@@ -2,7 +2,7 @@
 
 #region Pause
 paused = false // Is the game currently paused?
-pause_gp_loss = false // Pause was due to gamepad loss
+pause_gp_loss = false // Was pause due to gamepad loss?
 
 pause = function() {
 	if (!can_pause) {
