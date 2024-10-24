@@ -29,7 +29,7 @@ global.input = {
 	b: 0, // is "B" equivalent pressed just now
 	adown: 0, // is "A" equivalent being pressed currently
 	bdown: 0, // is "B" equivalent being pressed currently
-	start: 0, // is Start equivalent being pressed currently
+	start: 0, // is Start equivalent being pressed just now
 	sel: 0, // is "Select" equivalent pressed just now
 	gp_idx: -1, // current gamepad index
 }
