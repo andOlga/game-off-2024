@@ -1,3 +1,3 @@
 ///@description Turn vibration off
 
-vibrate(0, 0)
+vibrate(-1, 0.0)
