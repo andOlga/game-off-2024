@@ -112,6 +112,14 @@ get_ls = function () { // Translate LS into D-Pad like inputs
 	}
 	return retval
 }
+
+vibrate = function(frames, strength) {
+	var gp_count = gamepad_get_device_count()
+	for (var gp_idx = 0; gp_idx < gp_count; gp_idx++) {
+		gamepad_set_vibration(gp_idx, strength, strength)
+		alarm[0] = frames
+	}
+}
 #endregion
 
 #region Input hints
