@@ -19,6 +19,6 @@ if (buttons.debug + keys.debug) {
 	}
 }
 
-if (global.input.start) {
+if (global.input.start || os_is_paused()) {
 	pause()
 }
