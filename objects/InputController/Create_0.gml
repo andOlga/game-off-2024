@@ -117,7 +117,13 @@ vibrate = function(frames, strength) {
 	var gp_count = gamepad_get_device_count()
 	for (var gp_idx = 0; gp_idx < gp_count; gp_idx++) {
 		gamepad_set_vibration(gp_idx, strength, strength)
-		alarm[0] = frames
+		call_later(
+			frames,
+			time_source_units_frames,
+			method({gp_idx}, function () {
+				gamepad_set_vibration(gp_idx, 0.0, 0.0)
+			})
+		)
 	}
 }
 #endregion
