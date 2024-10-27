@@ -9,9 +9,9 @@ pause = function() {
 		return
 	}
 	if (!paused) {
-		instance_deactivate_all(true);
+		instance_deactivate_all(true)
 	} else {
-		instance_activate_all();
+		instance_activate_all()
 		pause_gp_loss = false
 	}
 	paused = !paused
