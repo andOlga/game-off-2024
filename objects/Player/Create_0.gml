@@ -4,3 +4,4 @@ reset_input = function(wait_time = 10) {
 	alarm[0] = wait_time
 }
 last_move = {dx: 0, dy: -32}
+instance_create_layer(x, y, "Instances", Sword)
