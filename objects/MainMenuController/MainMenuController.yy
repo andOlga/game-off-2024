@@ -11,8 +11,8 @@
   "name":"MainMenuController",
   "overriddenProperties":[],
   "parent":{
-    "name":"Controllers",
-    "path":"folders/Objects/Controllers.yy",
+    "name":"Helpers",
+    "path":"folders/Objects/Helpers.yy",
   },
   "parentObjectId":null,
   "persistent":false,
