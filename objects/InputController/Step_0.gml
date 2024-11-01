@@ -13,12 +13,6 @@ global.input.sel = buttons.sel + keys.sel
 global.input.dx = clamp(buttons.dx + keys.dx + ls.dx, -1, 1)
 global.input.dy = clamp(buttons.dy + keys.dy + ls.dy, -1, 1)
 
-if (buttons.debug + keys.debug) {
-	with (DebugController) {
-		toggle_overlay()
-	}
-}
-
 if (global.input.start || os_is_paused()) {
 	pause()
 }

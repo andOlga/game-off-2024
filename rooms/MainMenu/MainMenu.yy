@@ -7,7 +7,6 @@
   "inheritLayers":false,
   "instanceCreationOrder":[
     {"name":"inst_696A7D17","path":"rooms/MainMenu/MainMenu.yy",},
-    {"name":"inst_20839D5C","path":"rooms/MainMenu/MainMenu.yy",},
     {"name":"inst_3D939C1A","path":"rooms/MainMenu/MainMenu.yy",},
   ],
   "isDnd":false,
@@ -16,7 +15,6 @@
         {"$GMRInstance":"v1","%Name":"inst_696A7D17","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_696A7D17","objectId":{"name":"InputController","path":"objects/InputController/InputController.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"InputController","path":"objects/InputController/InputController.yy",},"propertyId":{"name":"can_pause","path":"objects/InputController/InputController.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"False",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":0.0,},
-        {"$GMRInstance":"v1","%Name":"inst_20839D5C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_20839D5C","objectId":{"name":"DebugController","path":"objects/DebugController/DebugController.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":32.0,"y":0.0,},
         {"$GMRInstance":"v1","%Name":"inst_3D939C1A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3D939C1A","objectId":{"name":"MainMenuController","path":"objects/MainMenuController/MainMenuController.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"MainMenuController","path":"objects/MainMenuController/MainMenuController.yy",},"propertyId":{"name":"next_room","path":"objects/MainMenuController/MainMenuController.yy",},"resource":{"name":"r1","path":"rooms/r1/r1.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"r1",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":320.0,"y":240.0,},

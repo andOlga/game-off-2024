@@ -60,7 +60,6 @@ get_buttons = function() {
 				gamepad_button_check(gp_idx, gp_padd)
 				- gamepad_button_check(gp_idx, gp_padu)
 			),
-			debug: gamepad_button_check_pressed(gp_idx, gp_shoulderl),
 		}
 		var gamepad_was_in_use = false
 		var gamepad_vars = struct_get_names(retval)
@@ -87,7 +86,6 @@ get_keys = function() {
 		sel: keyboard_check_pressed(vk_space),
 		dx: keyboard_check(vk_right) - keyboard_check(vk_left),
 		dy: keyboard_check(vk_down) - keyboard_check(vk_up),
-		debug: keyboard_check_pressed(ord("D")),
 	}
 }
 
