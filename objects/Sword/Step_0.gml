@@ -5,7 +5,7 @@ if (is_flying) {
 	var last_move = Player.last_move
 	if (global.input.a) {
 		is_flying = true
-		flying_dirs = last_move
+		flying_dirs = {dx: last_move.dx, dy: last_move.dy}
 		exit
 	}
 	x = Player.x
