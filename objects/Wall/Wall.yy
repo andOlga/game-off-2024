@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"WallHorz",
+  "%Name":"Wall",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"Player","path":"objects/Player/Player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"Sword","path":"objects/Sword/Sword.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"BaseEnemy","path":"objects/BaseEnemy/BaseEnemy.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"WallHorz",
+  "name":"Wall",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sWallHorz",
-    "path":"sprites/sWallHorz/sWallHorz.yy",
+    "name":"sBlock",
+    "path":"sprites/sBlock/sBlock.yy",
   },
   "spriteMaskId":null,
   "visible":true,
