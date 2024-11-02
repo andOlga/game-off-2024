@@ -2,6 +2,14 @@ text_alpha = 1
 is_in_fade = false
 randomize()
 seed = random_get_seed()
+ini_open("save.ini")
+var launchNums = ini_read_real("Save data", "launchNums", 0)
+ini_write_real("Save data", "launchNums", min(13, launchNums + 1))
+ini_close()
+o = "o"
+for (var i = 0; i < launchNums; i++) {
+	o += "o"
+}
 
 ///@param {real} seed
 get_input_hint_message = function() {
@@ -10,14 +18,7 @@ get_input_hint_message = function() {
 	var ihB = InputController.get_input_hint(INPUT_GLYPHS.b)
 	var ihPause = InputController.get_input_hint(INPUT_GLYPHS.pause)
 	var ihSel = InputController.get_input_hint(INPUT_GLYPHS.sel)
-	ini_open("save.ini")
-	var launchNums = ini_read_real("Save data", "launchNums", 0)
-	ini_write_real("Save data", "launchNums", min(13, launchNums + 1))
-	ini_close()
-	var o = "o"
-	for (var i = 0; i < launchNums; i++) {
-		o += "o"
-	}
+	
 	ihMessage = (
 		  $"Controls:\n"
 		+ $"Move: {ihDpad}\n"
