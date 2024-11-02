@@ -1,7 +1,9 @@
 if (is_flying) {
-	x += flying_dirs.dx / 2
-	y += flying_dirs.dy / 2
+	hspeed = flying_dirs.dx
+	vspeed = flying_dirs.dy
+	speed = 16
 } else {
+	speed = 0
 	var last_move = Player.last_move
 	if (global.input.a) {
 		is_flying = true
