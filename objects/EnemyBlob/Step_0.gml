@@ -5,3 +5,4 @@ if (can_move) {
 	this[$ move_direction] += move_amount
 	wait_for_turn(20)
 }
+event_inherited()
