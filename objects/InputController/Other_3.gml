@@ -1,6 +1,6 @@
 ///@description Save window size
 var window_data = {
-	fs: window_get_fullscreen(),
+	fullscreen: window_get_fullscreen(),
 	width: window_get_width(),
 	height: window_get_height(),
 	winx: window_get_x(),
