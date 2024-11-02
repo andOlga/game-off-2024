@@ -12,8 +12,8 @@
   "name":"BaseEnemy",
   "overriddenProperties":[],
   "parent":{
-    "name":"Helpers",
-    "path":"folders/Objects/Helpers.yy",
+    "name":"System",
+    "path":"folders/Objects/System.yy",
   },
   "parentObjectId":null,
   "persistent":false,
