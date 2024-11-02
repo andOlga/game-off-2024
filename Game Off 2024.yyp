@@ -11,6 +11,7 @@
   "defaultScriptType":1,
   "Folders":[
     {"$GMFolder":"","%Name":"Fonts","folderPath":"folders/Fonts.yy","name":"Fonts","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Todos","folderPath":"folders/Todos.yy","name":"Todos","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Enemies","folderPath":"folders/Objects/Enemies.yy","name":"Enemies","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"System","folderPath":"folders/Objects/System.yy","name":"System","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -27,6 +28,7 @@
   "name":"Game Off 2024",
   "resources":[
     {"id":{"name":"PromptFont","path":"fonts/PromptFont/PromptFont.yy",},},
+    {"id":{"name":"ItemController","path":"notes/ItemController/ItemController.yy",},},
     {"id":{"name":"BaseEnemy","path":"objects/BaseEnemy/BaseEnemy.yy",},},
     {"id":{"name":"Chaser","path":"objects/Chaser/Chaser.yy",},},
     {"id":{"name":"Flyer","path":"objects/Flyer/Flyer.yy",},},
