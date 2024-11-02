@@ -1,12 +1,3 @@
-if (!variable_global_exists("remaining_rooms")) {
-	global.remaining_rooms = []
-	for (var i = 1; i <= 9999; i++) {
-		if (asset_get_index($"r{i}") != -1) {
-			array_push(global.remaining_rooms, i)
-		}
-	}
-}
-
 finish_room = function () {
 	if (room_goal()) {
 		var current_room = real(string_replace(room_get_name(room), "r", ""))
