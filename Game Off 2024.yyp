@@ -16,7 +16,6 @@
     {"$GMFolder":"","%Name":"Rooms","folderPath":"folders/Rooms.yy","name":"Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sounds","folderPath":"folders/Sounds.yy","name":"Sounds","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sprites","folderPath":"folders/Sprites.yy","name":"Sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Templates","folderPath":"folders/Templates.yy","name":"Templates","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Tile Sets","folderPath":"folders/Tile Sets.yy","name":"Tile Sets","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "IncludedFiles":[],
@@ -41,6 +40,7 @@
     {"id":{"name":"EndScreen","path":"rooms/EndScreen/EndScreen.yy",},},
     {"id":{"name":"MainMenu","path":"rooms/MainMenu/MainMenu.yy",},},
     {"id":{"name":"r1","path":"rooms/r1/r1.yy",},},
+    {"id":{"name":"TemplateRoom","path":"rooms/TemplateRoom/TemplateRoom.yy",},},
     {"id":{"name":"sBlob","path":"sprites/sBlob/sBlob.yy",},},
     {"id":{"name":"sBlock","path":"sprites/sBlock/sBlock.yy",},},
     {"id":{"name":"sChaser","path":"sprites/sChaser/sChaser.yy",},},
@@ -56,6 +56,7 @@
     {"roomId":{"name":"MainMenu","path":"rooms/MainMenu/MainMenu.yy",},},
     {"roomId":{"name":"r1","path":"rooms/r1/r1.yy",},},
     {"roomId":{"name":"EndScreen","path":"rooms/EndScreen/EndScreen.yy",},},
+    {"roomId":{"name":"TemplateRoom","path":"rooms/TemplateRoom/TemplateRoom.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
