@@ -36,6 +36,7 @@
     {"id":{"name":"RoomExit","path":"objects/RoomExit/RoomExit.yy",},},
     {"id":{"name":"Sword","path":"objects/Sword/Sword.yy",},},
     {"id":{"name":"Wall","path":"objects/Wall/Wall.yy",},},
+    {"id":{"name":"WinMessage","path":"objects/WinMessage/WinMessage.yy",},},
     {"id":{"name":"EndScreen","path":"rooms/EndScreen/EndScreen.yy",},},
     {"id":{"name":"MainMenu","path":"rooms/MainMenu/MainMenu.yy",},},
     {"id":{"name":"r1","path":"rooms/r1/r1.yy",},},
