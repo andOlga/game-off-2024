@@ -1,14 +1,17 @@
 ///@description Save window size
-var fs = window_get_fullscreen()
-var width = window_get_width()
-var height = window_get_height()
-var winx = window_get_x()
-var winy = window_get_y()
+var window_data = {
+	fs: window_get_fullscreen(),
+	width: window_get_width(),
+	height: window_get_height(),
+	winx: window_get_x(),
+	winy: window_get_y()
+}
 ini_open("save.ini")
 var s = "Window config"
-ini_write_real(s, "fullscreen", fs)
-ini_write_real(s, "width", width)
-ini_write_real(s, "height", height)
-ini_write_real(s, "winx", winx)
-ini_write_real(s, "winy", winy)
+var window_data_attrs = struct_get_names(window_data)
+for (var i = 0; i < array_length(window_data_attrs); i++) {
+	var attr = window_data_attrs[i]
+	var value = window_data[$ attr]
+	ini_write_real(s, attr, value)
+}
 ini_close()

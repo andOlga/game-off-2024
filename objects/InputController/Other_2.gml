@@ -11,3 +11,4 @@ var winy = ini_read_real(s, "winy", -1)
 if (winx > -1 && winy > -1) {
 	window_set_position(winx, winy)
 }
+ini_close()
