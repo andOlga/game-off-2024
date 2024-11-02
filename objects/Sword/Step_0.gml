@@ -12,7 +12,25 @@ if (is_flying) {
 	}
 	x = Player.x
 	y = Player.y
-	if (last_move.dx > 0) { // Right
+	
+	// Note: the numbers used below are "feels right" guesswork, they aren't supposed to make sense
+	if (last_move.dx > 0 && last_move.dy > 0) { // Right-Down
+		image_angle = 270 + 45
+		x += 40
+		y += 16
+	} else if (last_move.dx > 0 && last_move.dy < 0) { // Right-Up
+		image_angle = 90 - 45
+		x += 16
+		y -= 10
+	} else if (last_move.dx < 0 && last_move.dy > 0) { // Left-Down
+		image_angle = 270 - 45
+		x += 16
+		y += 40
+	} else if (last_move.dx < 0 && last_move.dy < 0) { // Left-Up
+		image_angle = 90 + 45
+		y += 16
+		x -= 11
+	} else if (last_move.dx > 0) { // Right
 		image_angle = 0
 		x += 32
 	} else if (last_move.dx < 0) { // Left
