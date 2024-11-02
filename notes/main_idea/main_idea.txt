@@ -1,0 +1,3 @@
+Every room will have some sort of goal to it
+Once the goal is complete, the room will be removed from the pool of rooms that the player can enter
+Room transitions are random and the player can enter any "unfinished" room, looping back eventually

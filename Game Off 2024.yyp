@@ -28,6 +28,7 @@
   "name":"Game Off 2024",
   "resources":[
     {"id":{"name":"PromptFont","path":"fonts/PromptFont/PromptFont.yy",},},
+    {"id":{"name":"main_idea","path":"notes/main_idea/main_idea.yy",},},
     {"id":{"name":"BaseEnemy","path":"objects/BaseEnemy/BaseEnemy.yy",},},
     {"id":{"name":"EnemyBlob","path":"objects/EnemyBlob/EnemyBlob.yy",},},
     {"id":{"name":"InputController","path":"objects/InputController/InputController.yy",},},
