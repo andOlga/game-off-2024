@@ -30,6 +30,7 @@
     {"id":{"name":"PromptFont","path":"fonts/PromptFont/PromptFont.yy",},},
     {"id":{"name":"BaseEnemy","path":"objects/BaseEnemy/BaseEnemy.yy",},},
     {"id":{"name":"EnemyBlob","path":"objects/EnemyBlob/EnemyBlob.yy",},},
+    {"id":{"name":"HealthBar","path":"objects/HealthBar/HealthBar.yy",},},
     {"id":{"name":"InputController","path":"objects/InputController/InputController.yy",},},
     {"id":{"name":"MainMenuController","path":"objects/MainMenuController/MainMenuController.yy",},},
     {"id":{"name":"Player","path":"objects/Player/Player.yy",},},
