@@ -5,9 +5,15 @@ if (is_in_fade) {
 }
 
 if (global.input.start) {
-	random_set_seed(seed)
 	is_in_fade = true
-	alarm[0] = 1
+	random_set_seed(seed)
+	InputController.can_pause = true
+	var roomZero = asset_get_index("r0")
+	if (roomZero != -1) {
+		room_goto(roomZero)
+	} else {
+		RoomExit.alarm[0] = 5
+	}
 }
 
 keyboard_string = string_copy(string_digits(keyboard_string), 1, 16)
