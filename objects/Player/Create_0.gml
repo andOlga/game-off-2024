@@ -16,13 +16,13 @@ hurt = function () {
 		is_hurting = true
 		hp--
 		if (hp <= 0) {
-			call_later(2, time_source_units_seconds, room_restart)
+			call_later(120, time_source_units_frames, room_restart)
 			instance_destroy(Sword)
 			image_alpha = 0
 		} else {
 			update_health_display()
 			alarm[1] = 60
-			alarm[2] = 10
+			alarm[2] = 5
 		}
 	}
 }
