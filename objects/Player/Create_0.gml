@@ -10,6 +10,7 @@ hurt = function () {
 	if (!is_hurting) {
 		is_hurting = true
 		hp--
+		InputController.vibrate(60, 0.5)
 		if (hp <= 0) {
 			call_later(120, time_source_units_frames, room_restart)
 			instance_destroy(Sword)
