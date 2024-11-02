@@ -1,4 +1,4 @@
-///@description Wait for Start
+///@description Wait for Start, set seed
 
 if (is_in_fade) {
 	exit
@@ -10,8 +10,8 @@ if (global.input.start) {
 	alarm[0] = 1
 }
 
+keyboard_string = string_copy(string_digits(keyboard_string), 1, 16)
 if (keyboard_string != "") {
-	keyboard_string = string_copy(string_digits(keyboard_string), 1, 16)
 	seed = real(keyboard_string)
 } else {
 	seed = random_get_seed()
