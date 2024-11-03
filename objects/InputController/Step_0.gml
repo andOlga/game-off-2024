@@ -31,7 +31,7 @@ if (cheats_enabled) {
 	var pos_engage = string_last_pos("ENGAGE", keyboard_string)
 	var pos_r = 0
 	if (pos_engage > 0) {
-		pos_r = string_pos_ext("R", keyboard_string, pos_engage)
+		pos_r = string_pos_ext("TH", keyboard_string, pos_engage)
 		if (pos_r > 0) {
 			var room_number = string_digits(string_copy(keyboard_string, pos_engage, pos_r - pos_engage))
 			set_cheats(false)
