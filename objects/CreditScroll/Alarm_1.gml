@@ -3,5 +3,5 @@ rect_alpha += 0.01
 if (rect_alpha >= 1) {
 	game_restart()
 } else {
-	alarm[1] = 3
+	alarm[1] = 2
 }
