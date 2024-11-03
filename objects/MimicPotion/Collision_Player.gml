@@ -7,6 +7,10 @@ with (MimicPotionTarget) {
 			{has_sword: other.give_swords}
 		)
 		player_instance.draws_grid = false
+		if (other.ham_bothered) {
+			player_instance.is_hurting = true
+			player_instance.image_blend = c_aqua
+		}
 	}
 }
 instance_destroy()

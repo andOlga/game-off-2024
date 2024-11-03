@@ -55,6 +55,9 @@ if (cheats_enabled) {
 			is_hurting = true // bodge infinite invis frames
 			image_blend = c_aqua
 		}
+		with (MimicPotion) {
+			ham_bothered = true
+		}
 	}
 }
 #endregion
