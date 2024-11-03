@@ -231,7 +231,7 @@
   "name":"PromptFont",
   "parent":{
     "name":"Fonts",
-    "path":"folders/Fonts.yy",
+    "path":"folders/System/Fonts.yy",
   },
   "pointRounding":0,
   "ranges":[

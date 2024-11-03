@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Interactives",
-    "path":"folders/Objects/Interactives.yy",
+    "path":"folders/Game Objects/Interactives.yy",
   },
   "parentObjectId":null,
   "persistent":false,

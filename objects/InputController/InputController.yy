@@ -13,8 +13,8 @@
   "name":"InputController",
   "overriddenProperties":[],
   "parent":{
-    "name":"System",
-    "path":"folders/Objects/System.yy",
+    "name":"Objects",
+    "path":"folders/System/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":true,
