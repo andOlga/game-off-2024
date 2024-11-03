@@ -1,4 +1,0 @@
-ItemController stores items that player picks up (item adds itself to controller when touched)
-Handles item selection and activation
-Activation will call a function defined inside the item
-Selection will show a sprite of the item inside a box in ItemController's location

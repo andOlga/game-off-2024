@@ -18,7 +18,7 @@
   "name":"EndScreen",
   "parent":{
     "name":"Rooms",
-    "path":"folders/Rooms.yy",
+    "path":"folders/System/Rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{
