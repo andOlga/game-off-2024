@@ -54,7 +54,7 @@ Created in GameMaker
 v{GM_VERSION}
 
 Source code and updates
-available at:
+may be available at:
 
 github.com
 /andOlga
