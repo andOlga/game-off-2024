@@ -1,5 +1,5 @@
 with (MimicPotionTarget) {
-	if (marker_id == other.marker_id) {
+	if (target_id == other.target_id) {
 		var player_instance = instance_create_layer(
 			x, y,
 			"Instances",
