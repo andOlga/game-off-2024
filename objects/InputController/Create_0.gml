@@ -152,3 +152,12 @@ get_input_hint = function(glyph, sep = " or ", sep1 = ", ") {
 	}
 }
 #endregion
+
+#region Cheats
+cheats_enabled = false
+///@param {bool} val
+set_cheats = function(val) {
+	cheats_enabled = val
+	keyboard_string = ""
+}
+#endregion

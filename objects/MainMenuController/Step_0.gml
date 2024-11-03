@@ -8,6 +8,7 @@ if (global.input.start) {
 	is_in_fade = true
 	random_set_seed(seed)
 	InputController.can_pause = true
+	InputController.set_cheats(false)
 	var roomZero = asset_get_index("r0")
 	if (roomZero != -1) {
 		room_goto(roomZero)
