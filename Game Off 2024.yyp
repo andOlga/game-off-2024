@@ -70,7 +70,6 @@
     {"id":{"name":"sItemFrame","path":"sprites/sItemFrame/sItemFrame.yy",},},
     {"id":{"name":"sPlacedBomb","path":"sprites/sPlacedBomb/sPlacedBomb.yy",},},
     {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},},
-    {"id":{"name":"sPlayerCollision","path":"sprites/sPlayerCollision/sPlayerCollision.yy",},},
     {"id":{"name":"sPotion","path":"sprites/sPotion/sPotion.yy",},},
     {"id":{"name":"sPressurePlate","path":"sprites/sPressurePlate/sPressurePlate.yy",},},
     {"id":{"name":"sSword","path":"sprites/sSword/sSword.yy",},},

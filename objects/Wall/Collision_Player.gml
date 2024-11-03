@@ -1,2 +1,3 @@
-other.x = other.xprevious
-other.y = other.yprevious
+with (other) {
+	move_snap(32, 32)
+}
