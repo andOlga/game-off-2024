@@ -1,4 +1,5 @@
 finish_room = function () {
+	InputController.set_cheats(false)
 	if (room_get_name(room) == "r0") { // For debugging new rooms
 		room_restart()
 		return
