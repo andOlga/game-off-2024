@@ -26,3 +26,4 @@ hurt = function () {
 	}
 }
 update_health_display()
+draws_grid = true

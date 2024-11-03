@@ -1,3 +1,3 @@
+instance_destroy(BaseEnemy)
 instance_destroy(Sword)
-instance_destroy(Player)
 alarm[0] = 5
