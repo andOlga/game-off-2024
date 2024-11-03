@@ -47,5 +47,15 @@ if (cheats_enabled) {
 		}
 	}
 	#endregion
+	#region Invulnerability mode
+	var pos_bh = string_last_pos("BOTHERHAM", keyboard_string)
+	if (pos_bh > 0) {
+		set_cheats(false)
+		with (Player) { // bodge infinite invis frames
+			hp = 3
+			is_hurting = true
+			image_blend = c_aqua
+		}
+	}
 }
 #endregion
