@@ -4,14 +4,14 @@ if (is_flying) {
 	speed = 16
 } else {
 	speed = 0
-	var last_move = Player.last_move
+	var last_move = player_instance.last_move
 	if (global.input.a) {
 		is_flying = true
 		flying_dirs = {dx: last_move.dx, dy: last_move.dy}
 		exit
 	}
-	x = Player.x
-	y = Player.y
+	x = player_instance.x
+	y = player_instance.y
 	
 	// Note: the numbers used below are "feels right" guesswork, they aren't supposed to make sense
 	if (last_move.dx > 0 && last_move.dy > 0) { // Right-Down
