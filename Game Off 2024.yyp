@@ -23,7 +23,9 @@
     {"$GMFolder":"","%Name":"Sprites","folderPath":"folders/System/Sprites.yy","name":"Sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Todos","folderPath":"folders/Todos.yy","name":"Todos","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
-  "IncludedFiles":[],
+  "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":"credits.txt","CopyToMask":-1,"filePath":"datafiles","name":"credits.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+  ],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
@@ -37,6 +39,7 @@
     {"id":{"name":"Bomb","path":"objects/Bomb/Bomb.yy",},},
     {"id":{"name":"Chaser","path":"objects/Chaser/Chaser.yy",},},
     {"id":{"name":"CrackedWall","path":"objects/CrackedWall/CrackedWall.yy",},},
+    {"id":{"name":"CreditScroll","path":"objects/CreditScroll/CreditScroll.yy",},},
     {"id":{"name":"Flyer","path":"objects/Flyer/Flyer.yy",},},
     {"id":{"name":"Hopper","path":"objects/Hopper/Hopper.yy",},},
     {"id":{"name":"InputController","path":"objects/InputController/InputController.yy",},},
@@ -51,7 +54,6 @@
     {"id":{"name":"RoomExit","path":"objects/RoomExit/RoomExit.yy",},},
     {"id":{"name":"Sword","path":"objects/Sword/Sword.yy",},},
     {"id":{"name":"Wall","path":"objects/Wall/Wall.yy",},},
-    {"id":{"name":"WinMessage","path":"objects/WinMessage/WinMessage.yy",},},
     {"id":{"name":"EndScreen","path":"rooms/EndScreen/EndScreen.yy",},},
     {"id":{"name":"MainMenu","path":"rooms/MainMenu/MainMenu.yy",},},
     {"id":{"name":"r1","path":"rooms/r1/r1.yy",},},

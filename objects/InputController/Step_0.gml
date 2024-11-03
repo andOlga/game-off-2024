@@ -59,5 +59,13 @@ if (cheats_enabled) {
 			ham_bothered = true
 		}
 	}
+	#endregion
+	#region Skip to credits
+	var pos_df = string_last_pos("DINNAEFANCY", keyboard_string)
+	if (pos_df > 0) {
+		set_cheats(false)
+		room_goto(EndScreen)
+	}
+	#endregion
 }
 #endregion

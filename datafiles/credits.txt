@@ -1,0 +1,75 @@
+---Credits---
+
+
+
+
+
+
+
+
+
+
+
+
+--"Art"--
+&Olga
+
+--Programming--
+&Olga
+
+--Level Design--
+&Olga
+LHCollider
+
+--Fonts--
+PromptFont
+by Yukari "Shinmera" Hafner
+
+
+
+
+
+
+
+
+
+
+
+
+--Special Thanks--
+Tara
+jichan
+Jason Thor Hall
+DavidXNewton
+
+
+
+A submission to
+GitHub Game Off 2024
+Theme: "Secret"
+
+
+
+Created in GameMaker
+v{GM_VERSION}
+
+Source code and updates
+available at:
+
+github.com
+/andOlga
+/game-off-2024
+
+
+
+
+
+
+
+
+
+
+
+
+
+Thank you for playing.
