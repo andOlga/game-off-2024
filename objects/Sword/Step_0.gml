@@ -1,3 +1,4 @@
+///@description Fly towards target and follow player
 if (is_flying) {
 	hspeed = flying_dirs.dx
 	vspeed = flying_dirs.dy

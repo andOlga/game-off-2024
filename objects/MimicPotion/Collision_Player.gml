@@ -1,3 +1,4 @@
+///@description Spawn mimics
 with (MimicPotionTarget) {
 	if (target_id == other.target_id) {
 		var player_instance = instance_create_layer(

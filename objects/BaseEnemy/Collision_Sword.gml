@@ -1,3 +1,4 @@
+///@description Die when attacked
 if (other.is_flying) {
 	other.is_flying = false
 	instance_destroy()
