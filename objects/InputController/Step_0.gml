@@ -67,5 +67,13 @@ if (cheats_enabled) {
 		room_goto(EndScreen)
 	}
 	#endregion
+	#region Room number display
+	var pos_whereami = string_last_pos("WHEREAMI", keyboard_string)
+	if (pos_whereami > 0) {
+		set_cheats(false)
+		pause_roomno = true
+		pause()
+	}
+	#endregion
 }
 #endregion

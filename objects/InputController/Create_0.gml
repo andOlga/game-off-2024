@@ -3,6 +3,7 @@
 #region Pause
 paused = false // Is the game currently paused?
 pause_gp_loss = false // Was pause due to gamepad loss?
+pause_roomno = false // Show room number on pause screen
 
 pause = function() {
 	if (!can_pause) {
@@ -13,6 +14,7 @@ pause = function() {
 	} else {
 		instance_activate_all()
 		pause_gp_loss = false
+		pause_roomno = false
 	}
 	paused = !paused
 }
