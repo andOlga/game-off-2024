@@ -55,6 +55,7 @@
     {"id":{"name":"PressurePlate","path":"objects/PressurePlate/PressurePlate.yy",},},
     {"id":{"name":"RoomExit","path":"objects/RoomExit/RoomExit.yy",},},
     {"id":{"name":"Sword","path":"objects/Sword/Sword.yy",},},
+    {"id":{"name":"SwordPickup","path":"objects/SwordPickup/SwordPickup.yy",},},
     {"id":{"name":"Turret","path":"objects/Turret/Turret.yy",},},
     {"id":{"name":"Wall","path":"objects/Wall/Wall.yy",},},
     {"id":{"name":"EndScreen","path":"rooms/EndScreen/EndScreen.yy",},},
