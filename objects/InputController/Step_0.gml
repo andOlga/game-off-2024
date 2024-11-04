@@ -52,7 +52,7 @@ if (cheats_enabled) {
 	if (pos_bh > 0) {
 		set_cheats(false)
 		with (Player) {
-			is_hurting = true // bodge infinite invis frames
+			is_hurting = true // bodge infinite invuln frames
 			image_blend = c_aqua
 		}
 		with (MimicPotion) {
