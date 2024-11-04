@@ -4,5 +4,9 @@ if (target_direction == "Towards Player") {
 } else if (target_direction == "Random") {
 	new_angle = irandom_range(0, 360)
 }
-move_direction = sign(new_angle - image_angle)
+if (target_direction == "As Specified") {
+	move_direction = 0
+} else {
+	move_direction = sign(new_angle - image_angle)
+}
 alarm[1] = 1

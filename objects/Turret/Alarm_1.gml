@@ -1,7 +1,7 @@
 ///@description Rotate towards angle
 if (
 	sign(new_angle - image_angle) != move_direction
-	|| target_direction == "As Specified"
+	|| move_direction = 0
 ) {
 	image_index = 1
 	alarm[2] = 30
