@@ -21,13 +21,13 @@ if (paused && global.input.sel) {
 	game_end()
 }
 
-#region Cheats
+#region Cheats - Tab to toggle, then type any of listed below
 if (keyboard_check_released(vk_tab)) {
 	set_cheats(!cheats_enabled)
 }
 if (cheats_enabled) {
 	keyboard_string = string_upper(keyboard_string) // workaround for YoYoGames/GameMaker-Bugs#6877
-	#region <Tab> ENGAGExTH (x = room number) - Room select
+	#region engageXth (x = room number) - Room select
 	var pos_engage = string_last_pos("ENGAGE", keyboard_string)
 	var pos_r = 0
 	if (pos_engage > 0) {
@@ -47,7 +47,7 @@ if (cheats_enabled) {
 		}
 	}
 	#endregion
-	#region <Tab>BOTHERHAM - Invulnerability mode
+	#region botherham - Invulnerability mode
 	var pos_bh = string_last_pos("BOTHERHAM", keyboard_string)
 	if (pos_bh > 0) {
 		set_cheats(false)
@@ -60,7 +60,7 @@ if (cheats_enabled) {
 		}
 	}
 	#endregion
-	#region <Tab>DINNAEFANCY - Skip current room & mark finished
+	#region dinnaefancy - Skip current room & mark finished
 	var pos_df = string_last_pos("DINNAEFANCY", keyboard_string)
 	if (pos_df > 0) {
 		set_cheats(false)
@@ -72,7 +72,7 @@ if (cheats_enabled) {
 		}
 	}
 	#endregion
-	#region <Tab>WHEREAMI - Room number display
+	#region whereami - Room number display
 	var pos_whereami = string_last_pos("WHEREAMI", keyboard_string)
 	if (pos_whereami > 0) {
 		set_cheats(false)
