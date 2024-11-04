@@ -8,7 +8,7 @@
   "option_linux_display_name":"Secret Entrances, Confounding Rooms: Enfer's Trial",
   "option_linux_display_splash":false,
   "option_linux_enable_steam":false,
-  "option_linux_homepage":"http://www.yoyogames.com",
+  "option_linux_homepage":"",
   "option_linux_icon":"${options_dir}/linux/icons/64.png",
   "option_linux_interpolate_pixels":true,
   "option_linux_long_desc":"",
