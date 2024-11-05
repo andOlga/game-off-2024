@@ -1,21 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"Water",
+  "%Name":"Fish",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"Player","path":"objects/Player/Player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"Water",
+  "name":"Fish",
   "overriddenProperties":[],
   "parent":{
-    "name":"Game Objects",
-    "path":"folders/Game Objects.yy",
+    "name":"Interactives",
+    "path":"folders/Game Objects/Interactives.yy",
   },
-  "parentObjectId":{
-    "name":"Wall",
-    "path":"objects/Wall/Wall.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -34,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sWall",
-    "path":"sprites/sWall/sWall.yy",
+    "name":"sFish",
+    "path":"sprites/sFish/sFish.yy",
   },
   "spriteMaskId":null,
   "visible":true,
