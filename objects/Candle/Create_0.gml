@@ -3,5 +3,5 @@ depth = -9999
 
 use = function () {
 	is_lit = true
-	alarm[0] = 300
+	alarm[0] = light_duration
 }
