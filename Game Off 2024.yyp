@@ -45,6 +45,7 @@
     {"id":{"name":"HealthPotion","path":"objects/HealthPotion/HealthPotion.yy",},},
     {"id":{"name":"Hopper","path":"objects/Hopper/Hopper.yy",},},
     {"id":{"name":"InputController","path":"objects/InputController/InputController.yy",},},
+    {"id":{"name":"InulnerabilityPotion","path":"objects/InulnerabilityPotion/InulnerabilityPotion.yy",},},
     {"id":{"name":"ItemFrame","path":"objects/ItemFrame/ItemFrame.yy",},},
     {"id":{"name":"MainMenuController","path":"objects/MainMenuController/MainMenuController.yy",},},
     {"id":{"name":"MimicPotion","path":"objects/MimicPotion/MimicPotion.yy",},},
