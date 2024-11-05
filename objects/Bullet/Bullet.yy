@@ -12,7 +12,9 @@
   ],
   "managed":true,
   "name":"Bullet",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"BaseEnemy","path":"objects/BaseEnemy/BaseEnemy.yy",},"propertyId":{"name":"can_swim","path":"objects/BaseEnemy/BaseEnemy.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"True",},
+  ],
   "parent":{
     "name":"Enemies",
     "path":"folders/Game Objects/Enemies.yy",

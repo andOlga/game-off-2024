@@ -1,6 +1,5 @@
 event_inherited()
 audio_play_sound(aShoot, 10, false, 1, 0, 1.5)
-can_swim = true
 if (target_direction == "Towards Player") {
 	direction = point_direction(x, y, Player.x, Player.y)
 } else if (target_direction == "Random") {
