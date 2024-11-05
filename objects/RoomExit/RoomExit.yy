@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":true,
   "spriteId":{
-    "name":"sDoor",
-    "path":"sprites/sDoor/sDoor.yy",
+    "name":"sRoomExit",
+    "path":"sprites/sRoomExit/sRoomExit.yy",
   },
   "spriteMaskId":null,
   "visible":true,
