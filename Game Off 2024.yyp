@@ -69,6 +69,7 @@
     {"id":{"name":"r6","path":"rooms/r6/r6.yy",},},
     {"id":{"name":"r7","path":"rooms/r7/r7.yy",},},
     {"id":{"name":"r8","path":"rooms/r8/r8.yy",},},
+    {"id":{"name":"r9","path":"rooms/r9/r9.yy",},},
     {"id":{"name":"TemplateRoom","path":"rooms/TemplateRoom/TemplateRoom.yy",},},
     {"id":{"name":"sBlob","path":"sprites/sBlob/sBlob.yy",},},
     {"id":{"name":"sBomb","path":"sprites/sBomb/sBomb.yy",},},
@@ -102,6 +103,7 @@
     {"roomId":{"name":"r6","path":"rooms/r6/r6.yy",},},
     {"roomId":{"name":"r7","path":"rooms/r7/r7.yy",},},
     {"roomId":{"name":"r8","path":"rooms/r8/r8.yy",},},
+    {"roomId":{"name":"r9","path":"rooms/r9/r9.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
