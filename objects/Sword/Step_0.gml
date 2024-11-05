@@ -7,6 +7,7 @@ if (is_flying) {
 	speed = 0
 	var last_move = player_instance.last_move
 	if (global.input.a) {
+		audio_play_sound(aShoot, 100, false)
 		is_flying = true
 		flying_dirs = {dx: last_move.dx, dy: last_move.dy}
 		exit

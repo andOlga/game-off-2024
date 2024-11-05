@@ -12,7 +12,10 @@
     "name":"Interactives",
     "path":"folders/Game Objects/Interactives.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"BaseInstantItem",
+    "path":"objects/BaseInstantItem/BaseInstantItem.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

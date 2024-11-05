@@ -1,4 +1,5 @@
-///@description Restore window size
+///@description Restore window size, set audio volume
+audio_master_gain(0.1)
 ini_open("save.ini")
 var s = "Window config"
 window_set_fullscreen(ini_read_real(s, "fullscreen", 0))

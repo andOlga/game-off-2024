@@ -9,5 +9,6 @@ if (global.input.sel) {
 }
 
 if (global.input.b) {
+	audio_play_sound(aItem, 10, false, 1, 0, 3.0)
 	items[current_item].use()
 }

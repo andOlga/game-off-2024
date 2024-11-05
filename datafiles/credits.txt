@@ -10,12 +10,18 @@
 
 
 
-
---"Art"--
-&Olga
-
 --Programming--
 &Olga
+
+
+--Art--
+Made with GameMaker's
+image editor
+by &Olga
+
+--Sound--
+Made with jsfxr
+by &Olga
 
 --Level Design--
 &Olga

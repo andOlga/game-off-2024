@@ -1,20 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"SwordPickup",
+  "%Name":"BaseInstantItem",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"Player","path":"objects/Player/Player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"SwordPickup",
+  "name":"BaseInstantItem",
   "overriddenProperties":[],
   "parent":{
-    "name":"Interactives",
-    "path":"folders/Game Objects/Interactives.yy",
+    "name":"Objects",
+    "path":"folders/System/Objects.yy",
   },
-  "parentObjectId":{
-    "name":"BaseInstantItem",
-    "path":"objects/BaseInstantItem/BaseInstantItem.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -32,10 +29,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sSword",
-    "path":"sprites/sSword/sSword.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

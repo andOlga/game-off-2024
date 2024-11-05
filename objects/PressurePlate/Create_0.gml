@@ -1,4 +1,5 @@
 is_pressed = false
+pressed_before = false
 
 ///@param {bool} state
 ///@param {bool} force

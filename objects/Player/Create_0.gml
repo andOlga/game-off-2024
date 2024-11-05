@@ -12,6 +12,7 @@ update_health_display = function () {
 }
 hurt = function () {
 	if (!is_hurting) {
+		audio_play_sound(aHurt, 200, false)
 		is_hurting = true
 		hp--
 		InputController.vibrate(60, 0.2)
