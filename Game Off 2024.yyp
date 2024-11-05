@@ -59,6 +59,7 @@
     {"id":{"name":"SwordPickup","path":"objects/SwordPickup/SwordPickup.yy",},},
     {"id":{"name":"Turret","path":"objects/Turret/Turret.yy",},},
     {"id":{"name":"Wall","path":"objects/Wall/Wall.yy",},},
+    {"id":{"name":"Water","path":"objects/Water/Water.yy",},},
     {"id":{"name":"EndScreen","path":"rooms/EndScreen/EndScreen.yy",},},
     {"id":{"name":"MainMenu","path":"rooms/MainMenu/MainMenu.yy",},},
     {"id":{"name":"r1","path":"rooms/r1/r1.yy",},},
