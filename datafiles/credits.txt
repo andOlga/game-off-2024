@@ -23,7 +23,7 @@ by &Olga
 Made with jsfxr
 by &Olga
 
---Level Design--
+--Game Design--
 &Olga
 LHCollider
 
