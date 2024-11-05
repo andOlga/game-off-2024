@@ -2,6 +2,7 @@ if (has_sword) {
 	var sword = instance_create_layer(x, y, "Instances", Sword)
 	sword.player_instance = id
 }
+can_swim = false
 last_move = {dx: 0, dy: -32} // Set up sword position
 hp = 3
 is_hurting = false

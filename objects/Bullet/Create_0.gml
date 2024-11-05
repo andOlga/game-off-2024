@@ -1,4 +1,5 @@
 event_inherited()
+can_swim = true
 if (target_direction == "Towards Player") {
 	direction = point_direction(x, y, Player.x, Player.y)
 } else if (target_direction == "Random") {

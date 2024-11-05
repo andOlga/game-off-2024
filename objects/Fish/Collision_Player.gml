@@ -1,4 +1,2 @@
-with (Water) {
-	is_swimmable = true
-}
+other.can_swim = true
 instance_destroy()
