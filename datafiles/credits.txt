@@ -9,10 +9,13 @@
 
 
 
+--Game Design--
+&Olga
+LHCollider
 
 --Programming--
-&Olga
-
+Written in GML
+by &Olga
 
 --Art--
 Made with GameMaker's
@@ -22,10 +25,6 @@ by &Olga
 --Sound--
 Made with jsfxr
 by &Olga
-
---Game Design--
-&Olga
-LHCollider
 
 --Fonts--
 PromptFont
