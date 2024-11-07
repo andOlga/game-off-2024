@@ -11,4 +11,5 @@ if (dy > 0) {
 	y += 32
 }
 visited_coords = []
+collided_target_id = -1
 shoot(player_instance.last_move)
