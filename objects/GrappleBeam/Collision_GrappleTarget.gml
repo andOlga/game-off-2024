@@ -1,3 +1,4 @@
+///@description Teleport player to target
 collided_target_id = other.target_square_id
 with (GrappleTargetSquare) {
 	if (target_square_id == other.collided_target_id) {

@@ -1,3 +1,4 @@
+///@description Mark visited squares
 event_inherited()
 array_push(visited_coords, [x, y])
 if (!is_flying) {

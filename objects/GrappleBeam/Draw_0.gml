@@ -1,3 +1,4 @@
+///@description Draw sprite over visited squares
 for (var i = 0; i < array_length(visited_coords); i++) {
 	draw_sprite_ext(
 		sprite_index,
