@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sGridSquare",
-    "path":"sprites/sGridSquare/sGridSquare.yy",
+    "name":"sTargetGrapple",
+    "path":"sprites/sTargetGrapple/sTargetGrapple.yy",
   },
   "spriteMaskId":null,
   "visible":false,

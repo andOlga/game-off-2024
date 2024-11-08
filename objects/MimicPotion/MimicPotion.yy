@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sPotion",
-    "path":"sprites/sPotion/sPotion.yy",
+    "name":"sPotionMimic",
+    "path":"sprites/sPotionMimic/sPotionMimic.yy",
   },
   "spriteMaskId":null,
   "visible":true,

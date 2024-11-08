@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sPotion",
-    "path":"sprites/sPotion/sPotion.yy",
+    "name":"sPotionInvuln",
+    "path":"sprites/sPotionInvuln/sPotionInvuln.yy",
   },
   "spriteMaskId":null,
   "visible":true,
