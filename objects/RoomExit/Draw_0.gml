@@ -8,6 +8,6 @@ if (room != MainMenu) {
 }
 draw_set_alpha(finish_rect_alpha)
 draw_set_color(new_color)
-draw_rectangle(0, 0, 640, 480, false)
+draw_rectangle(0, 0, room_width, room_height, false)
 draw_set_color(old_color)
 draw_set_alpha(old_alpha)
