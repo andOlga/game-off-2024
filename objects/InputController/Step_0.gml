@@ -80,5 +80,12 @@ if (cheats_enabled) {
 		pause()
 	}
 	#endregion
+	#region whoisresponsibleforthis - Skip to credits
+	var pos_who_resp = string_last_pos("WHOISRESPONSIBLEFORTHIS", keyboard_string)
+	if (pos_who_resp > 0) {
+		set_cheats(false)
+		room_goto(EndScreen)
+	}
+	#endregion
 }
 #endregion
