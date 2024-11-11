@@ -1,0 +1,13 @@
+Create a `PushBlock`:
+- Basically a `Wall` on its own, with a unique sprite (something akin to a crate)
+- Can collide with other `Wall`s and `PushBlock`s, stopping its movement
+- On collision with `PressurePlate`s, toggle them
+
+Create a `Glove`:
+- Item pickup
+- When used, shoot a `GloveBeam` (similar to `GrappleBeam`):
+  - No trail
+  - Possibly max distance limit to a couple squares? Dunno if we want players grabbing stuff from all across the room
+  - When `GloveBeam` collides with a `PushBlock`, sets that block as "active" and makes it follow player movement
+    - "Active" blocks should be recolored to match the color of the glove itself, whatever that ends up being
+- When used a second time, lets go of the "active" `PushBlock` if there is one
