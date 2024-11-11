@@ -2,7 +2,7 @@
 if (stays_on && pressed_before) {
 	exit
 }
-var pressed = place_meeting(x,y, Player)
+var pressed = place_meeting(x, y, [Player, GloveBox])
 set_pressed(pressed)
 if (pressed != pressed_before) {
 	pressed_before = pressed
