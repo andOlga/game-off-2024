@@ -6,6 +6,8 @@ Our submission for Game Off 2024, theme "Secret". A minimalistic, action-based d
 
 If you just want to play the latest version of the game, it should be available here: (gxc link)
 
+The link provided is the **only** binary build of the game produced by us. Any other binaries of the game are third-party.
+
 # Building
 
 If you want to modify the game (add/remove rooms, enemies, items), use it as a base for your own project, or just build a native version for your own platform, you should:
