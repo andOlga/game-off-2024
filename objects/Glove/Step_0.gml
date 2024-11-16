@@ -2,7 +2,16 @@
 
 for (var i = 0; i < array_length(carries); i++) {
 	var carry = carries[i]
-	if (point_distance(carry.box_id.x, carry.box_id.y, carry.player_instance_id.x, carry.player_instance_id.y) > 64) {
+	if (
+		!instance_exists(carry.box_id)
+		|| !instance_exists(carry.player_instance_id)
+		|| point_distance(
+			carry.box_id.x,
+			carry.box_id.y,
+			carry.player_instance_id.x,
+			carry.player_instance_id.y
+		) > 64
+	) {
 		uncarry(carry.box_id)
 		continue
 	}

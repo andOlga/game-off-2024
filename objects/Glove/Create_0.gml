@@ -21,8 +21,10 @@ uncarry = function (box_id) {
 	var len = array_length(carries)
 	for (var i = 0; i < len; i++) {
 		if (carries[i].box_id == box_id) {
-			box_id.image_blend = c_white
-			box_id.speed = 0
+			if (instance_exists(box_id)) {
+				box_id.image_blend = c_white
+				box_id.speed = 0
+			}
 			array_delete(carries, i, 1)
 			break
 		}
