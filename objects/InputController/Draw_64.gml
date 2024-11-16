@@ -1,5 +1,7 @@
 ///@description Pause message
 if (paused) {
+	var old_color = draw_get_color()
+	draw_set_color(room == SandRoom ? #0072BC : c_white)
 	var ih = get_input_hint(INPUT_GLYPHS.pause)
 	var ihExit = get_input_hint(INPUT_GLYPHS.sel)
 	var msg = $"Game paused.\nPress {ih} to resume.\nPress {ihExit} to exit."
@@ -12,7 +14,8 @@ if (paused) {
 	var old_ha = draw_get_halign()
 	draw_set_halign(fa_center)
 	draw_set_valign(fa_middle)
-	draw_text(x, y, msg);
+	draw_text(x, y, msg)
 	draw_set_halign(old_ha)
 	draw_set_valign(old_va)
+	draw_set_color(old_color)
 }
