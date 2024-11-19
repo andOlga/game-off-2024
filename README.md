@@ -1,6 +1,6 @@
 # Secret Entrances, Confounding Rooms: Enfer's Trial
 
-Our submission for Game Off 2024, theme "Secret". A minimalistic, action-based dungeon crawler.
+This is the game we created for Game Off 2024, theme "Secret". A minimalistic, action-based dungeon crawler.
 
 # Playing
 
