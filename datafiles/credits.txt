@@ -49,7 +49,7 @@ DavidXNewton
 
 
 
-A submission to
+Developed during
 GitHub Game Off 2024
 Theme: "Secret"
 
