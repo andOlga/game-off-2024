@@ -11,4 +11,12 @@ set_pressed = function (state, force = false) {
 		is_pressed = true
 		image_index = 1
 	}
+	
+	// Feather disable once GM1044
+	door_color = door_color & 0xFFFFFF // discard alpha
+	with (Door) {
+		if (image_blend == other.door_color) {
+			is_open = other.is_pressed
+		}
+	}
 }
