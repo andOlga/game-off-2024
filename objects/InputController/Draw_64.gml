@@ -2,9 +2,10 @@
 if (paused) {
 	var old_color = draw_get_color()
 	draw_set_color(room == SandRoom ? #0072BC : c_white)
-	var ih = get_input_hint(INPUT_GLYPHS.pause)
+	var ihResume = get_input_hint(INPUT_GLYPHS.pause)
 	var ihExit = get_input_hint(INPUT_GLYPHS.sel)
-	var msg = $"Game paused.\nPress {ih} to resume.\nPress {ihExit} to exit."
+	var ihRestart = get_input_hint(INPUT_GLYPHS.b)
+	var msg = $"Game paused.\nPress {ihResume} to resume.\nPress {ihRestart} to restart the room.\nPress {ihExit} to exit."
 	if (pause_gp_loss) msg = "Controller disconnected.\n" + msg
 	if (pause_roomno) {
 		var roomno = string_replace(room_get_name(room), "r", "")

@@ -17,8 +17,14 @@ if (global.input.start || os_is_paused()) {
 	pause()
 }
 
-if (paused && global.input.sel) {
-	game_end()
+if (paused) {
+	if (global.input.b) {
+		pause()
+		room_restart()
+	}
+	if (global.input.sel) {
+		game_end()
+	}
 }
 
 #region Cheats - Tab to toggle, then type any of listed below
