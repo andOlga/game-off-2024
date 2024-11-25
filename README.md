@@ -6,7 +6,9 @@ This is the game we created for Game Off 2024, theme "Secret". A minimalistic, a
 
 If you just want to play the latest version of the game, it should be available here: https://gx.games/games/i4xwr1/
 
-The link provided is the **only** binary build of the game produced by us. Any other binaries of the game are third-party.
+The older game jam version of the game should also be available here: https://andolga.itch.io/game-off-2024
+
+The links provided are the **only** binary builds of the game produced by us. Any other binaries of the game are third-party.
 
 # Building
 
