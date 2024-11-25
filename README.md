@@ -17,6 +17,6 @@ If you want to modify the game (add/remove rooms, enemies, items), use it as a b
 1. Read and accept the game's [LICENSE](LICENSE.md).
 2. Download a copy of [GameMaker](https://gamemaker.io/en/download). Get the latest stable version, not the LTS release.
 3. Clone this repository (or just [download the code](https://github.com/andOlga/game-off-2024/archive/refs/heads/master.zip)).
-4. On GameMaker's start page, click "Open", then navigate to the cloned repo and select the `Game Off 2024.yyp` file.
+4. On GameMaker's start page, click "Import", then navigate to the cloned repo and select the `Game Off 2024.yyp` file.
 5. Test that the game builds correctly by going to Build -> Run.
 6. Optionally, build your native executables by going to Build -> Create Executable.
