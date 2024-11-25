@@ -4,7 +4,7 @@ This is the game we created for Game Off 2024, theme "Secret". A minimalistic, a
 
 # Playing
 
-If you just want to play the latest version of the game, it should be available here: (gxc link)
+If you just want to play the latest version of the game, it should be available here: https://gx.games/games/i4xwr1/
 
 The link provided is the **only** binary build of the game produced by us. Any other binaries of the game are third-party.
 
