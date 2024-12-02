@@ -14,7 +14,7 @@ finish_room = function () {
 	}
 	var rooms_left = array_length(global.remaining_rooms)
 	if (rooms_left > 0) {
-		var next_room = global.remaining_rooms[irandom_range(1, rooms_left) - 1]
+		var next_room = method_call(choose, global.remaining_rooms)
 		room_goto(asset_get_index($"r{next_room}"))
 	} else {
 		room_goto(EndScreen)
