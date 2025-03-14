@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bl37rtcwtq73x"]
+[gd_scene load_steps=6 format=3 uid="uid://bl37rtcwtq73x"]
 
 [ext_resource type="Script" uid="uid://cl0mmisx3kgad" path="res://game_objects/enemies/hopper.gd" id="1_lupmx"]
 [ext_resource type="Texture2D" uid="uid://cn4cgx6jobybh" path="res://sprite_images/sBlob.png" id="1_qkgy8"]
@@ -7,8 +7,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lupmx"]
 size = Vector2(32, 32)
 
-[node name="Hopper" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v81qw"]
+size = Vector2(32, 32)
+
+[node name="Hopper" type="CharacterBody2D"]
 z_index = 2
+collision_layer = 4
+collision_mask = 4
+motion_mode = 1
 script = ExtResource("1_lupmx")
 
 [node name="Sprite" type="Sprite2D" parent="."]
@@ -24,5 +30,9 @@ shape = SubResource("RectangleShape2D_lupmx")
 [node name="MovementTimer" type="Timer" parent="."]
 wait_time = 0.3
 autostart = true
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_v81qw")
 
 [connection signal="timeout" from="MovementTimer" to="." method="_on_movement_timer_timeout"]
