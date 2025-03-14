@@ -57,10 +57,6 @@ func _on_invis_blink_timer_timeout() -> void:
 func _ready() -> void:
 	update_health_display()
 
-func _draw() -> void:
-	# TODO: draw grid
-	pass
-
 func _physics_process(delta: float) -> void:
 	velocity = Input.get_vector(&"move_left", &"move_right", &"move_up", &"move_down") * 10800 * delta
 	last_move = velocity
