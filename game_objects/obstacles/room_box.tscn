@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://be5awa77y8ldh"]
+
+[ext_resource type="PackedScene" uid="uid://cxu0hldj0bn5g" path="res://game_objects/obstacles/wall.tscn" id="1_n0ktk"]
+
+[node name="RoomBox" type="Node2D"]
+
+[node name="WallTop" parent="." instance=ExtResource("1_n0ktk")]
+scale = Vector2(20, 1)
+
+[node name="WallBottom" parent="." instance=ExtResource("1_n0ktk")]
+position = Vector2(0, 448)
+scale = Vector2(20, 1)
+
+[node name="WallLeft" parent="." instance=ExtResource("1_n0ktk")]
+position = Vector2(0, 32)
+scale = Vector2(1, 13)
+
+[node name="WallRight" parent="." instance=ExtResource("1_n0ktk")]
+position = Vector2(608, 32)
+scale = Vector2(1, 13)
