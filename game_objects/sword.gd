@@ -4,9 +4,10 @@ extends CharacterBody2D
 var old_position : Vector2
 
 func fire(velocity):
-	old_position = position
-	self.velocity = velocity
-	is_flying = true
+	if velocity != Vector2.ZERO:
+		old_position = position
+		self.velocity = velocity
+		is_flying = true
 	
 func rotate_to(velocity):
 	# TODO: determine new angle and position using velocity vector

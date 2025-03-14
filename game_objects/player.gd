@@ -7,7 +7,7 @@ class_name Player extends CharacterBody2D
 var is_hurting := false
 var draws_grid := true
 var hp := 3
-var last_move := Vector2(0, 32)
+var last_move := Vector2(0, 0)
 
 func update_health_display():
 	var hp_blends := [
