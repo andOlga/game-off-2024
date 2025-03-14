@@ -9,7 +9,7 @@ var draws_grid := true
 var hp := 3
 var last_move := Vector2(0, 0)
 
-func update_health_display():
+func update_health_display() -> void:
 	var hp_blends := [
 		Color("FFA500"), # Orange, hp = 1
 		Color("FFFF00"), # Yellow, hp = 2
@@ -17,7 +17,7 @@ func update_health_display():
 	]
 	$Sprite.modulate = hp_blends[hp - 1]
 
-func hurt():
+func hurt() -> void:
 	if not is_hurting:
 		$HurtSFX.play()
 		is_hurting = true
@@ -33,7 +33,7 @@ func hurt():
 			$InvisFrameTimer.start()
 			$InvisBlinkTimer.start()
 			
-func enable_swim(): # Turns off water collisions
+func enable_swim() -> void: # Turns off water collisions
 	set_collision_layer_value(2, false)
 	set_collision_mask_value(2, false)
 
