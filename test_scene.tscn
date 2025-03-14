@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bx2cxunaqj8tk"]
+[gd_scene load_steps=5 format=3 uid="uid://bx2cxunaqj8tk"]
 
 [ext_resource type="PackedScene" uid="uid://dydo5qirh645o" path="res://game_objects/player.tscn" id="1_uhqqe"]
-[ext_resource type="PackedScene" uid="uid://cxu0hldj0bn5g" path="res://game_objects/wall.tscn" id="2_ia1lp"]
-[ext_resource type="PackedScene" uid="uid://btg3mstd4ic4k" path="res://game_objects/water.tscn" id="3_sasra"]
+[ext_resource type="PackedScene" uid="uid://cxu0hldj0bn5g" path="res://game_objects/obstacles/wall.tscn" id="2_ia1lp"]
+[ext_resource type="PackedScene" uid="uid://btg3mstd4ic4k" path="res://game_objects/obstacles/water.tscn" id="3_sasra"]
+[ext_resource type="PackedScene" uid="uid://bl37rtcwtq73x" path="res://game_objects/enemies/hopper.tscn" id="4_coq8p"]
 
 [node name="TestScene" type="Node2D"]
 
@@ -32,3 +33,6 @@ position = Vector2(264, 224)
 
 [node name="Water3" parent="." instance=ExtResource("3_sasra")]
 position = Vector2(416, 136)
+
+[node name="Hopper" parent="." instance=ExtResource("4_coq8p")]
+position = Vector2(144, 264)

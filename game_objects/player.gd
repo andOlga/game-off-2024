@@ -1,6 +1,6 @@
 @icon("res://sprite_images/sPlayer.png")
 
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 @export var has_sword := false
 
