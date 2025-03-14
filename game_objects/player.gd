@@ -56,4 +56,5 @@ func _draw() -> void:
 
 func _physics_process(delta: float) -> void:
 	velocity = Input.get_vector(&"move_left", &"move_right", &"move_up", &"move_down") * 3 * 60
+	last_move = velocity
 	move_and_slide()
