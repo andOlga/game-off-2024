@@ -24,7 +24,9 @@ func hurt():
 		$SoundEffect.play()
 		is_hurting = true
 		hp -= 1
-		# TODO: Vibrate gamepad?
+		for i in Input.get_connected_joypads().size():
+			Input.start_joy_vibration(i, 0.2, 0.2, 1)
+		Input.vibrate_handheld(1000)
 		if hp <= 0:
 			$DeathTimer.start()
 			$Sprite.hide()
