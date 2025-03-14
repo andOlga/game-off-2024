@@ -5,6 +5,7 @@ var old_position : Vector2
 
 func fire(new_velocity: Vector2) -> void:
 	if new_velocity != Vector2.ZERO:
+		$ShootSFX.play()
 		old_position = position
 		velocity = new_velocity
 		is_flying = true

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxniiswwp0v4d"]
+[gd_scene load_steps=6 format=3 uid="uid://dxniiswwp0v4d"]
 
 [ext_resource type="Script" uid="uid://c5lxw27888ev0" path="res://game_objects/sword.gd" id="1_33e7n"]
 [ext_resource type="Texture2D" uid="uid://bmnlsih38mxwn" path="res://sprite_images/sSword.png" id="1_sq0s6"]
 [ext_resource type="AudioStream" uid="uid://cgbltx8ou3in5" path="res://sounds/aHurt.wav" id="3_mr3lh"]
+[ext_resource type="AudioStream" uid="uid://cmwjd85s4qci2" path="res://sounds/aShoot.wav" id="4_gyg73"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sq0s6"]
 size = Vector2(32, 32)
@@ -23,3 +24,6 @@ shape = SubResource("RectangleShape2D_sq0s6")
 [node name="KillSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_mr3lh")
 pitch_scale = 1.5
+
+[node name="ShootSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_gyg73")
