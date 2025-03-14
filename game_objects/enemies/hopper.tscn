@@ -1,38 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://bl37rtcwtq73x"]
+[gd_scene load_steps=4 format=3 uid="uid://bqfoheuxld3pl"]
 
 [ext_resource type="Script" uid="uid://cl0mmisx3kgad" path="res://game_objects/enemies/hopper.gd" id="1_lupmx"]
-[ext_resource type="Texture2D" uid="uid://cn4cgx6jobybh" path="res://sprite_images/sBlob.png" id="1_qkgy8"]
-[ext_resource type="PackedScene" uid="uid://c3t7nkavjywjo" path="res://game_objects/enemy_hurt_box.tscn" id="2_s6dub"]
+[ext_resource type="PackedScene" uid="uid://c8cpp5pfe3d1" path="res://game_objects/enemies/!base_enemy.tscn" id="1_qkgy8"]
+[ext_resource type="Texture2D" uid="uid://cn4cgx6jobybh" path="res://sprite_images/sBlob.png" id="2_s6dub"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lupmx"]
-size = Vector2(32, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v81qw"]
-size = Vector2(32, 32)
-
-[node name="Hopper" type="CharacterBody2D"]
-z_index = 2
-collision_layer = 4
-collision_mask = 12
-motion_mode = 1
+[node name="Hopper" instance=ExtResource("1_qkgy8")]
 script = ExtResource("1_lupmx")
+step_size = 32
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" parent="." index="0"]
 position = Vector2(16, 16)
-texture = ExtResource("1_qkgy8")
+texture = ExtResource("2_s6dub")
 
-[node name="EnemyHurtBox" parent="." instance=ExtResource("2_s6dub")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyHurtBox"]
-position = Vector2(16, 16)
-shape = SubResource("RectangleShape2D_lupmx")
-
-[node name="MovementTimer" type="Timer" parent="."]
+[node name="MovementTimer" type="Timer" parent="." index="3"]
 wait_time = 0.3
 autostart = true
-
-[node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(16, 16)
-shape = SubResource("RectangleShape2D_v81qw")
 
 [connection signal="timeout" from="MovementTimer" to="." method="_on_movement_timer_timeout"]

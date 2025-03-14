@@ -47,8 +47,7 @@ func _physics_process(delta: float) -> void:
 		if collision:
 			var collider := collision.get_collider()
 			if collider is BaseEnemy:
-				$KillSFX.play()
-				collider.queue_free()
+				collider.kill()
 			velocity = Vector2.ZERO
 			position = old_position
 			is_flying = false
