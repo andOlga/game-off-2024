@@ -4,11 +4,11 @@ extends CharacterBody2D
 
 const hurt_sfx := preload("res://sounds/aHurt.wav")
 
-@onready var can_swim := false
-@onready var is_hurting := false
-@onready var draws_grid := true
-@onready var hp := 3
-@onready var last_move := Vector2(0, 32)
+var can_swim := false
+var is_hurting := false
+var draws_grid := true
+var hp := 3
+var last_move := Vector2(0, 32)
 
 func update_health_display():
 	var hp_blends := [
@@ -57,6 +57,6 @@ func _draw() -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
-	velocity = Input.get_vector(&"move_left", &"move_right", &"move_up", &"move_down") * 3 * 60
+	velocity = Input.get_vector(&"move_left", &"move_right", &"move_up", &"move_down") * 10800 * delta
 	last_move = velocity
 	move_and_slide()

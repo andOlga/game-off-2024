@@ -7,6 +7,7 @@
 radius = 16.0
 
 [node name="Player" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_a4hy7")
 
 [node name="Sprite" type="Sprite2D" parent="."]
