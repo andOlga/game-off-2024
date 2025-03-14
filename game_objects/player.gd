@@ -27,7 +27,7 @@ func hurt() -> void:
 		Input.vibrate_handheld(1000)
 		if hp <= 0:
 			$DeathTimer.start()
-			$Sprite.hide()
+			hide()
 		else:
 			update_health_display()
 			$InvisFrameTimer.start()
@@ -54,7 +54,7 @@ func _on_invis_blink_timer_timeout() -> void:
 func _ready() -> void:
 	update_health_display()
 	if not has_sword:
-		$Sword.queue_free()
+		$Sword.hide()
 
 func _physics_process(delta: float) -> void:
 	velocity = Input.get_vector(&"move_left", &"move_right", &"move_up", &"move_down") * 10800 * delta
