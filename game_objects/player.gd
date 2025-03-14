@@ -1,10 +1,11 @@
+@icon("res://sprite_images/sPlayer.png")
+
 extends CharacterBody2D
 
 @export var has_sword := false
 
 const hurt_sfx := preload("res://sounds/aHurt.wav")
 
-var can_swim := false
 var is_hurting := false
 var draws_grid := true
 var hp := 3
@@ -34,6 +35,10 @@ func hurt():
 			update_health_display()
 			$InvisFrameTimer.start()
 			$InvisBlinkTimer.start()
+			
+func enable_swim(): # Turns off water collisions
+	set_collision_layer_value(2, false)
+	set_collision_mask_value(2, false)
 
 func _on_death_timer_timeout() -> void:
 	get_tree().reload_current_scene()

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://btg3mstd4ic4k"]
+
+[ext_resource type="Texture2D" uid="uid://i67qu5a3qylm" path="res://sprite_images/sWater.png" id="1_cnstx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3iax"]
+size = Vector2(32, 32)
+
+[node name="Water" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+texture = ExtResource("1_cnstx")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_j3iax")
