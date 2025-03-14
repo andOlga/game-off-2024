@@ -1,15 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dydo5qirh645o"]
+[gd_scene load_steps=6 format=3 uid="uid://dydo5qirh645o"]
 
 [ext_resource type="Script" uid="uid://rp7xbtb14ywe" path="res://game_objects/player.gd" id="1_a4hy7"]
 [ext_resource type="Texture2D" uid="uid://dv0r8tf6pyd11" path="res://sprite_images/sPlayer.png" id="1_rpe43"]
+[ext_resource type="AudioStream" uid="uid://cgbltx8ou3in5" path="res://sounds/aHurt.wav" id="3_7o085"]
+[ext_resource type="PackedScene" uid="uid://dxniiswwp0v4d" path="res://game_objects/sword.tscn" id="3_hy5qn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rpe43"]
 radius = 16.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
-collision_layer = 3
-collision_mask = 3
+collision_mask = 15
 motion_mode = 1
 script = ExtResource("1_a4hy7")
 
@@ -21,7 +22,8 @@ texture = ExtResource("1_rpe43")
 position = Vector2(16, 16)
 shape = SubResource("CircleShape2D_rpe43")
 
-[node name="SoundEffect" type="AudioStreamPlayer" parent="."]
+[node name="HurtSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7o085")
 
 [node name="DeathTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -32,6 +34,9 @@ one_shot = true
 
 [node name="InvisBlinkTimer" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="Sword" parent="." instance=ExtResource("3_hy5qn")]
+position = Vector2(32, 0)
 
 [connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
 [connection signal="timeout" from="InvisFrameTimer" to="." method="_on_invis_frame_timer_timeout"]

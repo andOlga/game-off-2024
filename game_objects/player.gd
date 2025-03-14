@@ -2,9 +2,7 @@
 
 class_name Player extends CharacterBody2D
 
-@export var has_sword := false
-
-const hurt_sfx := preload("res://sounds/aHurt.wav")
+@export var has_sword := true
 
 var is_hurting := false
 var draws_grid := true
@@ -21,8 +19,7 @@ func update_health_display():
 
 func hurt():
 	if not is_hurting:
-		$SoundEffect.stream = hurt_sfx
-		$SoundEffect.play()
+		$HurtSFX.play()
 		is_hurting = true
 		hp -= 1
 		for i in Input.get_connected_joypads().size():
@@ -56,8 +53,15 @@ func _on_invis_blink_timer_timeout() -> void:
 
 func _ready() -> void:
 	update_health_display()
+	if not has_sword:
+		$Sword.queue_free()
 
 func _physics_process(delta: float) -> void:
 	velocity = Input.get_vector(&"move_left", &"move_right", &"move_up", &"move_down") * 10800 * delta
-	last_move = velocity
+	if velocity != Vector2.ZERO:
+		last_move = velocity
+	if has_sword:
+		$Sword.rotate_to(last_move)
+		if Input.is_action_just_pressed("action_sword"):
+			$Sword.fire(last_move * 3)
 	move_and_slide()
