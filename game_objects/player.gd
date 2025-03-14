@@ -4,11 +4,11 @@ extends CharacterBody2D
 
 const hurt_sfx := preload("res://sounds/aHurt.wav")
 
-@onready var can_swim := true
-@onready var last_move := Vector2(0, 32)
-@onready var hp := 3
+@onready var can_swim := false
 @onready var is_hurting := false
 @onready var draws_grid := true
+@onready var hp := 3
+@onready var last_move := Vector2(0, 32)
 
 func update_health_display():
 	var hp_blends := [
