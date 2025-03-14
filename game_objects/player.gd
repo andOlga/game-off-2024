@@ -12,9 +12,9 @@ const hurt_sfx := preload("res://sounds/aHurt.wav")
 
 func update_health_display():
 	var hp_blends := [
-		Color("FFA500"), # Orange,
-		Color("FFFF00"), # Yellow,
-		Color("008000"), # Green
+		Color("FFA500"), # Orange, hp = 1
+		Color("FFFF00"), # Yellow, hp = 2
+		Color("008000"), # Green, hp = 3
 	]
 	$Sprite.modulate = hp_blends[hp - 1]
 
