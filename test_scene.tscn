@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dydo5qirh645o" path="res://game_objects/player.tscn" id="1_uhqqe"]
 [ext_resource type="PackedScene" uid="uid://btg3mstd4ic4k" path="res://game_objects/obstacles/water.tscn" id="3_sasra"]
 [ext_resource type="PackedScene" uid="uid://be5awa77y8ldh" path="res://game_objects/obstacles/room_box.tscn" id="4_2nij2"]
-[ext_resource type="PackedScene" uid="uid://bl37rtcwtq73x" path="res://game_objects/enemies/hopper.tscn" id="4_coq8p"]
+[ext_resource type="PackedScene" uid="uid://bqfoheuxld3pl" path="res://game_objects/enemies/hopper.tscn" id="4_coq8p"]
 
 [node name="TestScene" type="Node2D"]
 
