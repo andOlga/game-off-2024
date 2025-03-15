@@ -8,6 +8,9 @@
 
 [node name="TestScene" type="Node2D"]
 
+[node name="PauseScreen" parent="." instance=ExtResource("5_2nij2")]
+z_index = 4096
+
 [node name="Player" parent="." instance=ExtResource("1_uhqqe")]
 position = Vector2(80, 80)
 
@@ -24,6 +27,3 @@ position = Vector2(416, 136)
 position = Vector2(144, 264)
 
 [node name="RoomBox" parent="." instance=ExtResource("4_2nij2")]
-
-[node name="PauseScreen" parent="." instance=ExtResource("5_2nij2")]
-z_index = 4096
