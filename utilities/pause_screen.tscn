@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd4k87pwls1tp"]
+
+[ext_resource type="FontFile" uid="uid://dccfwfvw53bwp" path="res://promptfont.otf" id="1_mf76y"]
+[ext_resource type="Script" uid="uid://dvjcpev3tjtie" path="res://utilities/pause_screen.gd" id="2_75vu3"]
+
+[node name="PauseScreen" type="RichTextLabel"]
+process_mode = 3
+offset_right = 640.0
+offset_bottom = 480.0
+theme_override_fonts/normal_font = ExtResource("1_mf76y")
+theme_override_font_sizes/normal_font_size = 35
+text = "Game paused.
+Press ⇸, ␮ or ␯to resume.
+Press ↦ or Ｘ to restart the room.
+Press ⇷ or ␺ to exit."
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_75vu3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(0, 0, 0, 1)
