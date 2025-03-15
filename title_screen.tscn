@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf30cimyfkwi0"]
+
+[ext_resource type="FontFile" uid="uid://dccfwfvw53bwp" path="res://promptfont.otf" id="1_v6p8y"]
+[ext_resource type="Script" uid="uid://bvt5niauy2djk" path="res://title_screen.gd" id="2_ak2if"]
+
+[node name="TitleScreen" type="RichTextLabel"]
+offset_right = 640.0
+offset_bottom = 480.0
+theme_override_fonts/normal_font = ExtResource("1_v6p8y")
+theme_override_font_sizes/normal_font_size = 37
+text = "Controls:
+Move: ⇎, ⇋ or ⏴⏵⏶⏷
+Use sword: ↧ or Ｚ
+Use item: ↦ or Ｘ
+Change item: ⇷ or ␺
+Pause: ⇸, ␮ or ␯
+Seed (type number to change):
+(TODO)
+
+Press ⇸, ␮ or ␯ to continue."
+fit_content = true
+horizontal_alignment = 1
+script = ExtResource("2_ak2if")
+
+[node name="FadeTimer" type="Timer" parent="."]
+wait_time = 0.08
+
+[connection signal="timeout" from="FadeTimer" to="." method="_on_fade_timer_timeout"]
