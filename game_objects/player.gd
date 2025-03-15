@@ -11,9 +11,9 @@ var last_move := Vector2(0, 0)
 
 func update_health_display() -> void:
 	var hp_blends := [
-		Color("FFA500"), # Orange, hp = 1
-		Color("FFFF00"), # Yellow, hp = 2
-		Color("008000"), # Green, hp = 3
+		Color(&"FFA500"), # Orange, hp = 1
+		Color(&"FFFF00"), # Yellow, hp = 2
+		Color(&"008000"), # Green, hp = 3
 	]
 	$Sprite.modulate = hp_blends[hp - 1]
 
