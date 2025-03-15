@@ -4,7 +4,7 @@ func _ready() -> void:
 	hide()
 	get_tree().paused = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var scene_tree := get_tree()
 	if scene_tree.paused:
 		if Input.is_action_just_pressed("action_pause"):
