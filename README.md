@@ -20,3 +20,7 @@ If you want to modify the game (add/remove rooms, enemies, items), use it as a b
 4. On GameMaker's start page, click "Open", then navigate to the cloned repo and select the `Game Off 2024.yyp` file.
 5. Test that the game builds correctly by going to Build -> Run.
 6. Optionally, build your native executables by going to Build -> Create Executable.
+
+# Future
+
+This game was created as an experiment and remains as such, I do not intend to personally develop it into a full title. However, in the spirit of experimentation, I am currently working on a [Godot port](../../godot) of this game, which will replace this GameMaker branch as the default landing page once it's complete.
