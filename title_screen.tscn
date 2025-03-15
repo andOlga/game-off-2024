@@ -15,7 +15,7 @@ Use item: ↦ or Ｘ
 Change item: ⇷ or ␺
 Pause: ⇸, ␮ or ␯
 Seed (type number to change):
-(TODO)
+
 
 Press ⇸, ␮ or ␯ to continue."
 fit_content = true
@@ -24,5 +24,15 @@ script = ExtResource("2_ak2if")
 
 [node name="FadeTimer" type="Timer" parent="."]
 wait_time = 0.08
+
+[node name="SeedBox" type="LineEdit" parent="."]
+layout_mode = 0
+offset_top = 320.0
+offset_right = 640.0
+offset_bottom = 360.0
+theme_override_fonts/font = ExtResource("1_v6p8y")
+theme_override_font_sizes/font_size = 37
+alignment = 1
+flat = true
 
 [connection signal="timeout" from="FadeTimer" to="." method="_on_fade_timer_timeout"]
