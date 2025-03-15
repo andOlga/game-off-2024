@@ -18,6 +18,10 @@ boot_splash/use_filter=false
 boot_splash/image="uid://df4ofyciij7xx"
 config/icon="uid://dv0r8tf6pyd11"
 
+[autoload]
+
+RoomRng="*res://utilities/room_rng.gd"
+
 [display]
 
 window/size/viewport_width=640

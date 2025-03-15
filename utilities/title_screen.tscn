@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bf30cimyfkwi0"]
 
 [ext_resource type="FontFile" uid="uid://dccfwfvw53bwp" path="res://promptfont.otf" id="1_v6p8y"]
-[ext_resource type="Script" uid="uid://bvt5niauy2djk" path="res://title_screen.gd" id="2_ak2if"]
+[ext_resource type="Script" uid="uid://bvt5niauy2djk" path="res://utilities/title_screen.gd" id="2_ak2if"]
 
 [node name="TitleScreen" type="RichTextLabel"]
 offset_right = 640.0
@@ -33,6 +33,9 @@ offset_bottom = 360.0
 theme_override_fonts/font = ExtResource("1_v6p8y")
 theme_override_font_sizes/font_size = 37
 alignment = 1
+max_length = 22
+clear_button_enabled = true
 flat = true
+caret_blink = true
 
 [connection signal="timeout" from="FadeTimer" to="." method="_on_fade_timer_timeout"]
