@@ -23,4 +23,4 @@ If you want to modify the game (add/remove rooms, enemies, items), use it as a b
 
 # Future
 
-This game was created as an experiment and remains as such, I do not intend to personally develop it into a full title. However, in the spirit of experimentation, I am currently working on a [Godot port](../../godot) of this game, which will replace this GameMaker branch as the default landing page once it's complete.
+This game was created as an experiment and remains as such, I do not intend to personally develop it into a full title. However, in the spirit of experimentation, I am currently working on a [Godot port](../godot) of this game, which will replace this GameMaker branch as the default landing page once it's complete.
