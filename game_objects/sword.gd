@@ -4,7 +4,7 @@ extends CharacterBody2D
 var old_position : Vector2
 
 func fire(new_velocity: Vector2) -> void:
-	if new_velocity != Vector2.ZERO:
+	if not is_flying and new_velocity != Vector2.ZERO:
 		$ShootSFX.play()
 		old_position = position
 		velocity = new_velocity
