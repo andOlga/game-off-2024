@@ -5,6 +5,5 @@ func kill() -> void:
 	set_process(false)
 	$DeathSFX.play()
 
-
 func _on_death_sfx_finished() -> void:
 	queue_free()
