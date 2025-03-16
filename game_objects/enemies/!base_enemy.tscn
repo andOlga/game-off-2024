@@ -29,3 +29,5 @@ shape = SubResource("RectangleShape2D_e3tph")
 [node name="DeathSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_e3tph")
 pitch_scale = 1.5
+
+[connection signal="finished" from="DeathSFX" to="." method="_on_death_sfx_finished"]
