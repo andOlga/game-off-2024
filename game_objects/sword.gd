@@ -15,7 +15,8 @@ func rotate_to(new_directions: Vector2) -> void:
 		return
 	var dir_x := new_directions.x
 	var dir_y := new_directions.y
-	# Note: the numbers used below are "feels right" guesswork, they aren't supposed to make sense
+	# Note: the numbers used below are "feels right" guesswork,
+	# they aren't supposed to make sense
 	if dir_x > 0 and dir_y > 0: # Right-Down
 		rotation_degrees = 45
 		position = Vector2(40, 16)
