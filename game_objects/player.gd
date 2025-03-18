@@ -7,7 +7,7 @@ class_name Player extends CharacterBody2D
 var is_hurting := false
 var draws_grid := true
 var hp := 3
-var last_move := Vector2(0, 0)
+var last_move := Vector2(180, 0)
 
 func update_health_display() -> void:
 	var hp_blends := [
@@ -54,14 +54,14 @@ func _on_invis_blink_timer_timeout() -> void:
 func _ready() -> void:
 	update_health_display()
 	if not has_sword:
-		$Sword.hide()
+		%Sword.hide()
 
 func _physics_process(delta: float) -> void:
 	velocity = Input.get_vector(&"move_left", &"move_right", &"move_up", &"move_down") * 10800 * delta
 	if velocity != Vector2.ZERO:
 		last_move = velocity
 	if has_sword:
-		$Sword.rotate_to(last_move)
+		%Sword.rotate_to(last_move)
 		if Input.is_action_just_pressed("action_sword"):
-			$Sword.fire(last_move * 3)
+			%Sword.fire(last_move * 3)
 	move_and_slide()

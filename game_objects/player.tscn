@@ -8,36 +8,40 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_rpe43"]
 radius = 16.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="Node2D"]
 z_index = 1
+
+[node name="Chara" type="CharacterBody2D" parent="."]
+unique_name_in_owner = true
 collision_mask = 11
 motion_mode = 1
 script = ExtResource("1_a4hy7")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="Chara"]
 position = Vector2(16, 16)
 texture = ExtResource("1_rpe43")
 
-[node name="Hitbox" type="CollisionShape2D" parent="."]
+[node name="Hitbox" type="CollisionShape2D" parent="Chara"]
 position = Vector2(16, 16)
 shape = SubResource("CircleShape2D_rpe43")
 
-[node name="HurtSFX" type="AudioStreamPlayer" parent="."]
+[node name="HurtSFX" type="AudioStreamPlayer" parent="Chara"]
 stream = ExtResource("3_7o085")
 
-[node name="DeathTimer" type="Timer" parent="."]
+[node name="DeathTimer" type="Timer" parent="Chara"]
 wait_time = 2.0
 one_shot = true
 
-[node name="InvisFrameTimer" type="Timer" parent="."]
+[node name="InvisFrameTimer" type="Timer" parent="Chara"]
 one_shot = true
 
-[node name="InvisBlinkTimer" type="Timer" parent="."]
+[node name="InvisBlinkTimer" type="Timer" parent="Chara"]
 wait_time = 0.1
 
 [node name="Sword" parent="." instance=ExtResource("3_hy5qn")]
+unique_name_in_owner = true
 position = Vector2(32, 0)
 
-[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
-[connection signal="timeout" from="InvisFrameTimer" to="." method="_on_invis_frame_timer_timeout"]
-[connection signal="timeout" from="InvisBlinkTimer" to="." method="_on_invis_blink_timer_timeout"]
+[connection signal="timeout" from="Chara/DeathTimer" to="Chara" method="_on_death_timer_timeout"]
+[connection signal="timeout" from="Chara/InvisFrameTimer" to="Chara" method="_on_invis_frame_timer_timeout"]
+[connection signal="timeout" from="Chara/InvisBlinkTimer" to="Chara" method="_on_invis_blink_timer_timeout"]
