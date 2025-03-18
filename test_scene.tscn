@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bx2cxunaqj8tk"]
+[gd_scene load_steps=8 format=3 uid="uid://bx2cxunaqj8tk"]
 
 [ext_resource type="PackedScene" uid="uid://dydo5qirh645o" path="res://game_objects/player.tscn" id="1_uhqqe"]
 [ext_resource type="PackedScene" uid="uid://btg3mstd4ic4k" path="res://game_objects/obstacles/water.tscn" id="3_sasra"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bqfoheuxld3pl" path="res://game_objects/enemies/hopper.tscn" id="4_coq8p"]
 [ext_resource type="PackedScene" uid="uid://dd4k87pwls1tp" path="res://utilities/pause_screen.tscn" id="5_2nij2"]
 [ext_resource type="PackedScene" uid="uid://bagl5p3l6tq7l" path="res://game_objects/enemies/flyer.tscn" id="6_7cbxl"]
+[ext_resource type="PackedScene" uid="uid://c27wnmpahm0wx" path="res://game_objects/enemies/bullet.tscn" id="7_8pr8v"]
 
 [node name="TestScene" type="Node2D"]
 
@@ -36,3 +37,14 @@ can_swim = true
 
 [node name="Flyer2" parent="." instance=ExtResource("6_7cbxl")]
 position = Vector2(288, 352)
+
+[node name="Bullet" parent="." instance=ExtResource("7_8pr8v")]
+position = Vector2(248, 80)
+
+[node name="Bullet2" parent="." instance=ExtResource("7_8pr8v")]
+position = Vector2(216, 296)
+rotation = 0.333614
+
+[node name="Bullet3" parent="." instance=ExtResource("7_8pr8v")]
+position = Vector2(424, 112)
+rotation = 3.14036
