@@ -1,4 +1,5 @@
 *.windows.*
 *.linux.*
+*.macos.*
 web/*
 !web/.gitkeep
