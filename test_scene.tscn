@@ -19,6 +19,7 @@ z_index = 4096
 
 [node name="Player" parent="." instance=ExtResource("1_uhqqe")]
 position = Vector2(80, 80)
+has_sword = false
 
 [node name="Water" parent="." instance=ExtResource("3_sasra")]
 position = Vector2(200, 168)
