@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bx2cxunaqj8tk"]
+[gd_scene load_steps=13 format=3 uid="uid://bx2cxunaqj8tk"]
 
 [ext_resource type="PackedScene" uid="uid://dydo5qirh645o" path="res://game_objects/player.tscn" id="1_uhqqe"]
 [ext_resource type="PackedScene" uid="uid://btg3mstd4ic4k" path="res://game_objects/obstacles/water.tscn" id="3_sasra"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://d0k4x0llribe5" path="res://game_objects/pickups/health_potion.tscn" id="8_buypi"]
 [ext_resource type="PackedScene" uid="uid://de1fd31q4fxq2" path="res://game_objects/pickups/fish.tscn" id="9_njel3"]
 [ext_resource type="PackedScene" uid="uid://d265m4a33q21" path="res://game_objects/pickups/sword.tscn" id="10_vr1i5"]
+[ext_resource type="PackedScene" uid="uid://bnjygso137p73" path="res://game_objects/pickups/key.tscn" id="11_oo8pe"]
+[ext_resource type="PackedScene" uid="uid://b25oxmnsnq3h6" path="res://game_objects/obstacles/door.tscn" id="12_4gito"]
 
 [node name="TestScene" type="Node2D"]
 
@@ -61,3 +63,19 @@ position = Vector2(200, 104)
 
 [node name="SwordPickup" parent="." instance=ExtResource("10_vr1i5")]
 position = Vector2(328, 40)
+
+[node name="Key" parent="." instance=ExtResource("11_oo8pe")]
+modulate = Color(0.447059, 0.733333, 0.168627, 1)
+position = Vector2(352, 232)
+
+[node name="Door" parent="Key" instance=ExtResource("12_4gito")]
+position = Vector2(128, -8)
+
+[node name="Door2" parent="Key" instance=ExtResource("12_4gito")]
+position = Vector2(0, 64)
+
+[node name="Door3" parent="Key" instance=ExtResource("12_4gito")]
+position = Vector2(-232, 104)
+
+[node name="Door4" parent="Key" instance=ExtResource("12_4gito")]
+position = Vector2(-200, -32)
