@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://de1fd31q4fxq2"]
+
+[ext_resource type="PackedScene" uid="uid://bojby5emvgqx1" path="res://game_objects/pickups/!base_pickup.tscn" id="1_ir2pp"]
+[ext_resource type="Texture2D" uid="uid://bl0nl5wecp0y" path="res://sprite_images/sFish.png" id="2_0r17t"]
+[ext_resource type="Script" uid="uid://c63d1yloxgpp7" path="res://game_objects/pickups/fish.gd" id="2_1fd0q"]
+
+[node name="Fish" instance=ExtResource("1_ir2pp")]
+script = ExtResource("2_1fd0q")
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_0r17t")

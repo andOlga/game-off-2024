@@ -2,12 +2,11 @@
 
 class_name Player extends CharacterBody2D
 
-@export var has_sword := true
-
 var is_hurting := false
 var draws_grid := true
 var hp := 3
 var last_move := Vector2(180, 0)
+@onready var has_sword : bool = $"..".has_sword
 
 func update_health_display() -> void:
 	var hp_blends := [
@@ -39,7 +38,7 @@ func enable_swim() -> void: # Turns off water collisions
 	
 func enable_sword() -> void: # Gives the player the sword if they didn't have it
 	has_sword = true
-	$Sword.show()
+	%Sword.show()
 
 func _on_death_timer_timeout() -> void:
 	get_tree().reload_current_scene()

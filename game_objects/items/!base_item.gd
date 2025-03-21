@@ -7,4 +7,4 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		global_position = Vector2(-32, -32)
 
 func use() -> void:
-	push_error("Tried to activate item with unimplemented use()")
+	push_error("Tried to use() unimplemented item @", self)

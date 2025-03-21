@@ -10,4 +10,4 @@ func _on_pickup_sfx_finished() -> void:
 	queue_free()
 
 func activate(activator: Player) -> void:
-	push_error("Tried to activate() unimplemented pickup")
+	push_error("Tried to activate() unimplemented pickup @", self, " by ", activator)

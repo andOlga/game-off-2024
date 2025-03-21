@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dydo5qirh645o"]
+[gd_scene load_steps=7 format=3 uid="uid://dydo5qirh645o"]
 
 [ext_resource type="Script" uid="uid://rp7xbtb14ywe" path="res://game_objects/player.gd" id="1_a4hy7"]
+[ext_resource type="Script" uid="uid://i28bcw22hf4u" path="res://game_objects/player_parent.gd" id="1_pyg5a"]
 [ext_resource type="Texture2D" uid="uid://dv0r8tf6pyd11" path="res://sprite_images/sPlayer.png" id="1_rpe43"]
 [ext_resource type="AudioStream" uid="uid://cgbltx8ou3in5" path="res://sounds/aHurt.wav" id="3_7o085"]
 [ext_resource type="PackedScene" uid="uid://dxniiswwp0v4d" path="res://game_objects/sword.tscn" id="3_hy5qn"]
@@ -10,6 +11,7 @@ radius = 16.0
 
 [node name="Player" type="Node2D"]
 z_index = 1
+script = ExtResource("1_pyg5a")
 
 [node name="Chara" type="CharacterBody2D" parent="."]
 unique_name_in_owner = true
