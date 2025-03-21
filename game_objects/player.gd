@@ -36,6 +36,10 @@ func hurt() -> void:
 func enable_swim() -> void: # Turns off water collisions
 	set_collision_layer_value(2, false)
 	set_collision_mask_value(2, false)
+	
+func enable_sword() -> void: # Gives the player the sword if they didn't have it
+	has_sword = true
+	$Sword.show()
 
 func _on_death_timer_timeout() -> void:
 	get_tree().reload_current_scene()

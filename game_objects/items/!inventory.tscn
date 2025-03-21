@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dri8ned6r7ccs"]
+
+[ext_resource type="Script" uid="uid://dk4smtkmmbaar" path="res://game_objects/items/!inventory.gd" id="1_iud1i"]
+
+[node name="Inventory" type="Node2D"]
+script = ExtResource("1_iud1i")
+
+[node name="CurrentItemSprite" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(320, 240)
+scale = Vector2(20, 15)
+
+[node name="SpriteHideTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="SpriteHideTimer" to="." method="_on_sprite_hide_timer_timeout"]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://sexql6jvvx3q"]
+
+[ext_resource type="Script" uid="uid://tgoprpe5hgwu" path="res://game_objects/items/!base_item.gd" id="1_7a8gh"]
+[ext_resource type="AudioStream" uid="uid://6cmbnc3fmgq5" path="res://sounds/aItem.wav" id="2_clmfo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4wh4"]
+size = Vector2(32, 32)
+
+[node name="BaseItem" type="Node2D"]
+script = ExtResource("1_7a8gh")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="HitboxShape" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_e4wh4")
+
+[node name="PickupSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_clmfo")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

@@ -46,5 +46,5 @@ position = Vector2(216, 296)
 rotation = 0.333614
 
 [node name="Bullet3" parent="." instance=ExtResource("7_8pr8v")]
-position = Vector2(424, 112)
+position = Vector2(536, 368)
 rotation = 3.14036
