@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0k4x0llribe5"]
+
+[ext_resource type="PackedScene" uid="uid://bojby5emvgqx1" path="res://game_objects/pickups/!base_pickup.tscn" id="1_u8m5d"]
+[ext_resource type="Texture2D" uid="uid://dmd8p0d56rlpw" path="res://sprite_images/sPotionHealth.png" id="2_to3ig"]
+[ext_resource type="Script" uid="uid://w0muwbe70st2" path="res://game_objects/pickups/health_potion.gd" id="2_wn2ck"]
+
+[node name="HealthPotion" instance=ExtResource("1_u8m5d")]
+script = ExtResource("2_wn2ck")
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_to3ig")
