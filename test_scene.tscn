@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bx2cxunaqj8tk"]
+[gd_scene load_steps=14 format=3 uid="uid://bx2cxunaqj8tk"]
 
 [ext_resource type="PackedScene" uid="uid://dydo5qirh645o" path="res://game_objects/player.tscn" id="1_uhqqe"]
 [ext_resource type="PackedScene" uid="uid://btg3mstd4ic4k" path="res://game_objects/obstacles/water.tscn" id="3_sasra"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://d265m4a33q21" path="res://game_objects/pickups/sword.tscn" id="10_vr1i5"]
 [ext_resource type="PackedScene" uid="uid://bnjygso137p73" path="res://game_objects/pickups/key.tscn" id="11_oo8pe"]
 [ext_resource type="PackedScene" uid="uid://b25oxmnsnq3h6" path="res://game_objects/obstacles/door.tscn" id="12_4gito"]
+[ext_resource type="PackedScene" uid="uid://cgww5eeov0dl4" path="res://game_objects/pickups/invuln_potion.tscn" id="13_4gito"]
 
 [node name="TestScene" type="Node2D"]
 
@@ -79,3 +80,6 @@ position = Vector2(-232, 104)
 
 [node name="Door4" parent="Key" instance=ExtResource("12_4gito")]
 position = Vector2(-200, -32)
+
+[node name="InvulnPotion" parent="." instance=ExtResource("13_4gito")]
+position = Vector2(184, 40)
