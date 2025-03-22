@@ -27,6 +27,7 @@ func hurt() -> void:
 		if hp <= 0:
 			$DeathTimer.start()
 			hide()
+			%Sword.hide()
 		else:
 			update_health_display()
 			$InvisFrameTimer.start()

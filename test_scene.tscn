@@ -88,3 +88,4 @@ position = Vector2(184, 40)
 [node name="Turret" parent="." instance=ExtResource("14_fbuy2")]
 position = Vector2(480, 72)
 rotation = 0.591545
+target_direction = 1

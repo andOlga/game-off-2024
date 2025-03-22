@@ -1,3 +1,5 @@
+@icon("res://sprite_images/sBullet.png")
+
 extends BaseEnemy
 
 var is_moving := true
