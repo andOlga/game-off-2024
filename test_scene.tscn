@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bx2cxunaqj8tk"]
+[gd_scene load_steps=15 format=3 uid="uid://bx2cxunaqj8tk"]
 
 [ext_resource type="PackedScene" uid="uid://dydo5qirh645o" path="res://game_objects/player.tscn" id="1_uhqqe"]
 [ext_resource type="PackedScene" uid="uid://btg3mstd4ic4k" path="res://game_objects/obstacles/water.tscn" id="3_sasra"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bnjygso137p73" path="res://game_objects/pickups/key.tscn" id="11_oo8pe"]
 [ext_resource type="PackedScene" uid="uid://b25oxmnsnq3h6" path="res://game_objects/obstacles/door.tscn" id="12_4gito"]
 [ext_resource type="PackedScene" uid="uid://cgww5eeov0dl4" path="res://game_objects/pickups/invuln_potion.tscn" id="13_4gito"]
+[ext_resource type="PackedScene" uid="uid://dgm381ol6g6ra" path="res://game_objects/enemies/turret.tscn" id="14_fbuy2"]
 
 [node name="TestScene" type="Node2D"]
 
@@ -83,3 +84,7 @@ position = Vector2(-200, -32)
 
 [node name="InvulnPotion" parent="." instance=ExtResource("13_4gito")]
 position = Vector2(184, 40)
+
+[node name="Turret" parent="." instance=ExtResource("14_fbuy2")]
+position = Vector2(480, 72)
+rotation = 0.591545

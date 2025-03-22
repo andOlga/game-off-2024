@@ -6,7 +6,7 @@ var is_hurting := false
 var draws_grid := true
 var hp := 3
 var last_move := Vector2(180, 0)
-@onready var has_sword : bool = $"..".has_sword
+@onready var has_sword : bool = get_parent().has_sword
 
 func update_health_display() -> void:
 	var hp_blends := [

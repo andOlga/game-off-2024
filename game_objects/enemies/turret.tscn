@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgm381ol6g6ra"]
+
+[ext_resource type="PackedScene" uid="uid://c8cpp5pfe3d1" path="res://game_objects/enemies/!base_enemy.tscn" id="1_4tqfo"]
+[ext_resource type="Texture2D" uid="uid://bhbl0vxi5ce2c" path="res://sprite_images/sTurretOff.png" id="2_fouej"]
+[ext_resource type="Script" uid="uid://dxnfd3xh70vkv" path="res://game_objects/enemies/turret.gd" id="2_wiaf6"]
+
+[node name="Turret" instance=ExtResource("1_4tqfo")]
+script = ExtResource("2_wiaf6")
+target_direction = 0
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2(16, 16)
+texture = ExtResource("2_fouej")
+
+[node name="FireTimer" type="Timer" parent="." index="4"]
+wait_time = 0.5
+one_shot = true
+
+[node name="SpinTimer" type="Timer" parent="." index="5"]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
+[connection signal="timeout" from="SpinTimer" to="." method="_on_spin_timer_timeout"]
