@@ -2,9 +2,21 @@
 
 This is a Godot port of the game we created for Game Off 2024, theme "Secret". A minimalistic, action-based dungeon crawler.
 
+If you want to play the original GameMaker version, please check out the [appropriate branch](../gamemaker).
+
 # Playing
 
-Binary builds are not available yet, this port is WIP. If you want to play the original GameMaker version, please check out the [appropriate branch](../gamemaker).
+Note that this port is heavily work-in-progress, it can barely be called a game yet, for a complete experience please play the [GameMaker version](../gamemaker) for now.
+
+Because of this incomplete state, the binary builds (meant only for testing), for now, are available exclusively through GitHub Actions.
+We'll move to a more user-friendly form of distribution once the port is in a more presentable state.
+
+If, understanding that, you still want to download a binary build:
+1. Create a GitHub account if you don't have one.
+2. Open [this page](https://github.com/andOlga/game-off-2024/actions/workflows/nightly.yml?query=is%3Acompleted).
+3. Click on the *very first* link with the checkmark near it, which will point to the latest available build.
+4. Under "Artifacts", pick your platform and download the relevant archive.
+5. Extract it and run the executable file inside.
 
 # Building
 
