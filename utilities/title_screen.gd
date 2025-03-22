@@ -5,7 +5,7 @@ var is_in_fade := false
 func _ready() -> void:
 	$SeedBox.text = str(RoomRng.rng.seed)
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not $SeedBox.has_focus():
 		$SeedBox.grab_focus()
 	if Input.is_action_just_pressed("action_pause") and not is_in_fade:

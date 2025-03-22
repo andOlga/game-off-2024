@@ -2,7 +2,7 @@
 
 extends BasePickup
 
-func activate(activator: Player) -> void:
+func activate(_activator: Player) -> void:
 	for door in get_children():
 		if door is Door:
 			door.queue_free()
