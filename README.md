@@ -1,6 +1,6 @@
 # Secret Entrances, Confounding Rooms: Enfer's Trial
 
-This is a Godot port of the game we created for Game Off 2024, theme "Secret". A minimalistic, action-based dungeon crawler.
+This is a WIP Godot port of the game we created for Game Off 2024, theme "Secret". A minimalistic, action-based dungeon crawler.
 
 If you want to play the original GameMaker version, please check out the [appropriate branch](../gamemaker).
 
