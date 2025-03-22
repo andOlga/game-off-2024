@@ -3,5 +3,5 @@
 extends BasePickup
 
 func activate(activator: Player) -> void:
-	activator.is_hurting = true
+	activator.is_invuln = true
 	activator.get_node("Sprite").modulate = Color("00FFFF")

@@ -3,6 +3,7 @@
 class_name Player extends CharacterBody2D
 
 var is_hurting := false
+var is_invuln := false
 var draws_grid := true
 var hp := 3
 var last_move := Vector2(180, 0)
@@ -17,7 +18,7 @@ func update_health_display() -> void:
 	$Sprite.modulate = hp_blends[hp - 1]
 
 func hurt() -> void:
-	if not is_hurting:
+	if not is_hurting and not is_invuln:
 		$HurtSFX.play()
 		is_hurting = true
 		hp -= 1

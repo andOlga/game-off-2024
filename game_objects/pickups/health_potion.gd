@@ -3,5 +3,6 @@
 extends BasePickup
 
 func activate(activator: Player) -> void:
-	activator.hp = 3
-	activator.update_health_display()
+	if not activator.is_invuln:
+		activator.hp = 3
+		activator.update_health_display()
