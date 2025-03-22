@@ -13,6 +13,7 @@ We'll move to a more user-friendly form of distribution once the port is in a mo
 
 If, understanding that, you still want to download a binary build:
 1. Create a GitHub account if you don't have one.
+    * This will no longer be required once we have a proper release system in place, so if you're uncomfortable with that, please wait just a bit longer.
 2. Open [this page](https://github.com/andOlga/game-off-2024/actions/workflows/nightly.yml?query=is%3Acompleted).
 3. Click on the *very first* link with the checkmark near it, which will point to the latest available build.
 4. Under "Artifacts", pick your platform and download the relevant archive.
