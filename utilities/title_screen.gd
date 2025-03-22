@@ -22,6 +22,6 @@ func _process(delta: float) -> void:
 
 func _on_fade_timer_timeout() -> void:
 	if modulate.a <= 0:
-		get_tree().change_scene_to_file("res://test_scene.tscn")
+		RoomRng.go_to_next()
 	else:
 		modulate.a -= 0.1

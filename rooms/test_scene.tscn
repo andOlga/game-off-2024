@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cgww5eeov0dl4" path="res://game_objects/pickups/invuln_potion.tscn" id="13_4gito"]
 [ext_resource type="PackedScene" uid="uid://dgm381ol6g6ra" path="res://game_objects/enemies/turret.tscn" id="14_fbuy2"]
 
-[node name="TestScene" type="Node2D"]
+[node name="Room" type="Node2D"]
 
 [node name="PauseScreen" parent="." instance=ExtResource("5_2nij2")]
 visible = false
