@@ -11,7 +11,8 @@ Binary builds are not available yet, this port is WIP. If you want to play the o
 If you want to modify the game (add/remove rooms, enemies, items), use it as a base for your own project, or just build a native version for your own platform, you should:
 
 1. Read and accept the game's [LICENSE](LICENSE.md).
-2. Open [project.godot](project.godot) and look for the line that starts with `config/features`. This will let you identify the correct Godot version to use for the build.
-3. [Download](https://godotengine.org/download/archive/) the latest stable patch for the appropriate Godot version (for example, if `config/features` points to 4.4, download the latest stable 4.4.X build).
-4. Open Godot, click the Import button and point it to `project.godot`.
-5. Navigate to Project -> Export -> Export All -> Release.
+2. [Download](https://github.com/andOlga/game-off-2024/archive/refs/heads/godot.zip) the game's code.
+3. [Download](https://godotengine.org/download/archive/4.4-stable/) Godot 4.4-stable for your platform.
+4. Open Godot, click the Import button and point it to the downloaded zip file.
+5. Optionally, make whatever changes you deem necessary.
+6. Navigate to Project -> Export -> Export All -> Release.
