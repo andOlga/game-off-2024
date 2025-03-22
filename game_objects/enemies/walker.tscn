@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cygww4jc03oac"]
+
+[ext_resource type="Script" uid="uid://cxcqtruqeh1w5" path="res://game_objects/enemies/walker.gd" id="1_0h521"]
+[ext_resource type="PackedScene" uid="uid://c8cpp5pfe3d1" path="res://game_objects/enemies/!base_enemy.tscn" id="2_cprlb"]
+[ext_resource type="Texture2D" uid="uid://pcye80bjvt80" path="res://sprite_images/sChaserOff.png" id="3_iygqt"]
+
+[node name="Walker" type="Path2D"]
+script = ExtResource("1_0h521")
+
+[node name="Follower" type="PathFollow2D" parent="."]
+rotates = false
+loop = false
+
+[node name="WalkerInternal" parent="Follower" instance=ExtResource("2_cprlb")]
+
+[node name="Sprite" parent="Follower/WalkerInternal" index="0"]
+position = Vector2(16, 16)
+texture = ExtResource("3_iygqt")
+
+[connection signal="tree_exiting" from="Follower/WalkerInternal" to="." method="_on_walker_internal_tree_exiting"]
+
+[editable path="Follower/WalkerInternal"]
