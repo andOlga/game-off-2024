@@ -30,3 +30,9 @@ jobs:
         with:
           name: mac
           path: exports/SECRET.macos.zip
+          
+      - name: Upload web export
+        uses: actions/upload-artifact@v4
+        with:
+          name: web
+          path: exports/web/
