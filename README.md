@@ -4,7 +4,7 @@ This is a WIP Godot port of the game we created for Game Off 2024, theme "Secret
 
 # Playing
 
-Note that this port is heavily work-in-progress, it can barely be called a game yet, for a complete experience please play the [GameMaker version](../gamemaker) for now.
+Note that this port is heavily work-in-progress, it can barely be called a game yet, for a complete experience please play the original [GameMaker version](../gamemaker) for now.
 
 However, if you want to play the port in its current incomplete state, you may check it out [here](https://andolga.github.io/game-off-2024).
 
