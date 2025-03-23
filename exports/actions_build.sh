@@ -16,7 +16,7 @@ echo "Installing templates..."
 mkdir -p ~/.local/share/godot/export_templates/
 mv templates ~/.local/share/godot/export_templates/${GODOT_VERSION/-/.}
 echo "Exporting..."
-for i in "Windows Desktop" "Linux" "Linux Arm" "macOS" "Web"
+for i in "Windows x86_64" "Windows Arm" "Linux x86_64" "Linux Arm" "macOS" "Web"
 do
     ./Godot_v${GODOT_VERSION}_${GODOT_ARCH} --headless --quiet --path .. --export-release "$i"
 done

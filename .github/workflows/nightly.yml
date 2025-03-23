@@ -21,13 +21,19 @@ jobs:
       - name: Build exports
         run: bash exports/actions_build.sh
 
-      - name: Upload Windows export
+      - name: Upload Windows x86_64 export
         uses: actions/upload-artifact@v4
         with:
-          name: windows
-          path: exports/SECRET.windows.exe
+          name: windows.x86_64
+          path: exports/SECRET.windows.x86_64.exe
 
-      - name: Upload Linux export
+      - name: Upload Windows Arm export
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows.arm
+          path: exports/SECRET.windows.arm.exe
+
+      - name: Upload Linux x86_64 export
         uses: actions/upload-artifact@v4
         with:
           name: linux.x86_64
