@@ -35,7 +35,6 @@ script/source = "func is_room_complete(room: Node2D):
 
 [node name="PauseScreen" parent="." instance=ExtResource("5_2nij2")]
 visible = false
-z_index = 4096
 
 [node name="Player" parent="." instance=ExtResource("1_uhqqe")]
 position = Vector2(80, 80)

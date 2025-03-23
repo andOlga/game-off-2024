@@ -1,10 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8cpp5pfe3d1"]
+[gd_scene load_steps=6 format=3 uid="uid://c8cpp5pfe3d1"]
 
 [ext_resource type="Script" uid="uid://dq8qcl043xqvi" path="res://game_objects/enemies/!base_enemy.gd" id="1_6pep0"]
 [ext_resource type="PackedScene" uid="uid://c3t7nkavjywjo" path="res://game_objects/enemy_hurt_box.tscn" id="2_yy36e"]
 [ext_resource type="AudioStream" uid="uid://cgbltx8ou3in5" path="res://sounds/aHurt.wav" id="3_e3tph"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e3tph"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7vqa"]
 size = Vector2(32, 32)
 
 [node name="BaseEnemy" type="CharacterBody2D"]
@@ -24,7 +27,7 @@ shape = SubResource("RectangleShape2D_e3tph")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2(16, 16)
-shape = SubResource("RectangleShape2D_e3tph")
+shape = SubResource("RectangleShape2D_k7vqa")
 
 [node name="DeathSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_e3tph")

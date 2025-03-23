@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqfoheuxld3pl"]
+[gd_scene load_steps=5 format=3 uid="uid://bqfoheuxld3pl"]
 
 [ext_resource type="Script" uid="uid://cl0mmisx3kgad" path="res://game_objects/enemies/hopper.gd" id="1_lupmx"]
 [ext_resource type="PackedScene" uid="uid://c8cpp5pfe3d1" path="res://game_objects/enemies/!base_enemy.tscn" id="1_qkgy8"]
 [ext_resource type="Texture2D" uid="uid://cn4cgx6jobybh" path="res://sprite_images/sBlob.png" id="2_s6dub"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lupmx"]
+size = Vector2(24, 24)
 
 [node name="Hopper" instance=ExtResource("1_qkgy8")]
 script = ExtResource("1_lupmx")
@@ -11,6 +14,9 @@ step_size = 32
 [node name="Sprite" parent="." index="0"]
 position = Vector2(16, 16)
 texture = ExtResource("2_s6dub")
+
+[node name="Hitbox" parent="." index="2"]
+shape = SubResource("RectangleShape2D_lupmx")
 
 [node name="MovementTimer" type="Timer" parent="." index="3"]
 wait_time = 0.3

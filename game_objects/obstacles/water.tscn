@@ -10,9 +10,7 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(16, 16)
 texture = ExtResource("1_cnstx")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_j3iax")

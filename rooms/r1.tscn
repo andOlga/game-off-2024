@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=4 uid="uid://cj4ivoohpr647"]
+
+[ext_resource type="PackedScene" uid="uid://dd4k87pwls1tp" path="res://utilities/pause_screen.tscn" id="1_c57hn"]
+[ext_resource type="PackedScene" uid="uid://be5awa77y8ldh" path="res://game_objects/obstacles/room_box.tscn" id="2_affxv"]
+[ext_resource type="TileSet" uid="uid://d1rp48liwmrka" path="res://game_objects/obstacles/!obstacle_tiles.tres" id="3_affxv"]
+[ext_resource type="PackedScene" uid="uid://cdmvtimmcv48g" path="res://game_objects/obstacles/room_exit.tscn" id="4_byxqx"]
+[ext_resource type="PackedScene" uid="uid://dydo5qirh645o" path="res://game_objects/player.tscn" id="5_mlpm4"]
+[ext_resource type="PackedScene" uid="uid://bqfoheuxld3pl" path="res://game_objects/enemies/hopper.tscn" id="6_7ipun"]
+[ext_resource type="PackedScene" uid="uid://cygww4jc03oac" path="res://game_objects/enemies/walker.tscn" id="7_lnlsl"]
+[ext_resource type="PackedScene" uid="uid://bagl5p3l6tq7l" path="res://game_objects/enemies/flyer.tscn" id="8_lnlsl"]
+
+[sub_resource type="GDScript" id="GDScript_byxqx"]
+script/source = "func is_room_complete(room: Node2D) -> bool:
+	for child in room.find_children(\"*\"):
+		if child is BaseEnemy:
+			return false
+	return true
+"
+
+[sub_resource type="Curve2D" id="Curve2D_n7wsp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -96, -64, 0, 0, 0, 0, -192, -32, 0, 0, 0, 0, -256, -32, 0, 0, 0, 0, -320, 0, 0, 0, 0, 0, -384, -32, 0, 0, 0, 0, -448, 32, 0, 0, 0, 0, -480, 128, 0, 0, 0, 0, -384, 224, 0, 0, 0, 0, -384, 128, 0, 0, 0, 0, -352, 128, 0, 0, 0, 0, -288, 192, 0, 0, 0, 0, -128, 192, 0, 0, 0, 0, -128, 288, 0, 0, 0, 0, -64, 224, 0, 0, 0, 0, -64, 160)
+}
+point_count = 16
+
+[node name="Room" type="Node2D"]
+
+[node name="PauseScreen" parent="." instance=ExtResource("1_c57hn")]
+visible = false
+
+[node name="RoomBox" parent="." instance=ExtResource("2_affxv")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAASAAQAAQAAAAAAAQARAAQAAQAAAAAAAQAQAAQAAQAAAAAAAQAPAAQAAQAAAAAAAQAPAAMAAQAAAAAAAQAOAAQAAQAAAAAAAQANAAQAAQAAAAAAAQAMAAQAAQAAAAAAAQAMAAUAAQAAAAAAAQAMAAYAAQAAAAAAAQAMAAcAAQAAAAAAAQALAAcAAQAAAAAAAQAKAAcAAQAAAAAAAQAKAAYAAQAAAAAAAQAKAAUAAQAAAAAAAQAKAAQAAQAAAAAAAQAJAAQAAQAAAAAAAQAIAAQAAQAAAAAAAQAHAAQAAQAAAAAAAQA=")
+tile_set = ExtResource("3_affxv")
+
+[node name="RoomExit" parent="." instance=ExtResource("4_byxqx")]
+position = Vector2(352, 192)
+goal = SubResource("GDScript_byxqx")
+
+[node name="Player" parent="." instance=ExtResource("5_mlpm4")]
+position = Vector2(288, 416)
+
+[node name="Hopper" parent="." instance=ExtResource("6_7ipun")]
+position = Vector2(352, 160)
+
+[node name="Walker" parent="." instance=ExtResource("7_lnlsl")]
+position = Vector2(576, 96)
+curve = SubResource("Curve2D_n7wsp")
+speed = 0.2
+
+[node name="Hopper2" parent="." instance=ExtResource("6_7ipun")]
+position = Vector2(544, 288)
+
+[node name="Hopper3" parent="." instance=ExtResource("6_7ipun")]
+position = Vector2(224, 320)
+
+[node name="Hopper4" parent="." instance=ExtResource("6_7ipun")]
+position = Vector2(64, 288)
+
+[node name="Flyer" parent="." instance=ExtResource("8_lnlsl")]
+position = Vector2(352, 320)
+
+[node name="Flyer2" parent="." instance=ExtResource("8_lnlsl")]
+position = Vector2(480, 224)
+
+[node name="Flyer3" parent="." instance=ExtResource("8_lnlsl")]
+position = Vector2(128, 192)
