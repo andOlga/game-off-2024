@@ -2,8 +2,6 @@
 
 This is a WIP Godot port of the game we created for Game Off 2024, theme "Secret". A minimalistic, action-based dungeon crawler.
 
-If you want to play the original GameMaker version, please check out the [appropriate branch](../gamemaker).
-
 # Playing
 
 Note that this port is heavily work-in-progress, it can barely be called a game yet, for a complete experience please play the [GameMaker version](../gamemaker) for now.
