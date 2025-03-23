@@ -8,7 +8,7 @@ var success: bool
 
 func _on_enter_area_body_entered(body: Node2D) -> void:
 	if body is Player and not is_in_fade:
-		success = goal.new().is_room_complete()
+		success = goal.new().is_room_complete($/root/Room)
 		if success:
 			$FadeRect.color = Color("00FF00", 0)
 			$SuccessSFX.play()

@@ -24,8 +24,11 @@ _data = {
 point_count = 9
 
 [sub_resource type="GDScript" id="GDScript_fcyy2"]
-script/source = "func is_room_complete():
-	return false
+script/source = "func is_room_complete(room: Node2D):
+	for child in room.find_children(\"*\"):
+		if child is BaseEnemy:
+			return false
+	return true
 "
 
 [node name="Room" type="Node2D"]
