@@ -8,16 +8,7 @@ If you want to play the original GameMaker version, please check out the [approp
 
 Note that this port is heavily work-in-progress, it can barely be called a game yet, for a complete experience please play the [GameMaker version](../gamemaker) for now.
 
-Because of this incomplete state, the binary builds (meant only for testing), for now, are available exclusively through GitHub Actions.
-We'll move to a more user-friendly form of distribution once the port is in a more presentable state.
-
-If, understanding that, you still want to download a binary build:
-1. Create a GitHub account if you don't have one.
-    * This will no longer be required once we have a proper release system in place, so if you're uncomfortable with that, please wait just a bit longer.
-2. Open [this page](https://github.com/andOlga/game-off-2024/actions/workflows/nightly.yml?query=is%3Acompleted).
-3. Click on the *very first* link with the checkmark near it, which will point to the latest available build.
-4. Under "Artifacts", pick your platform and download the relevant archive.
-5. Extract it and run the executable file inside.
+However, if you want to play the port in its current incomplete state, you may check it out [here](https://andolga.github.io/game-off-2024).
 
 # Building
 
