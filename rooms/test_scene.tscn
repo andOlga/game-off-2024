@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bx2cxunaqj8tk"]
+[gd_scene load_steps=20 format=3 uid="uid://bx2cxunaqj8tk"]
 
 [ext_resource type="PackedScene" uid="uid://dydo5qirh645o" path="res://game_objects/player.tscn" id="1_uhqqe"]
 [ext_resource type="PackedScene" uid="uid://btg3mstd4ic4k" path="res://game_objects/obstacles/water.tscn" id="3_sasra"]
@@ -28,6 +28,11 @@ script/source = "func is_room_complete(room: Node2D):
 	for child in room.find_children(\"*\"):
 		if child is BaseEnemy:
 			return false
+	return true
+"
+
+[sub_resource type="GDScript" id="GDScript_0w6vg"]
+script/source = "func is_room_complete(room: Node2D) -> bool:
 	return true
 "
 
@@ -116,3 +121,7 @@ curve = SubResource("Curve2D_tbfmt")
 [node name="RoomExit" parent="." instance=ExtResource("16_fcyy2")]
 position = Vector2(448, 336)
 goal = SubResource("GDScript_fcyy2")
+
+[node name="RoomExit2" parent="." instance=ExtResource("16_fcyy2")]
+position = Vector2(32, 32)
+goal = SubResource("GDScript_0w6vg")
