@@ -1,3 +1,5 @@
+@icon("res://sprite_images/sDoor.png")
+
 class_name Door extends StaticBody2D
 
 func open() -> void:
