@@ -14,8 +14,8 @@ func go_to_next(complete_current := false) -> void:
 		var current_idx := rooms.find($/root/Room.scene_file_path)
 		rooms.remove_at(current_idx)
 	if rooms.is_empty():
-		print("No more rooms.") # TODO: Do something sensible here
-		get_tree().quit()
+		_ready() # Re-initialize the global state
+		get_tree().change_scene_to_file("res://utilities/title_screen.tscn")
 	else:
 		var next_idx := rng.randi_range(0, rooms.size() - 1)
 		var next_room := rooms[next_idx]
