@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bx2cxunaqj8tk"]
+[gd_scene load_steps=21 format=3 uid="uid://bx2cxunaqj8tk"]
 
 [ext_resource type="PackedScene" uid="uid://dydo5qirh645o" path="res://game_objects/player.tscn" id="1_uhqqe"]
 [ext_resource type="PackedScene" uid="uid://btg3mstd4ic4k" path="res://game_objects/obstacles/water.tscn" id="3_sasra"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dgm381ol6g6ra" path="res://game_objects/enemies/turret.tscn" id="14_fbuy2"]
 [ext_resource type="PackedScene" uid="uid://cygww4jc03oac" path="res://game_objects/enemies/walker.tscn" id="15_tbfmt"]
 [ext_resource type="PackedScene" uid="uid://cdmvtimmcv48g" path="res://game_objects/obstacles/room_exit.tscn" id="16_fcyy2"]
+[ext_resource type="PackedScene" uid="uid://c488sxldu3dw3" path="res://game_objects/interactives/pressure_plate.tscn" id="17_0w6vg"]
 
 [sub_resource type="Curve2D" id="Curve2D_tbfmt"]
 _data = {
@@ -125,3 +126,10 @@ goal = SubResource("GDScript_fcyy2")
 [node name="RoomExit2" parent="." instance=ExtResource("16_fcyy2")]
 position = Vector2(32, 32)
 goal = SubResource("GDScript_0w6vg")
+
+[node name="PressurePlate" parent="." instance=ExtResource("17_0w6vg")]
+position = Vector2(64, 160)
+
+[node name="PressurePlate2" parent="." instance=ExtResource("17_0w6vg")]
+position = Vector2(96, 224)
+stays_on = true

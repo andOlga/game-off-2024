@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c488sxldu3dw3"]
+
+[ext_resource type="Script" uid="uid://dfha8xi3fjqma" path="res://game_objects/interactives/pressure_plate.gd" id="1_2ohjl"]
+[ext_resource type="Texture2D" uid="uid://tjtbmswlu14g" path="res://sprite_images/sPressurePlateOff.png" id="1_5ab2g"]
+[ext_resource type="AudioStream" uid="uid://crpb5uo4s70oc" path="res://sounds/aToggle.wav" id="3_bkw0d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ab2g"]
+size = Vector2(32, 32)
+
+[node name="PressurePlate" type="Node2D"]
+script = ExtResource("1_2ohjl")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+texture = ExtResource("1_5ab2g")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="HitArea" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_5ab2g")
+
+[node name="OnSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bkw0d")
+pitch_scale = 1.5
+
+[node name="OffSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bkw0d")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_interacted"]
+[connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_interacted"]
