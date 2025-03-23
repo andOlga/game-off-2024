@@ -30,6 +30,7 @@ position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_5p6mo")
 
 [node name="FadeRect" type="ColorRect" parent="."]
+visible = false
 top_level = true
 z_index = 4095
 offset_right = 640.0
