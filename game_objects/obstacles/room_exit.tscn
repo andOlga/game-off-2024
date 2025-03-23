@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdmvtimmcv48g"]
+
+[ext_resource type="Script" uid="uid://bwb84u4taycc4" path="res://game_objects/obstacles/room_exit.gd" id="1_0mwo4"]
+[ext_resource type="Texture2D" uid="uid://ducmk02c62omr" path="res://sprite_images/sRoomExit.png" id="1_5p6mo"]
+[ext_resource type="AudioStream" uid="uid://cerpdnchnkqr3" path="res://sounds/aExit.wav" id="3_ywxxa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mwo4"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5p6mo"]
+size = Vector2(32, 32)
+
+[node name="RoomExit" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_0mwo4")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+texture = ExtResource("1_5p6mo")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_0mwo4")
+
+[node name="EnterArea" type="Area2D" parent="."]
+
+[node name="EnterBox" type="CollisionShape2D" parent="EnterArea"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_5p6mo")
+
+[node name="FadeRect" type="ColorRect" parent="."]
+top_level = true
+z_index = 4095
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(1, 0, 0, 0)
+
+[node name="FadeTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="SuccessSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ywxxa")
+pitch_scale = 1.5
+
+[node name="FailSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ywxxa")
+pitch_scale = 0.2
+
+[connection signal="body_entered" from="EnterArea" to="." method="_on_enter_area_body_entered"]
+[connection signal="timeout" from="FadeTimer" to="." method="_on_fade_timer_timeout"]
