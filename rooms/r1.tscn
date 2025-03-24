@@ -26,7 +26,6 @@ point_count = 16
 [node name="Room" type="Node2D"]
 
 [node name="PauseScreen" parent="." instance=ExtResource("1_c57hn")]
-visible = false
 
 [node name="RoomBox" parent="." instance=ExtResource("2_affxv")]
 

@@ -5,6 +5,7 @@
 
 [node name="PauseScreen" type="RichTextLabel"]
 process_mode = 3
+visible = false
 z_index = 4096
 offset_right = 640.0
 offset_bottom = 480.0

@@ -22,7 +22,6 @@ script/source = "func is_room_complete(room: Node2D) -> bool:
 [node name="Room" type="Node2D"]
 
 [node name="PauseScreen" parent="." instance=ExtResource("1_d5xra")]
-visible = false
 
 [node name="RoomBox" parent="." instance=ExtResource("1_6rfu3")]
 
