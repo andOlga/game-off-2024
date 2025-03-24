@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=4 uid="uid://ctj6h2bc01mlc"]
+[gd_scene load_steps=11 format=4 uid="uid://ctj6h2bc01mlc"]
 
 [ext_resource type="PackedScene" uid="uid://be5awa77y8ldh" path="res://game_objects/obstacles/room_box.tscn" id="1_6rfu3"]
+[ext_resource type="PackedScene" uid="uid://dd4k87pwls1tp" path="res://utilities/pause_screen.tscn" id="1_d5xra"]
 [ext_resource type="TileSet" uid="uid://d1rp48liwmrka" path="res://game_objects/obstacles/!obstacle_tiles.tres" id="2_kudh6"]
 [ext_resource type="PackedScene" uid="uid://c488sxldu3dw3" path="res://game_objects/interactives/pressure_plate.tscn" id="3_cp1c2"]
 [ext_resource type="PackedScene" uid="uid://dydo5qirh645o" path="res://game_objects/player.tscn" id="4_guvan"]
@@ -19,6 +20,9 @@ script/source = "func is_room_complete(room: Node2D) -> bool:
 "
 
 [node name="Room" type="Node2D"]
+
+[node name="PauseScreen" parent="." instance=ExtResource("1_d5xra")]
+visible = false
 
 [node name="RoomBox" parent="." instance=ExtResource("1_6rfu3")]
 
