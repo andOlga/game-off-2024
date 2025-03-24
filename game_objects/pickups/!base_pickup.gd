@@ -1,8 +1,11 @@
 class_name BasePickup extends Node2D
 
+var activated := false
+
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	if body is Player:
-		global_position = Vector2(-32, -32)
+	if body is Player and not activated:
+		hide()
+		activated = true
 		activate(body)
 		$PickupSFX.play()
 

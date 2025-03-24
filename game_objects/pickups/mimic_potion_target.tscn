@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://shbvqhrkswn2"]
+
+[ext_resource type="Script" uid="uid://dc3fm7vlbtn1i" path="res://game_objects/pickups/mimic_potion_target.gd" id="1_7gxfs"]
+[ext_resource type="Texture2D" uid="uid://bsmdh52u8yv84" path="res://sprite_images/sTargetMimic.png" id="1_thbua"]
+
+[node name="MimicPotionTarget" type="Node2D"]
+script = ExtResource("1_7gxfs")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+texture = ExtResource("1_thbua")
