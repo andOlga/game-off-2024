@@ -10,7 +10,6 @@ func _ready() -> void:
 
 func add_item(item: BaseItem) -> void:
 	items.append(item)
-	print(item)
 
 func _process(_delta: float) -> void:
 	var size := items.size()

@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bx2cxunaqj8tk"]
+[gd_scene load_steps=8 format=3 uid="uid://bx2cxunaqj8tk"]
 
 [ext_resource type="PackedScene" uid="uid://dydo5qirh645o" path="res://game_objects/player.tscn" id="1_uhqqe"]
 [ext_resource type="PackedScene" uid="uid://be5awa77y8ldh" path="res://game_objects/obstacles/room_box.tscn" id="4_2nij2"]
 [ext_resource type="PackedScene" uid="uid://dd4k87pwls1tp" path="res://utilities/pause_screen.tscn" id="5_2nij2"]
+[ext_resource type="PackedScene" uid="uid://dri8ned6r7ccs" path="res://game_objects/items/!inventory.tscn" id="5_ga0av"]
+[ext_resource type="PackedScene" uid="uid://cw5puwn2lyiir" path="res://game_objects/items/bomb.tscn" id="6_t8c02"]
 [ext_resource type="PackedScene" uid="uid://cdmvtimmcv48g" path="res://game_objects/obstacles/room_exit.tscn" id="16_fcyy2"]
 
 [sub_resource type="GDScript" id="GDScript_0w6vg"]
@@ -23,3 +25,8 @@ has_sword = false
 [node name="RoomExit2" parent="." instance=ExtResource("16_fcyy2")]
 position = Vector2(32, 32)
 goal = SubResource("GDScript_0w6vg")
+
+[node name="Inventory" parent="." instance=ExtResource("5_ga0av")]
+
+[node name="Bomb" parent="Inventory" instance=ExtResource("6_t8c02")]
+position = Vector2(192, 224)
