@@ -11,7 +11,7 @@ extends BaseEnemy
 const bullet_scene := preload("res://game_objects/enemies/bullet.tscn")
 const enabled_tex := preload("res://sprite_images/sTurretOn.png")
 const disabled_tex := preload("res://sprite_images/sTurretOff.png")
-@onready var first_player: Player = $"../Player/Chara"
+@onready var first_player: Player = $/root/Room/Player/Chara
 
 func _on_spin_timer_timeout() -> void:
 	$Sprite.texture = enabled_tex
