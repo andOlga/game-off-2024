@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://db4habag4xtxi" path="res://game_objects/obstacles/cracked_wall.tscn" id="3_v5y72"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_sn2kl"]
-resource_name = "Enemies"
+resource_name = "Obstacles"
 scenes/1/scene = ExtResource("1_2kc2a")
 scenes/2/scene = ExtResource("2_v5y72")
 scenes/4/scene = ExtResource("3_v5y72")
