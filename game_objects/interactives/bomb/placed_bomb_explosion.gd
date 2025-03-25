@@ -7,7 +7,8 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		body.hurt()
 	elif body is BaseEnemy:
 		body.kill()
-	# TODO: Add CrackedWall
+	elif body is CrackedWall:
+		body.queue_free()
 
 func _on_vaporize_timer_timeout() -> void:
 	queue_free()
