@@ -13,6 +13,7 @@ script = ExtResource("1_7a8gh")
 position = Vector2(16, 16)
 
 [node name="Hitbox" type="Area2D" parent="."]
+visible = false
 
 [node name="HitboxShape" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(16, 16)

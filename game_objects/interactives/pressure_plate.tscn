@@ -15,6 +15,7 @@ position = Vector2(16, 16)
 texture = ExtResource("1_5ab2g")
 
 [node name="Hitbox" type="Area2D" parent="."]
+visible = false
 
 [node name="HitArea" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(16, 16)

@@ -22,10 +22,12 @@ script = ExtResource("1_6pep0")
 [node name="EnemyHurtBox" parent="." instance=ExtResource("2_yy36e")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyHurtBox"]
+visible = false
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_e3tph")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_k7vqa")
 
