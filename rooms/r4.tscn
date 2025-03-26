@@ -81,7 +81,7 @@ position = Vector2(320, 32)
 curve = SubResource("Curve2D_lk057")
 
 [node name="Flyer" parent="." instance=ExtResource("11_ixif8")]
-position = Vector2(32, 320)
+position = Vector2(64, 352)
 
 [node name="Flyer2" parent="." instance=ExtResource("11_ixif8")]
 position = Vector2(576, 416)
