@@ -7,7 +7,7 @@ const placed_bomb_scene := preload(
 )
 
 func use() -> void:
-	for child in $/root/Room.find_children("*"):
+	for child in $/root/Room.find_children("*", "", true, false):
 		if child is Player:
 			var placed_bomb := placed_bomb_scene.instantiate()
 			placed_bomb.global_position = child.global_position
