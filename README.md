@@ -14,7 +14,7 @@ If you want to modify the game (add/remove rooms, enemies, items), use it as a b
 
 1. Read and accept the game's [LICENSE](LICENSE.md).
 2. [Download](https://github.com/andOlga/game-off-2024/archive/refs/heads/godot.zip) the game's code.
-3. [Download](https://godotengine.org/download/archive/4.4-stable/) Godot 4.4-stable for your platform.
+3. [Download](https://godotengine.org/download/archive/4.4.1-stable/) Godot 4.4.1-stable for your platform.
 4. Open Godot, click the Import button and point it to the downloaded zip file.
 5. Optionally, make whatever changes you deem necessary.
 6. Navigate to Project -> Export -> Export All -> Release.

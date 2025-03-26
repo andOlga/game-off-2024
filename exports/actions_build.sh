@@ -1,7 +1,7 @@
 #!/bin/bash
 # This file is meant to be ran by Github Actions to generate nightly builds.
 # For local builds, please just download the Godot editor yourself and use that.
-GODOT_VERSION="4.4-stable"
+GODOT_VERSION="4.4.1-stable"
 GODOT_ARCH="linux.x86_64"
 cd "$(dirname "$0")"
 bash clean.sh
