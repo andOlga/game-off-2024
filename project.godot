@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Secret Entrances, Confounding Rooms: Enfer's Trial"
-run/main_scene="uid://bf30cimyfkwi0"
+run/main_scene="uid://hvfpxwndriyy"
 config/features=PackedStringArray("4.4")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/use_filter=false

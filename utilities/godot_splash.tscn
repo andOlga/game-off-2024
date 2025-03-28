@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://hvfpxwndriyy"]
+
+[ext_resource type="Texture2D" uid="uid://b8xemhfuimnrl" path="res://sprite_images/godot_logo.svg" id="1_hxcyy"]
+[ext_resource type="Script" uid="uid://1s7ekwdfqdgf" path="res://utilities/godot_splash.gd" id="1_v01p4"]
+
+[node name="GodotSplash" type="Node2D"]
+script = ExtResource("1_v01p4")
+
+[node name="GodotLogo" type="Sprite2D" parent="."]
+position = Vector2(322.5, 240.575)
+scale = Vector2(0.674679, 0.674679)
+texture = ExtResource("1_hxcyy")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 216.0
+offset_top = 240.0
+offset_right = 448.0
+offset_bottom = 295.0
+theme_override_font_sizes/font_size = 39
+text = "Powered by"
+
+[node name="FadeTimer" type="Timer" parent="."]
+wait_time = 0.05
+
+[node name="WaitTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="FadeTimer" to="." method="_on_fade_timer_timeout"]
+[connection signal="timeout" from="WaitTimer" to="." method="_on_wait_timer_timeout"]
