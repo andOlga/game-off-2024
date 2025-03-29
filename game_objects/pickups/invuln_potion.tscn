@@ -6,6 +6,11 @@
 
 [node name="InvulnPotion" instance=ExtResource("1_x4quo")]
 script = ExtResource("2_idssr")
+duration_seconds = 10.0
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource("2_q437t")
+
+[node name="InvulnTimer" type="Timer" parent="." index="3"]
+
+[connection signal="timeout" from="InvulnTimer" to="." method="_on_invuln_timer_timeout"]
