@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://0kfauf8y2iie"]
+
+[ext_resource type="Texture2D" uid="uid://bdakaxmkt8cgs" path="res://sprite_images/sGrappleBeam.png" id="1_j6uky"]
+[ext_resource type="Script" uid="uid://bac0k70suadh" path="res://game_objects/interactives/grapple/grapple_beam.gd" id="1_xl24m"]
+[ext_resource type="AudioStream" uid="uid://cmwjd85s4qci2" path="res://sounds/aShoot.wav" id="3_if66b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j6uky"]
+size = Vector2(32, 18)
+
+[node name="GrappleBeam" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 24
+script = ExtResource("1_xl24m")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+texture = ExtResource("1_j6uky")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(16, 17)
+shape = SubResource("RectangleShape2D_j6uky")
+
+[node name="ShootSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_if66b")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxkdyhncoa6rj"]
+
+[ext_resource type="Texture2D" uid="uid://smbmut14p1lh" path="res://sprite_images/sTargetGrapple.png" id="1_jtxsa"]
+[ext_resource type="Script" uid="uid://domhst1dby3b8" path="res://game_objects/interactives/grapple/grapple_target.gd" id="1_ur2hc"]
+
+[node name="GrappleTarget" type="Node2D"]
+script = ExtResource("1_ur2hc")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+texture = ExtResource("1_jtxsa")

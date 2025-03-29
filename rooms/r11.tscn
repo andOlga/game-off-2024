@@ -1,0 +1,144 @@
+[gd_scene load_steps=14 format=4 uid="uid://dg4igp6wfc6rb"]
+
+[ext_resource type="PackedScene" uid="uid://dd4k87pwls1tp" path="res://utilities/pause_screen.tscn" id="1_i42ww"]
+[ext_resource type="PackedScene" uid="uid://dydo5qirh645o" path="res://game_objects/player.tscn" id="2_18wik"]
+[ext_resource type="TileSet" uid="uid://d1rp48liwmrka" path="res://game_objects/obstacles/!obstacle_tiles.tres" id="3_byb12"]
+[ext_resource type="PackedScene" uid="uid://dri8ned6r7ccs" path="res://game_objects/items/!inventory.tscn" id="3_uv3d1"]
+[ext_resource type="PackedScene" uid="uid://cdmvtimmcv48g" path="res://game_objects/obstacles/room_exit.tscn" id="4_18wik"]
+[ext_resource type="PackedScene" uid="uid://d0k4x0llribe5" path="res://game_objects/pickups/health_potion.tscn" id="5_uv3d1"]
+[ext_resource type="PackedScene" uid="uid://d4hnswy3q0ksv" path="res://game_objects/items/grapple.tscn" id="6_l48ck"]
+[ext_resource type="PackedScene" uid="uid://bppuc1t1wi8ic" path="res://game_objects/interactives/grapple/grapple_point.tscn" id="8_pm0hq"]
+[ext_resource type="PackedScene" uid="uid://bxkdyhncoa6rj" path="res://game_objects/interactives/grapple/grapple_target.tscn" id="9_nwgug"]
+[ext_resource type="PackedScene" uid="uid://d265m4a33q21" path="res://game_objects/pickups/sword.tscn" id="10_ys304"]
+[ext_resource type="PackedScene" uid="uid://dgm381ol6g6ra" path="res://game_objects/enemies/turret.tscn" id="11_bvekf"]
+[ext_resource type="PackedScene" uid="uid://bqfoheuxld3pl" path="res://game_objects/enemies/hopper.tscn" id="12_svxjl"]
+
+[sub_resource type="GDScript" id="GDScript_18wik"]
+script/source = "func is_room_complete(room: Node2D) -> bool:
+	for child in room.find_children(\"*\"):
+		if child is BaseEnemy:
+			return false
+	return true
+"
+
+[node name="Room" type="Node2D"]
+
+[node name="PauseScreen" parent="." instance=ExtResource("1_i42ww")]
+
+[node name="RoomBox" type="Node2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="RoomBox"]
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAQABAAAAAQAAAAAAAQACAAAAAQAAAAAAAQADAAAAAQAAAAAAAQAEAAAAAQAAAAAAAQAFAAAAAQAAAAAAAQAGAAAAAQAAAAAAAQAHAAAAAQAAAAAAAQAIAAAAAQAAAAAAAQAJAAAAAQAAAAAAAQAKAAAAAQAAAAAAAQALAAAAAQAAAAAAAQAMAAAAAQAAAAAAAQANAAAAAQAAAAAAAQAOAAAAAQAAAAAAAQAPAAAAAQAAAAAAAQAQAAAAAQAAAAAAAQARAAAAAQAAAAAAAQASAAAAAQAAAAAAAQATAAAAAQAAAAAAAQATAAEAAQAAAAAAAQATAAIAAQAAAAAAAQATAAMAAQAAAAAAAQATAAQAAQAAAAAAAQATAAUAAQAAAAAAAQATAAYAAQAAAAAAAQATAAgAAQAAAAAAAQATAAkAAQAAAAAAAQATAAoAAQAAAAAAAQATAAsAAQAAAAAAAQATAAwAAQAAAAAAAQATAA0AAQAAAAAAAQATAA4AAQAAAAAAAQASAA4AAQAAAAAAAQARAA4AAQAAAAAAAQAQAA4AAQAAAAAAAQAPAA4AAQAAAAAAAQAOAA4AAQAAAAAAAQANAA4AAQAAAAAAAQAMAA4AAQAAAAAAAQALAA4AAQAAAAAAAQAKAA4AAQAAAAAAAQAJAA4AAQAAAAAAAQAIAA4AAQAAAAAAAQAHAA4AAQAAAAAAAQAGAA4AAQAAAAAAAQAFAA4AAQAAAAAAAQAEAA4AAQAAAAAAAQADAA4AAQAAAAAAAQACAA4AAQAAAAAAAQABAA4AAQAAAAAAAQAAAA4AAQAAAAAAAQAAAA0AAQAAAAAAAQAAAAwAAQAAAAAAAQAAAAsAAQAAAAAAAQAAAAoAAQAAAAAAAQAAAAkAAQAAAAAAAQAAAAgAAQAAAAAAAQAAAAYAAQAAAAAAAQAAAAUAAQAAAAAAAQAAAAQAAQAAAAAAAQAAAAMAAQAAAAAAAQAAAAIAAQAAAAAAAQAAAAEAAQAAAAAAAQA=")
+tile_set = ExtResource("3_byb12")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAEAAQAAAAAAAQABAAIAAQAAAAAAAQABAAMAAQAAAAAAAQABAAQAAQAAAAAAAQABAAUAAQAAAAAAAQABAAYAAQAAAAAAAQABAAgAAQAAAAAAAQABAAkAAQAAAAAAAQABAAoAAQAAAAAAAQABAAsAAQAAAAAAAQABAAwAAQAAAAAAAQABAA0AAQAAAAAAAQADAAEAAQAAAAAAAQADAAIAAQAAAAAAAQADAAMAAQAAAAAAAQADAAQAAQAAAAAAAQADAAUAAQAAAAAAAQADAAYAAQAAAAAAAQADAAcAAQAAAAAAAQADAAgAAQAAAAAAAQADAAkAAQAAAAAAAQADAAoAAQAAAAAAAQADAAsAAQAAAAAAAQADAAwAAQAAAAAAAQADAA0AAQAAAAAAAQAFAAEAAQAAAAAAAQAFAAIAAQAAAAAAAQAFAAMAAQAAAAAAAQAFAAQAAQAAAAAAAQAFAAUAAQAAAAAAAQAFAAYAAQAAAAAAAQAFAAcAAQAAAAAAAQAFAAgAAQAAAAAAAQAFAAkAAQAAAAAAAQAFAAoAAQAAAAAAAQAFAAsAAQAAAAAAAQAFAAwAAQAAAAAAAQAFAA0AAQAAAAAAAQAHAAEAAQAAAAAAAQAHAAIAAQAAAAAAAQAHAAMAAQAAAAAAAQAHAAQAAQAAAAAAAQAHAAUAAQAAAAAAAQAHAAYAAQAAAAAAAQAHAAcAAQAAAAAAAQAHAAgAAQAAAAAAAQAHAAkAAQAAAAAAAQAHAAoAAQAAAAAAAQAHAAsAAQAAAAAAAQAHAAwAAQAAAAAAAQAHAA0AAQAAAAAAAQAJAAEAAQAAAAAAAQAJAAIAAQAAAAAAAQAJAAMAAQAAAAAAAQAJAAQAAQAAAAAAAQAJAAUAAQAAAAAAAQAJAAYAAQAAAAAAAQAJAAcAAQAAAAAAAQAJAAgAAQAAAAAAAQAJAAkAAQAAAAAAAQAJAAoAAQAAAAAAAQAJAAsAAQAAAAAAAQAJAAwAAQAAAAAAAQAJAA0AAQAAAAAAAQALAAEAAQAAAAAAAQALAAIAAQAAAAAAAQALAAMAAQAAAAAAAQALAAQAAQAAAAAAAQALAAUAAQAAAAAAAQALAAYAAQAAAAAAAQALAAcAAQAAAAAAAQALAAgAAQAAAAAAAQALAAkAAQAAAAAAAQALAAoAAQAAAAAAAQALAAsAAQAAAAAAAQALAAwAAQAAAAAAAQALAA0AAQAAAAAAAQANAAEAAQAAAAAAAQANAAIAAQAAAAAAAQANAAMAAQAAAAAAAQANAAQAAQAAAAAAAQANAAUAAQAAAAAAAQANAAYAAQAAAAAAAQANAAcAAQAAAAAAAQANAAgAAQAAAAAAAQANAAkAAQAAAAAAAQANAAoAAQAAAAAAAQANAAsAAQAAAAAAAQANAAwAAQAAAAAAAQANAA0AAQAAAAAAAQAPAAEAAQAAAAAAAQAPAAIAAQAAAAAAAQAPAAMAAQAAAAAAAQAPAAQAAQAAAAAAAQAPAAUAAQAAAAAAAQAPAAYAAQAAAAAAAQAPAAcAAQAAAAAAAQAPAAgAAQAAAAAAAQAPAAkAAQAAAAAAAQAPAAoAAQAAAAAAAQAPAAsAAQAAAAAAAQAPAAwAAQAAAAAAAQAPAA0AAQAAAAAAAQA=")
+tile_set = ExtResource("3_byb12")
+
+[node name="Player" parent="." instance=ExtResource("2_18wik")]
+position = Vector2(64, 384)
+has_sword = false
+
+[node name="RoomExit" parent="." instance=ExtResource("4_18wik")]
+position = Vector2(0, 224)
+goal = SubResource("GDScript_18wik")
+
+[node name="HealthPotion" parent="." instance=ExtResource("5_uv3d1")]
+position = Vector2(64, 32)
+
+[node name="Inventory" parent="." instance=ExtResource("3_uv3d1")]
+
+[node name="Grapple" parent="Inventory" instance=ExtResource("6_l48ck")]
+position = Vector2(64, 64)
+
+[node name="GrapplePoints" type="Node" parent="."]
+
+[node name="GrapplePoint" parent="GrapplePoints" instance=ExtResource("8_pm0hq")]
+position = Vector2(64, 416)
+
+[node name="GrappleTarget" parent="GrapplePoints/GrapplePoint" instance=ExtResource("9_nwgug")]
+position = Vector2(64, -352)
+
+[node name="GrapplePoint2" parent="GrapplePoints" instance=ExtResource("8_pm0hq")]
+position = Vector2(128, 416)
+
+[node name="GrappleTarget" parent="GrapplePoints/GrapplePoint2" instance=ExtResource("9_nwgug")]
+position = Vector2(64, -32)
+
+[node name="GrapplePoint3" parent="GrapplePoints" instance=ExtResource("8_pm0hq")]
+position = Vector2(192, 32)
+
+[node name="GrappleTarget" parent="GrapplePoints/GrapplePoint3" instance=ExtResource("9_nwgug")]
+position = Vector2(64, 32)
+
+[node name="GrapplePoint4" parent="GrapplePoints" instance=ExtResource("8_pm0hq")]
+position = Vector2(256, 416)
+
+[node name="GrappleTarget" parent="GrapplePoints/GrapplePoint4" instance=ExtResource("9_nwgug")]
+position = Vector2(64, -32)
+
+[node name="GrapplePoint5" parent="GrapplePoints" instance=ExtResource("8_pm0hq")]
+position = Vector2(320, 32)
+
+[node name="GrappleTarget" parent="GrapplePoints/GrapplePoint5" instance=ExtResource("9_nwgug")]
+position = Vector2(64, 32)
+
+[node name="GrapplePoint6" parent="GrapplePoints" instance=ExtResource("8_pm0hq")]
+position = Vector2(384, 416)
+
+[node name="GrappleTarget" parent="GrapplePoints/GrapplePoint6" instance=ExtResource("9_nwgug")]
+position = Vector2(64, -32)
+
+[node name="GrapplePoint7" parent="GrapplePoints" instance=ExtResource("8_pm0hq")]
+position = Vector2(448, 32)
+
+[node name="GrappleTarget" parent="GrapplePoints/GrapplePoint7" instance=ExtResource("9_nwgug")]
+position = Vector2(64, 192)
+
+[node name="GrapplePoint8" parent="GrapplePoints" instance=ExtResource("8_pm0hq")]
+position = Vector2(608, 224)
+
+[node name="GrappleTarget" parent="GrapplePoints/GrapplePoint8" instance=ExtResource("9_nwgug")]
+position = Vector2(-544, 160)
+
+[node name="SwordPickup" parent="." instance=ExtResource("10_ys304")]
+position = Vector2(576, 224)
+
+[node name="Turret" parent="." instance=ExtResource("11_bvekf")]
+position = Vector2(160, 32)
+rotation = 1.5708
+
+[node name="Turret2" parent="." instance=ExtResource("11_bvekf")]
+position = Vector2(288, 32)
+rotation = 1.5708
+
+[node name="Turret3" parent="." instance=ExtResource("11_bvekf")]
+position = Vector2(416, 32)
+rotation = 1.5708
+
+[node name="Turret4" parent="." instance=ExtResource("11_bvekf")]
+position = Vector2(448, 448)
+rotation = 4.71239
+
+[node name="Turret5" parent="." instance=ExtResource("11_bvekf")]
+position = Vector2(320, 448)
+rotation = 4.71239
+
+[node name="Turret6" parent="." instance=ExtResource("11_bvekf")]
+position = Vector2(192, 448)
+rotation = 4.71239
+
+[node name="Hopper" parent="." instance=ExtResource("12_svxjl")]
+position = Vector2(576, 192)
+
+[node name="Hopper5" parent="." instance=ExtResource("12_svxjl")]
+position = Vector2(512, 192)
+
+[node name="Hopper2" parent="." instance=ExtResource("12_svxjl")]
+position = Vector2(576, 256)
+
+[node name="Hopper3" parent="." instance=ExtResource("12_svxjl")]
+position = Vector2(544, 224)
+
+[node name="Hopper4" parent="." instance=ExtResource("12_svxjl")]
+position = Vector2(512, 256)

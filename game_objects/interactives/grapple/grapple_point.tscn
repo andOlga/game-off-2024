@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bppuc1t1wi8ic"]
+
+[ext_resource type="PackedScene" uid="uid://cxu0hldj0bn5g" path="res://game_objects/obstacles/wall.tscn" id="1_0srni"]
+[ext_resource type="Script" uid="uid://wxt2xqhntuyt" path="res://game_objects/interactives/grapple/grapple_point.gd" id="2_0wk84"]
+[ext_resource type="Texture2D" uid="uid://cn1hg2hbwtokw" path="res://sprite_images/sGrappleTarget.png" id="2_rk2bm"]
+
+[node name="GrapplePoint" instance=ExtResource("1_0srni")]
+script = ExtResource("2_0wk84")
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2(16, 16)
+texture = ExtResource("2_rk2bm")
+
+[node name="Hitbox" parent="." index="1"]
+position = Vector2(16, 16)
