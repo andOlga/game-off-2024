@@ -1,0 +1,214 @@
+[gd_scene load_steps=18 format=4 uid="uid://0kbtcdxkfd7c"]
+
+[ext_resource type="PackedScene" uid="uid://dd4k87pwls1tp" path="res://utilities/pause_screen.tscn" id="1_smi6e"]
+[ext_resource type="PackedScene" uid="uid://be5awa77y8ldh" path="res://game_objects/obstacles/room_box.tscn" id="2_5r65k"]
+[ext_resource type="TileSet" uid="uid://d1rp48liwmrka" path="res://game_objects/obstacles/!obstacle_tiles.tres" id="3_5r65k"]
+[ext_resource type="PackedScene" uid="uid://bnjygso137p73" path="res://game_objects/pickups/key.tscn" id="4_dwf73"]
+[ext_resource type="PackedScene" uid="uid://b25oxmnsnq3h6" path="res://game_objects/obstacles/door.tscn" id="5_6axld"]
+[ext_resource type="PackedScene" uid="uid://dydo5qirh645o" path="res://game_objects/player.tscn" id="6_7o871"]
+[ext_resource type="PackedScene" uid="uid://bqfoheuxld3pl" path="res://game_objects/enemies/hopper.tscn" id="7_gk36x"]
+[ext_resource type="PackedScene" uid="uid://cygww4jc03oac" path="res://game_objects/enemies/walker.tscn" id="8_3e7j1"]
+[ext_resource type="PackedScene" uid="uid://dgm381ol6g6ra" path="res://game_objects/enemies/turret.tscn" id="9_3jfav"]
+[ext_resource type="PackedScene" uid="uid://bagl5p3l6tq7l" path="res://game_objects/enemies/flyer.tscn" id="10_apvj0"]
+[ext_resource type="PackedScene" uid="uid://cdmvtimmcv48g" path="res://game_objects/obstacles/room_exit.tscn" id="11_0by5o"]
+
+[sub_resource type="GDScript" id="GDScript_7o871"]
+script/source = "extends Node2D
+
+var count_left : int
+var count_right : int
+
+func _ready() -> void:
+	count_left = $EnemiesLeft.get_child_count()
+	count_right = $EnemiesRight.get_child_count()
+
+func _on_key_tree_exiting() -> void:
+	var key2 := get_node_or_null(\"Key2\")
+	if key2:
+		key2.get_node(\"Hitbox\").queue_free()
+		key2.get_node(\"Sprite\").queue_free()
+
+func _on_key_2_tree_exiting() -> void:
+	var key1 := get_node_or_null(\"Key1\")
+	if key1:
+		key1.get_node(\"Hitbox\").queue_free()
+		key1.get_node(\"Sprite\").queue_free()
+"
+
+[sub_resource type="Curve2D" id="Curve2D_3jfav"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 0, 0, 0, 0, 0, 128, 96, 0, 0, 0, 0, 64, 96, 0, 0, 0, 0, 32, 64, 0, 0, 0, 0, 64, 32, 0, 0, 0, 0, 128, 0)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_3e7j1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 96, 0, 0, 0, 0, 0, 224, 0, 0, 0, 0, 0, 224, 64, 0, 0, 0, 0, 96, 64, 0, 0, 0, 0, 64, 32, 0, 0, 0, 0, 96, 0)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_apvj0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -192, 0, 0, 0, 0, 0, -160, -64, 0, 0, 0, 0, -64, -32, 0, 0, 0, 0, -32, -64, 0, 0, 0, 0, -32, -32, 0, 0, 0, 0, -64, 0)
+}
+point_count = 7
+
+[sub_resource type="GDScript" id="GDScript_0by5o"]
+script/source = "func is_room_complete(room: Node2D) -> bool:
+	return (
+		room.get_node(\"EnemiesLeft\").get_child_count() == 0
+		and room.get_node(\"EnemiesRight\").get_child_count() == room.count_right
+	)
+"
+
+[sub_resource type="GDScript" id="GDScript_mhotr"]
+script/source = "func is_room_complete(room: Node2D) -> bool:
+	return (
+		room.get_node(\"EnemiesLeft\").get_child_count() == room.count_left
+		and room.get_node(\"EnemiesRight\").get_child_count() == 0
+	)
+"
+
+[node name="Room" type="Node2D"]
+script = SubResource("GDScript_7o871")
+
+[node name="PauseScreen" parent="." instance=ExtResource("1_smi6e")]
+
+[node name="RoomBox" parent="." instance=ExtResource("2_5r65k")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAcAAQAAAAAAAQACAAcAAQAAAAAAAQADAAcAAQAAAAAAAQAEAAcAAQAAAAAAAQAFAAcAAQAAAAAAAQAHAAcAAQAAAAAAAQAIAAcAAQAAAAAAAQAJAAcAAQAAAAAAAQAJAAYAAQAAAAAAAQAJAAUAAQAAAAAAAQAJAAQAAQAAAAAAAQAJAAMAAQAAAAAAAQAJAAIAAQAAAAAAAQAJAAEAAQAAAAAAAQAJAAkAAQAAAAAAAQAIAAkAAQAAAAAAAQAHAAkAAQAAAAAAAQAJAAoAAQAAAAAAAQAJAAsAAQAAAAAAAQAJAAwAAQAAAAAAAQAJAA0AAQAAAAAAAQAFAAkAAQAAAAAAAQAEAAkAAQAAAAAAAQADAAkAAQAAAAAAAQACAAkAAQAAAAAAAQABAAkAAQAAAAAAAQANAAcAAQAAAAAAAQAOAAcAAQAAAAAAAQAQAAcAAQAAAAAAAQARAAcAAQAAAAAAAQASAAcAAQAAAAAAAQATAAcAAQAAAAAAAQANAAkAAQAAAAAAAQAOAAkAAQAAAAAAAQAQAAkAAQAAAAAAAQARAAkAAQAAAAAAAQASAAkAAQAAAAAAAQALAAEAAQAAAAAAAQALAAIAAQAAAAAAAQALAAMAAQAAAAAAAQALAAQAAQAAAAAAAQALAAUAAQAAAAAAAQALAAYAAQAAAAAAAQALAAcAAQAAAAAAAQAMAAcAAQAAAAAAAQALAAkAAQAAAAAAAQALAAoAAQAAAAAAAQALAAsAAQAAAAAAAQALAAwAAQAAAAAAAQALAA0AAQAAAAAAAQAMAAkAAQAAAAAAAQA=")
+tile_set = ExtResource("3_5r65k")
+
+[node name="Key1" parent="." instance=ExtResource("4_dwf73")]
+modulate = Color(1, 0.678431, 0.678431, 1)
+position = Vector2(320, 32)
+
+[node name="Door" parent="Key1" instance=ExtResource("5_6axld")]
+position = Vector2(160, 192)
+
+[node name="Door2" parent="Key1" instance=ExtResource("5_6axld")]
+position = Vector2(160, 256)
+
+[node name="Key2" parent="." instance=ExtResource("4_dwf73")]
+modulate = Color(0, 1, 0.882353, 1)
+position = Vector2(320, 416)
+
+[node name="Door" parent="Key2" instance=ExtResource("5_6axld")]
+position = Vector2(-128, -128)
+
+[node name="Door2" parent="Key2" instance=ExtResource("5_6axld")]
+position = Vector2(-128, -192)
+
+[node name="Player" parent="." instance=ExtResource("6_7o871")]
+position = Vector2(320, 256)
+
+[node name="EnemiesLeft" type="Node" parent="."]
+
+[node name="Hopper" parent="EnemiesLeft" instance=ExtResource("7_gk36x")]
+position = Vector2(64, 192)
+
+[node name="Hopper2" parent="EnemiesLeft" instance=ExtResource("7_gk36x")]
+position = Vector2(96, 160)
+
+[node name="Hopper3" parent="EnemiesLeft" instance=ExtResource("7_gk36x")]
+position = Vector2(128, 128)
+
+[node name="Hopper4" parent="EnemiesLeft" instance=ExtResource("7_gk36x")]
+position = Vector2(160, 96)
+
+[node name="Hopper5" parent="EnemiesLeft" instance=ExtResource("7_gk36x")]
+position = Vector2(192, 64)
+
+[node name="Hopper6" parent="EnemiesLeft" instance=ExtResource("7_gk36x")]
+position = Vector2(224, 32)
+
+[node name="Hopper7" parent="EnemiesLeft" instance=ExtResource("7_gk36x")]
+position = Vector2(64, 32)
+
+[node name="Hopper8" parent="EnemiesLeft" instance=ExtResource("7_gk36x")]
+position = Vector2(96, 64)
+
+[node name="Hopper9" parent="EnemiesLeft" instance=ExtResource("7_gk36x")]
+position = Vector2(128, 96)
+
+[node name="Hopper10" parent="EnemiesLeft" instance=ExtResource("7_gk36x")]
+position = Vector2(160, 128)
+
+[node name="Hopper11" parent="EnemiesLeft" instance=ExtResource("7_gk36x")]
+position = Vector2(192, 160)
+
+[node name="Hopper12" parent="EnemiesLeft" instance=ExtResource("7_gk36x")]
+position = Vector2(224, 192)
+
+[node name="Walker" parent="EnemiesLeft" instance=ExtResource("8_3e7j1")]
+position = Vector2(32, 320)
+curve = SubResource("Curve2D_3jfav")
+speed = 2.0
+
+[node name="Walker2" parent="EnemiesLeft" instance=ExtResource("8_3e7j1")]
+position = Vector2(32, 352)
+curve = SubResource("Curve2D_3e7j1")
+speed = 2.0
+
+[node name="Walker3" parent="EnemiesLeft" instance=ExtResource("8_3e7j1")]
+position = Vector2(256, 416)
+curve = SubResource("Curve2D_apvj0")
+speed = 2.0
+
+[node name="EnemiesRight" type="Node" parent="."]
+
+[node name="Turret" parent="EnemiesRight" instance=ExtResource("9_3jfav")]
+position = Vector2(416, 336)
+target_direction = 1
+
+[node name="Turret5" parent="EnemiesRight" instance=ExtResource("9_3jfav")]
+position = Vector2(448, 352)
+target_direction = 1
+
+[node name="Turret6" parent="EnemiesRight" instance=ExtResource("9_3jfav")]
+position = Vector2(512, 352)
+target_direction = 1
+
+[node name="Turret7" parent="EnemiesRight" instance=ExtResource("9_3jfav")]
+position = Vector2(512, 368)
+target_direction = 1
+
+[node name="Turret8" parent="EnemiesRight" instance=ExtResource("9_3jfav")]
+position = Vector2(448, 368)
+target_direction = 1
+
+[node name="Turret4" parent="EnemiesRight" instance=ExtResource("9_3jfav")]
+position = Vector2(416, 384)
+target_direction = 1
+
+[node name="Turret2" parent="EnemiesRight" instance=ExtResource("9_3jfav")]
+position = Vector2(544, 336)
+target_direction = 1
+
+[node name="Turret3" parent="EnemiesRight" instance=ExtResource("9_3jfav")]
+position = Vector2(544, 384)
+target_direction = 1
+
+[node name="Flyer" parent="EnemiesRight" instance=ExtResource("10_apvj0")]
+position = Vector2(448, 160)
+
+[node name="Flyer2" parent="EnemiesRight" instance=ExtResource("10_apvj0")]
+position = Vector2(480, 128)
+
+[node name="Flyer3" parent="EnemiesRight" instance=ExtResource("10_apvj0")]
+position = Vector2(512, 96)
+
+[node name="Flyer4" parent="EnemiesRight" instance=ExtResource("10_apvj0")]
+position = Vector2(544, 64)
+
+[node name="RoomExit" parent="." instance=ExtResource("11_0by5o")]
+position = Vector2(32, 256)
+goal = SubResource("GDScript_0by5o")
+
+[node name="RoomExit2" parent="." instance=ExtResource("11_0by5o")]
+position = Vector2(576, 256)
+goal = SubResource("GDScript_mhotr")
+
+[connection signal="tree_exiting" from="Key1" to="." method="_on_key_tree_exiting"]
+[connection signal="tree_exiting" from="Key2" to="." method="_on_key_2_tree_exiting"]
