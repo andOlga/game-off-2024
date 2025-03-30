@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://btg3mstd4ic4k"]
+[gd_scene load_steps=4 format=3 uid="uid://btg3mstd4ic4k"]
 
 [ext_resource type="Texture2D" uid="uid://i67qu5a3qylm" path="res://sprite_images/sWater.png" id="1_cnstx"]
+[ext_resource type="Script" uid="uid://8envt5oet2vr" path="res://game_objects/obstacles/water.gd" id="1_yvuxq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j3iax"]
 size = Vector2(32, 32)
@@ -8,6 +9,7 @@ size = Vector2(32, 32)
 [node name="Water" type="StaticBody2D"]
 collision_layer = 2
 collision_mask = 0
+script = ExtResource("1_yvuxq")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_cnstx")

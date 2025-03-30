@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtefklc2m2nso"]
+
+[ext_resource type="Texture2D" uid="uid://cvqccn5qvbj3" path="res://sprite_images/sGloveBox.png" id="1_hqsym"]
+[ext_resource type="Script" uid="uid://v1sakitnnun1" path="res://game_objects/interactives/glove/glove_box.gd" id="1_vf020"]
+[ext_resource type="AudioStream" uid="uid://cgbltx8ou3in5" path="res://sounds/aHurt.wav" id="3_iisgk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8e0pr"]
+size = Vector2(32, 32)
+
+[node name="GloveBox" type="CharacterBody2D"]
+collision_layer = 9
+collision_mask = 26
+script = ExtResource("1_vf020")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+texture = ExtResource("1_hqsym")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_8e0pr")
+
+[node name="BridgeSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_iisgk")
+pitch_scale = 0.2

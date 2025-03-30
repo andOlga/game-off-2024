@@ -23,5 +23,5 @@ func toggle_state():
 func _on_hitbox_interacted(body: Node2D) -> void:
 	if pressed and stays_on:
 		return
-	if body is Player: # TODO: add GloveBox here
+	if body is Player or body is GloveBox:
 		toggle_state()

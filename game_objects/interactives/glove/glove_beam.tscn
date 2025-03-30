@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6t0cl06rlhf7"]
+
+[ext_resource type="Texture2D" uid="uid://bddwuvmibjy0l" path="res://sprite_images/sGlove.png" id="1_0sbtt"]
+[ext_resource type="Script" uid="uid://dppm2g2xl4n3o" path="res://game_objects/interactives/glove/glove_beam.gd" id="1_ald6c"]
+[ext_resource type="AudioStream" uid="uid://cmwjd85s4qci2" path="res://sounds/aShoot.wav" id="2_ald6c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gcxv2"]
+size = Vector2(32, 32)
+
+[node name="GloveBeam" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 24
+script = ExtResource("1_ald6c")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+texture = ExtResource("1_0sbtt")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_gcxv2")
+
+[node name="ShootSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ald6c")

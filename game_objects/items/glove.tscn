@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://r4uy0r17b5ye"]
+
+[ext_resource type="PackedScene" uid="uid://sexql6jvvx3q" path="res://game_objects/items/!base_item.tscn" id="1_lq6o2"]
+[ext_resource type="Script" uid="uid://c6pnq22e5q012" path="res://game_objects/items/glove.gd" id="2_d8a3f"]
+[ext_resource type="Texture2D" uid="uid://bddwuvmibjy0l" path="res://sprite_images/sGlove.png" id="2_di368"]
+
+[node name="Glove" instance=ExtResource("1_lq6o2")]
+script = ExtResource("2_d8a3f")
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_di368")
