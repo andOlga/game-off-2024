@@ -4,7 +4,7 @@ This is a WIP Godot remake of the game we created for Game Off 2024, theme "Secr
 
 # Playing
 
-Note that the remake is work-in-progress and only has about half the levels of the original game.
+Note that the remake is work-in-progress and is missing a few levels from the original game.
 For a complete experience please play the original [GameMaker version](../gamemaker) for now.
 
 However, if you want to play the remake in its current incomplete state, you may check it out [here](https://andolga.github.io/game-off-2024).
