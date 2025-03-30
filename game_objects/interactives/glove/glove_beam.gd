@@ -21,10 +21,7 @@ func shoot(new_launcher: Player):
 	is_shooting = true
 
 func _physics_process(delta: float) -> void:
-	if not is_shooting:
-		return
 	if global_position.distance_to(launcher.global_position) > 64:
-		is_shooting = false
 		if $ShootSFX.playing:
 			hide()
 			await $ShootSFX.finished
@@ -36,7 +33,6 @@ func _physics_process(delta: float) -> void:
 			if collider is GloveBox:
 				collider.following = launcher
 				collider.modulate = Color.AQUA
-				is_shooting = false
 			if $ShootSFX.playing:
 				hide()
 				await $ShootSFX.finished
