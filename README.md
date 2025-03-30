@@ -1,13 +1,16 @@
 # Secret Entrances, Confounding Rooms: Enfer's Trial
 
-This is a WIP Godot remake of the game we created for Game Off 2024, theme "Secret". A minimalistic, action-based dungeon crawler.
+This is a Godot remake of the game we created for Game Off 2024, theme "Secret". A minimalistic, action-based dungeon crawler.
+
+The Godot version is the recommended version to both play and develop for.
+
+However, if you want to see the version that was originally submitted to Game Off, please check out the [gamemaker](../gamemaker) branch.
 
 # Playing
 
-Note that the remake is work-in-progress and is missing a few levels from the original game.
-For a complete experience please play the original [GameMaker version](../gamemaker) for now.
+Offline builds for major desktop platforms are available [here](../../releases/latest).
 
-However, if you want to play the remake in its current incomplete state, you may check it out [here](https://andolga.github.io/game-off-2024).
+You may also play the game in any modern web browser (including mobile ones) [here](https://andolga.github.io/game-off-2024). For playing on phones, a gamepad is currently required.
 
 # Building
 
