@@ -1,0 +1,154 @@
+[gd_scene load_steps=19 format=4 uid="uid://c211d4kdlydqy"]
+
+[ext_resource type="PackedScene" uid="uid://dd4k87pwls1tp" path="res://utilities/pause_screen.tscn" id="1_le7bi"]
+[ext_resource type="PackedScene" uid="uid://be5awa77y8ldh" path="res://game_objects/obstacles/room_box.tscn" id="2_mi6pc"]
+[ext_resource type="TileSet" uid="uid://d1rp48liwmrka" path="res://game_objects/obstacles/!obstacle_tiles.tres" id="3_mi6pc"]
+[ext_resource type="PackedScene" uid="uid://cdmvtimmcv48g" path="res://game_objects/obstacles/room_exit.tscn" id="4_juxj0"]
+[ext_resource type="PackedScene" uid="uid://dydo5qirh645o" path="res://game_objects/player.tscn" id="5_00xuy"]
+[ext_resource type="PackedScene" uid="uid://dri8ned6r7ccs" path="res://game_objects/items/!inventory.tscn" id="6_8ju13"]
+[ext_resource type="PackedScene" uid="uid://r4uy0r17b5ye" path="res://game_objects/items/glove.tscn" id="7_s0u1x"]
+[ext_resource type="PackedScene" uid="uid://dtefklc2m2nso" path="res://game_objects/interactives/glove/glove_box.tscn" id="8_s0u1x"]
+[ext_resource type="PackedScene" uid="uid://cw5puwn2lyiir" path="res://game_objects/items/bomb.tscn" id="8_vmsik"]
+[ext_resource type="PackedScene" uid="uid://c488sxldu3dw3" path="res://game_objects/interactives/pressure_plate.tscn" id="9_jpijl"]
+[ext_resource type="PackedScene" uid="uid://dgm381ol6g6ra" path="res://game_objects/enemies/turret.tscn" id="10_cvhhy"]
+[ext_resource type="PackedScene" uid="uid://b25oxmnsnq3h6" path="res://game_objects/obstacles/door.tscn" id="11_k7t1t"]
+[ext_resource type="PackedScene" uid="uid://d265m4a33q21" path="res://game_objects/pickups/sword.tscn" id="12_drd8l"]
+[ext_resource type="PackedScene" uid="uid://bagl5p3l6tq7l" path="res://game_objects/enemies/flyer.tscn" id="13_ss3ov"]
+[ext_resource type="PackedScene" uid="uid://de1fd31q4fxq2" path="res://game_objects/pickups/fish.tscn" id="15_5gjil"]
+[ext_resource type="PackedScene" uid="uid://bqfoheuxld3pl" path="res://game_objects/enemies/hopper.tscn" id="16_7c8x6"]
+
+[sub_resource type="GDScript" id="GDScript_drd8l"]
+script/source = "extends Node2D
+
+func _on_pressure_plate_toggled(new_state: bool) -> void:
+	$Door.toggle()
+"
+
+[sub_resource type="GDScript" id="GDScript_7c8x6"]
+script/source = "func is_room_complete(room: Node2D) -> bool:
+	for child in room.find_children(\"*\"):
+		if child is BaseEnemy:
+			return false
+		if child is PressurePlate:
+			if not child.pressed:
+				return false
+	return true
+"
+
+[node name="Room" type="Node2D"]
+script = SubResource("GDScript_drd8l")
+
+[node name="PauseScreen" parent="." instance=ExtResource("1_le7bi")]
+
+[node name="RoomBox" parent="." instance=ExtResource("2_mi6pc")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAMAAQAAAAAAAQABAAQAAQAAAAAAAQABAAUAAQAAAAAAAQABAAYAAQAAAAAAAQACAAMAAQAAAAAAAQACAAQAAQAAAAAAAQACAAUAAQAAAAAAAQALAAUAAQAAAAAAAQALAAQAAQAAAAAAAQALAAMAAQAAAAAAAQAMAAMAAQAAAAAAAQANAAMAAQAAAAAAAQAOAAMAAQAAAAAAAQAPAAMAAQAAAAAAAQAQAAMAAQAAAAAAAQARAAMAAQAAAAAAAQARAAQAAQAAAAAAAQARAAUAAQAAAAAAAQARAAYAAQAAAAAAAQASAAYAAQAAAAAAAQALAAgAAQAAAAAAAQALAAkAAQAAAAAAAQALAAoAAQAAAAAAAQAMAAoAAQAAAAAAAQANAAoAAQAAAAAAAQAOAAoAAQAAAAAAAQAPAAoAAQAAAAAAAQAQAAoAAQAAAAAAAQARAAoAAQAAAAAAAQARAAgAAQAAAAAAAQASAAgAAQAAAAAAAQAKAAgAAQAAAAAAAQAJAAgAAQAAAAAAAQAFAAgAAQAAAAAAAQACAAgAAQAAAAAAAQABAAgAAQAAAAAAAQAFAAMAAQAAAAAAAQAGAAMAAQAAAAAAAgAGAAQAAQAAAAAAAgAGAAUAAQAAAAAAAQAHAAMAAQAAAAAAAQAHAAQAAQAAAAAAAQAHAAUAAQAAAAAAAQAJAAMAAQAAAAAAAQAJAAQAAQAAAAAAAQAJAAUAAQAAAAAAAQAKAAMAAQAAAAAAAgAKAAQAAQAAAAAAAgAKAAUAAQAAAAAAAQABAAEAAQAAAAAAAgABAAIAAQAAAAAAAgACAAEAAQAAAAAAAgACAAIAAQAAAAAAAgADAAEAAQAAAAAAAgADAAIAAQAAAAAAAgAEAAEAAQAAAAAAAgAEAAIAAQAAAAAAAgAFAAEAAQAAAAAAAgAFAAIAAQAAAAAAAgAGAAEAAQAAAAAAAgAGAAIAAQAAAAAAAgAHAAEAAQAAAAAAAgAHAAIAAQAAAAAAAgAIAAEAAQAAAAAAAgAIAAIAAQAAAAAAAgAJAAEAAQAAAAAAAgAJAAIAAQAAAAAAAgAKAAEAAQAAAAAAAgAKAAIAAQAAAAAAAgALAAEAAQAAAAAAAgALAAIAAQAAAAAAAgAMAAEAAQAAAAAAAgAMAAIAAQAAAAAAAgANAAEAAQAAAAAAAgANAAIAAQAAAAAAAgAOAAEAAQAAAAAAAgAOAAIAAQAAAAAAAgAPAAEAAQAAAAAAAgAPAAIAAQAAAAAAAgAQAAEAAQAAAAAAAgAQAAIAAQAAAAAAAgARAAEAAQAAAAAAAgARAAIAAQAAAAAAAgASAAEAAQAAAAAAAgASAAIAAQAAAAAAAgASAAMAAQAAAAAAAgASAAQAAQAAAAAAAgASAAUAAQAAAAAAAgABAAwAAQAAAAAAAgABAA0AAQAAAAAAAgACAAwAAQAAAAAAAgACAA0AAQAAAAAAAgADAAsAAQAAAAAAAQADAAwAAQAAAAAAAgADAA0AAQAAAAAAAgAEAAsAAQAAAAAAAQAEAAwAAQAAAAAAAgAEAA0AAQAAAAAAAgAFAAsAAQAAAAAAAQAFAAwAAQAAAAAAAgAFAA0AAQAAAAAAAgAJAAkAAQAAAAAAAgAJAAoAAQAAAAAAAgAJAAsAAQAAAAAAAgAJAAwAAQAAAAAAAgAJAA0AAQAAAAAAAgAKAAkAAQAAAAAAAgAKAAoAAQAAAAAAAgAKAAsAAQAAAAAAAgAKAAwAAQAAAAAAAgAKAA0AAQAAAAAAAgAGAAsAAQAAAAAAAQAGAAwAAQAAAAAAAgAGAA0AAQAAAAAAAgAHAAsAAQAAAAAAAgAHAAwAAQAAAAAAAgAHAA0AAQAAAAAAAgAIAAsAAQAAAAAAAgAIAAwAAQAAAAAAAgAIAA0AAQAAAAAAAgAMAAsAAQAAAAAAAgAMAAwAAQAAAAAAAgAMAA0AAQAAAAAAAgANAAsAAQAAAAAAAgANAAwAAQAAAAAAAgANAA0AAQAAAAAAAgAOAAsAAQAAAAAAAgAOAAwAAQAAAAAAAgAOAA0AAQAAAAAAAgAPAAsAAQAAAAAAAgAPAAwAAQAAAAAAAgAPAA0AAQAAAAAAAgAQAAsAAQAAAAAAAgAQAAwAAQAAAAAAAgAQAA0AAQAAAAAAAgARAAsAAQAAAAAAAgARAAwAAQAAAAAAAgARAA0AAQAAAAAAAgASAAsAAQAAAAAAAgASAAwAAQAAAAAAAgASAA0AAQAAAAAAAgASAAkAAQAAAAAAAgASAAoAAQAAAAAAAgADAAMAAQAAAAAAAQAEAAgAAQAAAAAABAADAAgAAQAAAAAAAQAEAAMAAQAAAAAAAQAFAAQAAQAAAAAAAQAFAAUAAQAAAAAAAQAHAAoAAQAAAAAAAgAIAAoAAQAAAAAAAgAGAAgAAQAAAAAAAQAGAAkAAQAAAAAAAQAGAAoAAQAAAAAAAQAHAAgAAQAAAAAAAQAIAAgAAQAAAAAAAQAHAAkAAQAAAAAAAgAIAAkAAQAAAAAAAgAIAAMAAQAAAAAAAQARAAkAAQAAAAAABAALAAsAAQAAAAAAAgALAAwAAQAAAAAAAgALAA0AAQAAAAAAAgABAAkAAQAAAAAAAgABAAsAAQAAAAAAAgABAAoAAQAAAAAAAgACAAsAAQAAAAAAAQACAAoAAQAAAAAAAQACAAkAAQAAAAAAAQA=")
+tile_set = ExtResource("3_mi6pc")
+
+[node name="RoomExit" parent="." instance=ExtResource("4_juxj0")]
+position = Vector2(32, 224)
+goal = SubResource("GDScript_7c8x6")
+
+[node name="Player" parent="." instance=ExtResource("5_00xuy")]
+position = Vector2(64, 224)
+has_sword = false
+
+[node name="Inventory" parent="." instance=ExtResource("6_8ju13")]
+
+[node name="Glove" parent="Inventory" instance=ExtResource("7_s0u1x")]
+position = Vector2(96, 224)
+
+[node name="Bomb" parent="Inventory" instance=ExtResource("8_vmsik")]
+position = Vector2(448, 288)
+
+[node name="PressurePlate" parent="." instance=ExtResource("9_jpijl")]
+position = Vector2(96, 128)
+scale = Vector2(2, 2)
+
+[node name="PressurePlate2" parent="." instance=ExtResource("9_jpijl")]
+position = Vector2(384, 128)
+
+[node name="PressurePlate3" parent="." instance=ExtResource("9_jpijl")]
+position = Vector2(512, 128)
+
+[node name="PressurePlate4" parent="." instance=ExtResource("9_jpijl")]
+position = Vector2(512, 288)
+
+[node name="PressurePlate5" parent="." instance=ExtResource("9_jpijl")]
+position = Vector2(384, 288)
+
+[node name="GloveBox" parent="." instance=ExtResource("8_s0u1x")]
+position = Vector2(128, 224)
+
+[node name="GloveBox2" parent="." instance=ExtResource("8_s0u1x")]
+position = Vector2(176, 224)
+
+[node name="GloveBox3" parent="." instance=ExtResource("8_s0u1x")]
+position = Vector2(224, 224)
+
+[node name="GloveBox4" parent="." instance=ExtResource("8_s0u1x")]
+position = Vector2(272, 224)
+
+[node name="GloveBox5" parent="." instance=ExtResource("8_s0u1x")]
+position = Vector2(320, 224)
+
+[node name="Turret" parent="." instance=ExtResource("10_cvhhy")]
+position = Vector2(384, 224)
+rotation = 3.14159
+
+[node name="Door" parent="." instance=ExtResource("11_k7t1t")]
+position = Vector2(256, 160)
+
+[node name="SwordPickup" parent="." instance=ExtResource("12_drd8l")]
+position = Vector2(256, 128)
+
+[node name="Flyer" parent="." instance=ExtResource("13_ss3ov")]
+position = Vector2(400, 160)
+
+[node name="Flyer2" parent="." instance=ExtResource("13_ss3ov")]
+position = Vector2(496, 256)
+
+[node name="Flyer3" parent="." instance=ExtResource("13_ss3ov")]
+position = Vector2(496, 160)
+
+[node name="Flyer4" parent="." instance=ExtResource("13_ss3ov")]
+position = Vector2(400, 256)
+
+[node name="Fish" parent="." instance=ExtResource("15_5gjil")]
+position = Vector2(576, 224)
+
+[node name="Flyer5" parent="." instance=ExtResource("13_ss3ov")]
+position = Vector2(448, 368)
+can_swim = true
+
+[node name="Flyer10" parent="." instance=ExtResource("13_ss3ov")]
+position = Vector2(480, 400)
+can_swim = true
+
+[node name="Flyer6" parent="." instance=ExtResource("13_ss3ov")]
+position = Vector2(288, 352)
+can_swim = true
+
+[node name="Flyer7" parent="." instance=ExtResource("13_ss3ov")]
+position = Vector2(416, 400)
+can_swim = true
+
+[node name="Flyer8" parent="." instance=ExtResource("13_ss3ov")]
+position = Vector2(320, 384)
+can_swim = true
+
+[node name="Flyer9" parent="." instance=ExtResource("13_ss3ov")]
+position = Vector2(256, 384)
+can_swim = true
+
+[node name="Hopper" parent="." instance=ExtResource("16_7c8x6")]
+position = Vector2(128, 320)
+
+[node name="Hopper2" parent="." instance=ExtResource("16_7c8x6")]
+position = Vector2(160, 288)
+
+[node name="Hopper3" parent="." instance=ExtResource("16_7c8x6")]
+position = Vector2(96, 288)
+
+[connection signal="toggled" from="PressurePlate" to="." method="_on_pressure_plate_toggled"]
