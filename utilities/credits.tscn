@@ -1,0 +1,120 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5qdpvjoa580t"]
+
+[ext_resource type="FontFile" uid="uid://dccfwfvw53bwp" path="res://promptfont.otf" id="1_3ivsw"]
+[ext_resource type="Script" uid="uid://npi6lfmf0fw7" path="res://utilities/credits.gd" id="1_dput3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dput3"]
+size = Vector2(640, 5880)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2wqe"]
+size = Vector2(640, 480)
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_dput3")
+
+[node name="CreditsText" type="RichTextLabel" parent="."]
+offset_top = 544.0
+offset_right = 640.0
+offset_bottom = 4464.0
+theme_override_fonts/normal_font = ExtResource("1_3ivsw")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "---Credits---
+
+
+
+
+
+
+
+
+
+
+--Game Design--
+[url=https://andolga.github.io]&Olga[/url]
+[url=https://youtube.com/@LHCollider]LHCollider[/url]
+
+--Programming--
+Written in GDScript
+by &Olga
+
+--Art--
+Drawn by &Olga
+
+--Sound--
+Made with [url=https://sfxr.me/]jsfxr[/url]
+by &Olga
+
+--Fonts--
+[url=https://shinmera.github.io/promptfont/]PromptFont[/url]
+by Yukari \"Shinmera\" Hafner
+
+
+
+
+
+
+
+
+
+
+
+
+--Special Thanks--
+Tara
+jichan
+[url=https://www.youtube.com/@PirateSoftware]Jason Thor Hall[/url]
+[url=https://www.youtube.com/@davidxnewton]DavidXNewton[/url]
+
+
+
+Developed during
+[url=https://itch.io/jam/game-off-2024]GitHub Game Off 2024[/url]
+Theme: \"Secret\"
+
+
+
+Created in [url=https://godotengine.org]Godot[/url]
+v{GODOT_VERSION}
+
+Source code and updates
+may be available at:
+
+[url=https://github.com/andOlga/game-off-2024]github.com
+/andOlga
+/game-off-2024[/url]
+
+
+
+
+
+
+
+
+
+
+
+
+
+Thank you for playing."
+fit_content = true
+horizontal_alignment = 1
+
+[node name="CreditsArea" type="Area2D" parent="CreditsText"]
+
+[node name="CreditsCollision" type="CollisionShape2D" parent="CreditsText/CreditsArea"]
+position = Vector2(320, 976)
+shape = SubResource("RectangleShape2D_dput3")
+
+[node name="MonitorArea" type="Area2D" parent="."]
+
+[node name="MonitorCollision" type="CollisionShape2D" parent="MonitorArea"]
+position = Vector2(320, 240)
+shape = SubResource("RectangleShape2D_b2wqe")
+
+[node name="TitleTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="meta_clicked" from="CreditsText" to="." method="_on_credits_text_meta_clicked"]
+[connection signal="area_exited" from="MonitorArea" to="." method="_on_monitor_area_area_exited"]
+[connection signal="timeout" from="TitleTimer" to="." method="_on_title_timer_timeout"]
