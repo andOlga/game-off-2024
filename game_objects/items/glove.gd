@@ -12,7 +12,7 @@ func use() -> void:
 			child.following = null
 			child.modulate = Color.WHITE
 	if not have_boxes:
-		for child in $/root/Room.find_children("*"):
+		for child in $/root/Room.find_children("*", "", true, false):
 			if child is Player:
 				var beam := beam_scene.instantiate()
 				$/root/Room.add_child(beam)

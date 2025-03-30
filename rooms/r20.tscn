@@ -1,0 +1,104 @@
+[gd_scene load_steps=15 format=4 uid="uid://hfgumg27pl2t"]
+
+[ext_resource type="PackedScene" uid="uid://dd4k87pwls1tp" path="res://utilities/pause_screen.tscn" id="1_5i2lu"]
+[ext_resource type="PackedScene" uid="uid://be5awa77y8ldh" path="res://game_objects/obstacles/room_box.tscn" id="2_s80n6"]
+[ext_resource type="TileSet" uid="uid://d1rp48liwmrka" path="res://game_objects/obstacles/!obstacle_tiles.tres" id="3_s80n6"]
+[ext_resource type="PackedScene" uid="uid://dgm381ol6g6ra" path="res://game_objects/enemies/turret.tscn" id="4_0yaf4"]
+[ext_resource type="PackedScene" uid="uid://c488sxldu3dw3" path="res://game_objects/interactives/pressure_plate.tscn" id="4_dhv3d"]
+[ext_resource type="PackedScene" uid="uid://dri8ned6r7ccs" path="res://game_objects/items/!inventory.tscn" id="5_71x1h"]
+[ext_resource type="PackedScene" uid="uid://r4uy0r17b5ye" path="res://game_objects/items/glove.tscn" id="6_6mooc"]
+[ext_resource type="PackedScene" uid="uid://dtefklc2m2nso" path="res://game_objects/interactives/glove/glove_box.tscn" id="7_qoxr8"]
+[ext_resource type="PackedScene" uid="uid://b2vssre6sf7f2" path="res://game_objects/pickups/mimic_potion.tscn" id="8_lg5g8"]
+[ext_resource type="PackedScene" uid="uid://btg3mstd4ic4k" path="res://game_objects/obstacles/water.tscn" id="9_6mooc"]
+[ext_resource type="PackedScene" uid="uid://shbvqhrkswn2" path="res://game_objects/pickups/mimic_potion_target.tscn" id="10_jnnsr"]
+[ext_resource type="PackedScene" uid="uid://cdmvtimmcv48g" path="res://game_objects/obstacles/room_exit.tscn" id="10_qoxr8"]
+[ext_resource type="PackedScene" uid="uid://dydo5qirh645o" path="res://game_objects/player.tscn" id="11_lg5g8"]
+
+[sub_resource type="GDScript" id="GDScript_jnnsr"]
+script/source = "func is_room_complete(room: Node2D) -> bool:
+	for child in room.find_children(\"*\"):
+		if child is BaseEnemy:
+			return false
+		if child is PressurePlate:
+			if not child.pressed:
+				return false
+	return true
+"
+
+[node name="Room" type="Node2D"]
+
+[node name="PauseScreen" parent="." instance=ExtResource("1_5i2lu")]
+
+[node name="RoomBox" parent="." instance=ExtResource("2_s80n6")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAIAAMAAQAAAAAAAQAIAAQAAQAAAAAAAQAIAAUAAQAAAAAAAQAIAAYAAQAAAAAAAQAIAAcAAQAAAAAAAQALAAMAAQAAAAAAAQALAAUAAQAAAAAAAQALAAQAAQAAAAAAAQALAAYAAQAAAAAAAQALAAcAAQAAAAAAAQAMAAcAAQAAAAAAAQANAAcAAQAAAAAAAQAOAAcAAQAAAAAAAQAPAAcAAQAAAAAAAQAQAAcAAQAAAAAAAQARAAcAAQAAAAAAAQASAAcAAQAAAAAAAQAHAAcAAQAAAAAAAQAGAAcAAQAAAAAAAQAFAAcAAQAAAAAAAQAEAAcAAQAAAAAAAQADAAcAAQAAAAAAAQACAAcAAQAAAAAAAQABAAcAAQAAAAAAAQAIAAkAAQAAAAAAAQAIAAoAAQAAAAAAAQAIAAsAAQAAAAAAAQALAAsAAQAAAAAAAQALAAoAAQAAAAAAAQALAAkAAQAAAAAAAQAMAAkAAQAAAAAAAQANAAkAAQAAAAAAAQAOAAkAAQAAAAAAAQAPAAkAAQAAAAAAAQAQAAkAAQAAAAAAAQARAAkAAQAAAAAAAQASAAkAAQAAAAAAAQAHAAkAAQAAAAAAAQAGAAkAAQAAAAAAAQAFAAkAAQAAAAAAAQAEAAkAAQAAAAAAAQADAAkAAQAAAAAAAQACAAkAAQAAAAAAAQABAAkAAQAAAAAAAQAJAAMAAQAAAAAAAQAKAAMAAQAAAAAAAQAJAAsAAQAAAAAAAQAKAAsAAQAAAAAAAQA=")
+tile_set = ExtResource("3_s80n6")
+
+[node name="PressurePlate" parent="." instance=ExtResource("4_dhv3d")]
+position = Vector2(320, 128)
+
+[node name="PressurePlate2" parent="." instance=ExtResource("4_dhv3d")]
+position = Vector2(32, 192)
+
+[node name="PressurePlate3" parent="." instance=ExtResource("4_dhv3d")]
+position = Vector2(576, 416)
+
+[node name="Turret" parent="." instance=ExtResource("4_0yaf4")]
+position = Vector2(80, 256)
+
+[node name="Turret3" parent="." instance=ExtResource("4_0yaf4")]
+position = Vector2(192, 256)
+
+[node name="Turret6" parent="." instance=ExtResource("4_0yaf4")]
+position = Vector2(448, 288)
+rotation = 3.14159
+
+[node name="Turret8" parent="." instance=ExtResource("4_0yaf4")]
+position = Vector2(560, 288)
+rotation = 3.14159
+
+[node name="Turret9" parent="." instance=ExtResource("4_0yaf4")]
+position = Vector2(320, 128)
+rotation = 1.5708
+
+[node name="Turret11" parent="." instance=ExtResource("4_0yaf4")]
+position = Vector2(352, 160)
+rotation = 1.5708
+
+[node name="Turret13" parent="." instance=ExtResource("4_0yaf4")]
+position = Vector2(288, 320)
+rotation = -1.5708
+
+[node name="Inventory" parent="." instance=ExtResource("5_71x1h")]
+
+[node name="Glove" parent="Inventory" instance=ExtResource("6_6mooc")]
+position = Vector2(288, 320)
+
+[node name="GloveBox" parent="." instance=ExtResource("7_qoxr8")]
+position = Vector2(320, 288)
+
+[node name="GloveBox2" parent="." instance=ExtResource("7_qoxr8")]
+position = Vector2(224, 320)
+
+[node name="GloveBox3" parent="." instance=ExtResource("7_qoxr8")]
+position = Vector2(576, 32)
+
+[node name="MimicPotion" parent="." instance=ExtResource("8_lg5g8")]
+position = Vector2(320, 320)
+
+[node name="MimicPotionTarget2" parent="MimicPotion" instance=ExtResource("10_jnnsr")]
+position = Vector2(-288, 96)
+
+[node name="MimicPotionTarget" parent="MimicPotion" instance=ExtResource("10_jnnsr")]
+position = Vector2(-288, -288)
+
+[node name="Water" parent="." instance=ExtResource("9_6mooc")]
+position = Vector2(48, 272)
+
+[node name="RoomExit" parent="." instance=ExtResource("10_qoxr8")]
+position = Vector2(576, 256)
+goal = SubResource("GDScript_jnnsr")
+
+[node name="Player" parent="." instance=ExtResource("11_lg5g8")]
+position = Vector2(320, 256)
