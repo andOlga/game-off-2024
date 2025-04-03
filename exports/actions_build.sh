@@ -21,4 +21,4 @@ do
     ./Godot_v${GODOT_VERSION}_${GODOT_ARCH} --headless --quiet --path .. --export-release "$i"
 done
 echo "Creating Web zip for release..."
-zip -r SECRET.web.zip web
+zip -qr SECRET.web.zip web
