@@ -58,7 +58,7 @@ func _ready() -> void:
 	if not has_sword:
 		%Sword.hide()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	velocity = Input.get_vector(&"move_left", &"move_right", &"move_up", &"move_down") * 180
 	if velocity != Vector2.ZERO:
 		last_move = velocity

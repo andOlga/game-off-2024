@@ -9,7 +9,7 @@ func _on_movement_timer_timeout() -> void:
 	var move_direction : StringName = [&"x", &"y"].pick_random()
 	velocity[move_direction] = move_amount * 60
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if move_and_slide():
 		_on_movement_timer_timeout()
 	velocity = Vector2(0, 0)
