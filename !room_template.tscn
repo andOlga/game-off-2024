@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1ivl2yl7v56y"]
+
+[ext_resource type="PackedScene" uid="uid://dd4k87pwls1tp" path="res://utilities/pause_screen.tscn" id="1_7omql"]
+[ext_resource type="PackedScene" uid="uid://be5awa77y8ldh" path="res://game_objects/obstacles/room_box.tscn" id="2_rutgh"]
+[ext_resource type="TileSet" uid="uid://d1rp48liwmrka" path="res://game_objects/obstacles/!obstacle_tiles.tres" id="3_pr87e"]
+
+[node name="Room" type="Node2D"]
+
+[node name="PauseScreen" parent="." instance=ExtResource("1_7omql")]
+
+[node name="RoomBox" parent="." instance=ExtResource("2_rutgh")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("3_pr87e")
