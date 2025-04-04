@@ -35,7 +35,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: Release desktop exports
+      - name: Release downloadable exports
         run: gh release create v$VERSION exports/SECRET.*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

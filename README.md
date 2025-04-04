@@ -10,7 +10,7 @@ However, if you want to see the version that was originally submitted to Game Of
 
 Offline builds for major desktop platforms are available [here](../../releases/latest).
 
-You may also play the game in any modern web browser (including mobile ones) [here](https://andolga.github.io/game-off-2024). For playing on phones, a gamepad is currently required.
+A PWA of the game is available [here](https://andolga.github.io/game-off-2024). This can be played on any modern web browser, and installed as an app on phones. Please note that for playing on phones, a gamepad is currently required. If you wish to self-host the PWA, its download is also available alongside the desktop builds.
 
 # Building
 
