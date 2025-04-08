@@ -1,11 +1,9 @@
 extends Node2D
 
 func _ready() -> void:
-	$CreditsText.text = $CreditsText.text.format(
-		{
-			"GODOT_VERSION": Engine.get_version_info().string
-		}
-	)
+	$CreditsText.text = $CreditsText.text.format({
+		"GODOT_VERSION": Engine.get_version_info().string
+	})
 
 func _process(delta: float) -> void:
 	$CreditsText.position.y -= 60 * delta
