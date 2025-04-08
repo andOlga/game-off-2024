@@ -21,6 +21,7 @@ config/icon="uid://dv0r8tf6pyd11"
 [autoload]
 
 RoomRng="*res://utilities/room_rng.gd"
+InputHinter="*res://utilities/input_hinter.gd"
 
 [display]
 
