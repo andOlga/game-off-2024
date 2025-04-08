@@ -88,7 +88,7 @@ action_select={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://utilities/pause_screen.tscn", "res://utilities/title_screen.tscn", "res://utilities/godot_splash.tscn", "res://utilities/credits.tscn")
+locale/translations_pot_files=PackedStringArray("res://utilities/pause_screen.tscn", "res://utilities/title_screen.tscn", "res://utilities/godot_splash.tscn", "res://utilities/credits.tscn", "res://utilities/pause_screen.gd")
 
 [layer_names]
 
