@@ -3,7 +3,7 @@ extends Node
 func format_input_hint(text: String) -> String:
 	return text.format({
 		"dpad": "\u21ce",
-		"left_stick": "\u21CB",
+		"left_stick": "\u21cb",
 		"arrows": "\u23f4\u23f5\u23f6\u23f7",
 		"button_a": "\u21a7",
 		"key_z": "\uff3a",
