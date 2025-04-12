@@ -4,7 +4,6 @@ class_name Player extends CharacterBody2D
 
 var is_hurting := false
 var is_invuln := false
-var draws_grid := true
 var hp := 3
 var last_move := Vector2(180, 0)
 @onready var has_sword : bool = get_parent().has_sword
@@ -59,7 +58,12 @@ func _ready() -> void:
 		%Sword.hide()
 
 func _physics_process(_delta: float) -> void:
-	velocity = Input.get_vector(&"move_left", &"move_right", &"move_up", &"move_down") * 180
+	velocity = (
+		Input.get_vector(&"move_left", &"move_right", &"move_up", &"move_down")
+		.round() # Convert analog stick to digital directions
+		.normalized() # Re-handle diagonals
+		* 180
+	)
 	if velocity != Vector2.ZERO:
 		last_move = velocity
 	if has_sword:

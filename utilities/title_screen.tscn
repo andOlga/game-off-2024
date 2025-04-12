@@ -9,9 +9,9 @@ offset_bottom = 480.0
 theme_override_fonts/normal_font = ExtResource("1_v6p8y")
 theme_override_font_sizes/normal_font_size = 37
 text = "Controls:
-Move: {dpad} or {arrows}
-Use sword: {a} or {key_z}
-Use item: {b} or {key_x}
+Move: {dpad}, {left_stick} or {arrows}
+Use sword: {button_a} or {key_z}
+Use item: {button_b} or {key_x}
 Change item: {select} or {space}
 Pause: {start}, {enter} or {esc}
 Seed (type to change):
