@@ -13,7 +13,8 @@ theme_override_fonts/normal_font = ExtResource("1_mf76y")
 theme_override_font_sizes/normal_font_size = 35
 text = "Game paused.
 Press {start}, {enter} or {esc} to resume.
-Press {button_b} or {key_x} to restart the room."
+Press {button_b} or {key_x} to restart the room.
+Press {button_a} or {key_z} to reset all progress."
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_75vu3")

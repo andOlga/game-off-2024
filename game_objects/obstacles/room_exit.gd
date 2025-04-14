@@ -22,4 +22,4 @@ func _on_fade_timer_timeout() -> void:
 	if $FadeRect.color.a < 1:
 		$FadeRect.color.a += 0.1
 	else:
-		RoomRng.go_to_next(success)
+		RoomManager.go_to_next(success)
