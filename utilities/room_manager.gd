@@ -11,7 +11,8 @@ func _ready() -> void:
 		var save_data := JSON.parse_string(save.get_line()) as Dictionary
 		rooms = save_data.remaining_rooms
 		rng.seed = save_data.rng_seed
-		rng.state = save_data.rng_state
+		if OS.get_name() != "Web":
+			rng.state = save_data.rng_state
 		save.close()
 		if not rooms.is_empty():
 			have_rooms = true

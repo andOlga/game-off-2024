@@ -18,10 +18,6 @@ func _process(_delta: float) -> void:
 				scene_tree.quit()
 		elif Input.is_action_just_pressed(&"action_item"):
 			scene_tree.reload_current_scene()
-		elif Input.is_action_just_pressed(&"action_sword"):
-			scene_tree.paused = false
-			RoomManager.wipe_save()
-			get_tree().change_scene_to_file("res://utilities/title_screen.tscn")
 	else:
 		if Input.is_action_just_pressed(&"action_pause"):
 			scene_tree.paused = true
