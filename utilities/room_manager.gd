@@ -25,7 +25,6 @@ func wipe_save() -> void:
 	DirAccess.remove_absolute(SAVE_PATH)
 	rng.randomize()
 	_ready()
-	get_tree().change_scene_to_file("res://utilities/title_screen.tscn")
 
 func _save_game(rng_state: int) -> void:
 	var save := FileAccess.open(SAVE_PATH, FileAccess.WRITE)

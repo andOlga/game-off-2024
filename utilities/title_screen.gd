@@ -17,7 +17,8 @@ func _process(_delta: float) -> void:
 				new_seed = int(new_seed)
 			else:
 				new_seed = hash(new_seed)
-			if RoomManager.rng.seed != new_seed: # Prevent loaded state reset
+			if RoomManager.rng.seed != new_seed:
+				RoomManager.wipe_save()
 				RoomManager.rng.seed = new_seed
 		$SeedBox.text = str(RoomManager.rng.seed)
 		$FadeTimer.start()
