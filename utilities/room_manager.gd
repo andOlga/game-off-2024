@@ -1,6 +1,6 @@
 extends Node
 
-const SAVE_PATH := "user://remaining_rooms.json"
+const SAVE_PATH := "user://save.json"
 @onready var rng := RandomNumberGenerator.new()
 var rooms: PackedStringArray
 
@@ -8,7 +8,10 @@ func _ready() -> void:
 	var have_rooms = false
 	if FileAccess.file_exists(SAVE_PATH):
 		var save := FileAccess.open(SAVE_PATH, FileAccess.READ)
-		rooms = JSON.parse_string(save.get_line())
+		var save_data := JSON.parse_string(save.get_line()) as Dictionary
+		rooms = save_data.remaining_rooms
+		rng.seed = save_data.rng_seed
+		rng.state = save_data.rng_state
 		save.close()
 		if not rooms.is_empty():
 			have_rooms = true
@@ -16,27 +19,33 @@ func _ready() -> void:
 		rooms = ResourceLoader.list_directory("res://rooms")
 		for i in rooms.size():
 			rooms[i] = "res://rooms/" + rooms[i]
-		_save_remaining_rooms()
+		_save_game(rng.state)
 
 func wipe_save() -> void:
 	DirAccess.remove_absolute(SAVE_PATH)
+	rng.randomize()
 	_ready()
 	get_tree().change_scene_to_file("res://utilities/title_screen.tscn")
 
-func _save_remaining_rooms() -> void:
+func _save_game(rng_state: int) -> void:
 	var save := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
-	save.store_line(JSON.stringify(rooms))
+	save.store_line(JSON.stringify({
+		"rng_seed": rng.seed,
+		"rng_state": rng_state,
+		"remaining_rooms": rooms
+	}))
 	save.close()
 
 func go_to_next(complete_current := false) -> void:
+	var prev_rng_state := rng.state
 	if complete_current:
 		var current_idx := rooms.find($/root/Room.scene_file_path)
 		rooms.remove_at(current_idx)
-		_save_remaining_rooms()
 	if rooms.is_empty():
-		_ready() # Re-initialize the global state
+		wipe_save()
 		get_tree().change_scene_to_file("res://utilities/credits.tscn")
 	else:
 		var next_idx := rng.randi_range(0, rooms.size() - 1)
 		var next_room := rooms[next_idx]
+		_save_game(prev_rng_state)
 		get_tree().change_scene_to_file(next_room)

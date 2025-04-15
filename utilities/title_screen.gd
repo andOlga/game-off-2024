@@ -3,7 +3,6 @@ extends RichTextLabel
 var is_in_fade := false
 
 func _ready() -> void:
-	RoomManager.rng.randomize()
 	$SeedBox.text = str(RoomManager.rng.seed)
 	text = InputHinter.format_input_hint(text)
 	
@@ -18,7 +17,8 @@ func _process(_delta: float) -> void:
 				new_seed = int(new_seed)
 			else:
 				new_seed = hash(new_seed)
-			RoomManager.rng.seed = new_seed
+			if RoomManager.rng.seed != new_seed: # Prevent loaded state reset
+				RoomManager.rng.seed = new_seed
 		$SeedBox.text = str(RoomManager.rng.seed)
 		$FadeTimer.start()
 
