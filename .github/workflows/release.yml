@@ -19,6 +19,11 @@ jobs:
     
     steps:
       - uses: actions/checkout@v4
+
+      - name: Create version file
+        run: echo $VERSION > version.txt
+        env:
+          VERSION: ${{ github.run_number }}
       
       - name: Build exports
         run: bash exports/actions_build.sh
