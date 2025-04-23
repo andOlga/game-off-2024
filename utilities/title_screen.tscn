@@ -38,4 +38,11 @@ clear_button_enabled = true
 flat = true
 caret_blink = true
 
+[node name="VersionLabel" type="Label" parent="."]
+layout_mode = 0
+offset_top = 457.0
+offset_right = 640.0
+offset_bottom = 480.0
+horizontal_alignment = 2
+
 [connection signal="timeout" from="FadeTimer" to="." method="_on_fade_timer_timeout"]

@@ -1,10 +1,14 @@
 extends RichTextLabel
 
+const VERSION_FILE := "res://version.txt"
 var is_in_fade := false
 
 func _ready() -> void:
 	$SeedBox.text = str(RoomManager.rng.seed)
 	text = InputHinter.format_input_hint(text)
+	if FileAccess.file_exists(VERSION_FILE):
+		var ver := FileAccess.get_file_as_string(VERSION_FILE).strip_edges()
+		$VersionLabel.text = tr("v{VERSION}").format({"VERSION": ver})
 	
 func _process(_delta: float) -> void:
 	if not $SeedBox.has_focus():
