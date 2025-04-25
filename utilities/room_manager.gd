@@ -7,13 +7,13 @@ var rooms: PackedStringArray
 func _ready() -> void:
 	var have_rooms = false
 	if FileAccess.file_exists(SAVE_PATH):
-		var save := FileAccess.open(SAVE_PATH, FileAccess.READ)
-		var save_data := JSON.parse_string(save.get_line()) as Dictionary
+		var save_data := JSON.parse_string(
+			FileAccess.get_file_as_string(SAVE_PATH)
+		) as Dictionary
 		rooms = save_data.remaining_rooms
 		rng.seed = save_data.rng_seed
 		if OS.get_name() != "Web":
 			rng.state = save_data.rng_state
-		save.close()
 		if not rooms.is_empty():
 			have_rooms = true
 	if not have_rooms:
@@ -33,7 +33,7 @@ func _save_game(rng_state: int) -> void:
 		"rng_seed": rng.seed,
 		"rng_state": rng_state,
 		"remaining_rooms": rooms
-	}))
+	}, " "))
 	save.close()
 
 func go_to_next(complete_current := false) -> void:
