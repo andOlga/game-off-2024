@@ -2,9 +2,9 @@
 
 This is a Godot remake of the game we created for Game Off 2024, theme "Secret". A minimalistic, action-based dungeon crawler.
 
-The Godot version is the recommended version to both play and develop for.
+It's an experimental, just-for-fun port that was created with the purpose of learning a new engine. As such, it's slightly more buggy and less complete than the original [GameMaker version](https://github.com/andOlga/game-off-2024-gamemaker).
 
-However, if you want to see the version that was originally submitted to Game Off, please check out the [gamemaker](../gamemaker) branch.
+If you want to see the version that was originally submitted to Game Off, please check out the other repo.
 
 # Playing
 
